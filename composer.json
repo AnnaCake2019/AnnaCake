@@ -1,0 +1,18 @@
+{
+    "name": "notorious/shugar",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Notorious88",
+            "email": "voodo.2015@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Notorious\\Shugar\\": "src"
+        }
+    }
+}
