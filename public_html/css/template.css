@@ -7,19 +7,22 @@ body{
 .header {
     padding-top: 20px;
     display: flex;
-    background: #B22222;
+    background: #ffffff;
     justify-content: center;
     align-items: center;
 }
-
+.menu {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 .header .menu ul {
     display: flex;
     list-style: none;
 }
 
 .header .menu a {
-    color: #f6f7f8;
-    font-size: 20px;
+    color: #000000;
+    /*font-size: 20 px;*/
     text-decoration: none;
     padding: 20px;
     padding-right: 30px;
@@ -28,18 +31,17 @@ body{
     transition: background 0.6s;
 }
 
-
 .menu a:hover{
-    background: #f6f7f8;
-    color: #000000;
-    border-radius: 100px;
+    /*background: #f6f7f8;*/
+    color: pink;
+    /*border-radius: 100px;*/
 }
 
 
 
 
 #burg {
-    background: #B22222;
+    background: #ffffff;
     padding: 32px;
 }
 span{
@@ -56,10 +58,10 @@ span{
 .mobile-menu{
     display: flex;
     width: 100%;
-    background: #B22222;
+    background: #ffffff;
     flex-direction: column;
-    position: absolute;
-    margin-right: 300px;
+    /*position: absolute;*/
+    /*margin-right: 300px;*/
 
 }
 
@@ -74,21 +76,21 @@ span{
 }
 
 .header .mobile-menu a {
-    color: #f6f7f8;
+    color: #000000;
     /*font-weight: bold;*/
-    font-size: 20px;
+    /*font-size: 20px;*/
     text-decoration: none;
-    padding: 32px;
-    padding-right: 50px;
-    padding-left: 50px;
+    /*padding: 32px;*/
+    /*padding-right: 50px;*/
+    /*padding-left: 50px;*/
     transition: background 0.4s;
-    border-radius: 100px;
+    /*border-radius: 100px;*/
 
 }
 .mobile-menu a:hover{
-    background: #f6f7f8;
-    color: #000000;
-    border-radius: 100px;
+    /*background: #f6f7f8;*/
+    color: pink;
+    /*border-radius: 100px;*/
 }
 
 .mob-head{
@@ -97,7 +99,9 @@ span{
 
 
 .minlog {
-    display: none;
+    /*display: none;*/
+    height: 100px;
+    width: 100px;
 }
 footer{
     background-color: burlywood;
@@ -196,7 +200,7 @@ footer{
     .minlog {
         display: block;
         height: 100px;
-        width: 200px;
+        width: 100px;
     }
 
 }
