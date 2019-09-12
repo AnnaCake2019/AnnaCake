@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public_html/css/shop.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controllers/ShopController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
-    </list>
+    <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +71,16 @@
       <workItem from="1568132998520" duration="4446000" />
       <workItem from="1568193439385" duration="6076000" />
       <workItem from="1568210456850" duration="9427000" />
-      <workItem from="1568303586921" duration="4510000" />
+      <workItem from="1568303586921" duration="4752000" />
     </task>
+    <task id="LOCAL-00001" summary="two -v">
+      <created>1568308222541</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1568308222541</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,5 +98,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="two -v" />
+    <option name="LAST_COMMIT_MESSAGE" value="two -v" />
   </component>
 </project>
