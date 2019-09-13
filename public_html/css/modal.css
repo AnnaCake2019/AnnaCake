@@ -1,0 +1,38 @@
+.modalWindow{
+    position: fixed;
+    top: 200px;
+    right: 0;
+    z-index: 3;
+    padding: 10px;
+    color: black;
+    border-radius: 10px 0 0 10px;
+    text-align: center;
+    transition: 1s;
+    background: lightsteelblue ;
+}
+.modalWindow:hover{
+    transition: 1s;
+    background: linear-gradient(to bottom left, lightsteelblue, transparent 90%);
+}
+#window{
+    position: fixed;
+    top: 200px;
+    right: 200px;
+    display: none;
+    height: 20%;
+    width: 20%;
+    z-index: 4;
+    pointer-events: none;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(162,66,66,1) 38%, rgba(252,176,69,1) 100%);
+    opacity: 0.2;
+}
+#window:target{
+    pointer-events: auto;
+    display: block;
+}
+.word p{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}

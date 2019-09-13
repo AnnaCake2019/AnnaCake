@@ -9,6 +9,37 @@
     <title>AnnaCake</title>
 </head>
 <body>
+<!--Modal Window Start-->
+<a href="#window" class="modalWindow">
+    <div class="word"><p>о</p></div>
+    <div class="word"><p>б</p></div>
+    <div class="word"><p>р</p></div>
+    <div class="word"><p>а</p></div>
+    <div class="word"><p>т</p></div>
+    <div class="word"><p>н</p></div>
+    <div class="word"><p>а</p></div>
+    <div class="word"><p>я</p></div>
+    <div><br></div>
+    <div class="word"><p>с</p></div>
+    <div class="word"><p>в</p></div>
+    <div class="word"><p>я</p></div>
+    <div class="word"><p>з</p></div>
+    <div class="word"><p>ь</p></div></a>
+<div id="window">
+    <form method="post" action="#">
+        <a href="#close" class="close">X</a>
+        <div>
+            <label for="name">Имя</label>
+            <input id="name" type="text">
+        </div>
+        <div>
+            <label for="phone">Телефон</label>
+            <input id="phone" type="text">
+        </div>
+        <input type="submit" value="Заказать звонок">
+    </form>
+</div>
+<!--Modal Window end-->
 <div class="header">
     <div class="mob-head">
         <div id="burg" onclick="showMenu()">
