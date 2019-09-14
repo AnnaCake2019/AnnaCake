@@ -11,32 +11,28 @@
 <body>
 <!--Modal Window Start-->
 <a href="#window" class="modalWindow">
-    <div class="word"><p>о</p></div>
-    <div class="word"><p>б</p></div>
-    <div class="word"><p>р</p></div>
-    <div class="word"><p>а</p></div>
-    <div class="word"><p>т</p></div>
-    <div class="word"><p>н</p></div>
-    <div class="word"><p>а</p></div>
-    <div class="word"><p>я</p></div>
-    <div><br></div>
-    <div class="word"><p>с</p></div>
-    <div class="word"><p>в</p></div>
-    <div class="word"><p>я</p></div>
-    <div class="word"><p>з</p></div>
-    <div class="word"><p>ь</p></div></a>
+    <img src="/img/ico/phone.png">
+</a>
+<p class="errors"></p>
 <div id="window">
-    <form method="post" action="#">
+    <form name="communication" method="post" action="#">
         <a href="#close" class="close">X</a>
-        <div>
-            <label for="name">Имя</label>
-            <input id="name" type="text">
+        <div class="row windowFrom">
+            <div class="col-6">
+                <label class="formText" for="phone">Телефон</label>
+                <label class="formText" for="name">Имя</label>
+            </div>
+            <div class="col-6">
+                <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
+                <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
+            </div>
         </div>
-        <div>
-            <label for="phone">Телефон</label>
-            <input id="phone" type="text">
+        <div class="col-12 bot">
+        <input class="bot" type="submit" value="Заказать звонок">
         </div>
-        <input type="submit" value="Заказать звонок">
+        <div class="col-12">
+            <p id="errors"></p>
+        </div>
     </form>
 </div>
 <!--Modal Window end-->
@@ -81,5 +77,6 @@
     </div>
 </div>
 <script src="/js/script.js"></script>
+<script src="/js/communication.js"></script>
 </body>
 </html>
