@@ -10,7 +10,7 @@ form.addEventListener('submit', (event) =>{
             send();
         }
     }
-})
+});
 
 const send = () =>{
     const form_date = new FormData();

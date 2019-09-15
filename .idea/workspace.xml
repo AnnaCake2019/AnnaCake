@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
-      <change afterPath="$PROJECT_DIR$/public_html/js/communication.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/css/basked.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/modal.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/communication.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/communication.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -88,7 +89,10 @@
       <workItem from="1568377600500" duration="261000" />
       <workItem from="1568407971260" duration="147000" />
       <workItem from="1568444722676" duration="10000" />
-      <workItem from="1568458613000" duration="14006000" />
+      <workItem from="1568458613000" duration="14180000" />
+      <workItem from="1568486774193" duration="512000" />
+      <workItem from="1568542539020" duration="40000" />
+      <workItem from="1568542606549" duration="7007000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>

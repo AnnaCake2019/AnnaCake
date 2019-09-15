@@ -27,7 +27,7 @@
     width: 350px;
     z-index: 4;
     pointer-events: none;
-    background: rgba(174, 176, 166, 0.9);
+    background: rgba(174, 176, 166, 0.7);
 
 
     animation-name: slideLeft;

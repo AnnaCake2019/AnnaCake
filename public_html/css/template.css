@@ -2,8 +2,10 @@
 @import "grid.css";
 @import "slider.css";
 @import "modal.css";
+@import "basked.css";
 body{
     margin: 0;
+    font-family: 'Bradley Hand ITC', sans-serif;
 }
 a{
     text-decoration: none;

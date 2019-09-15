@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/template.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>AnnaCake</title>
 </head>
 <body>
@@ -13,7 +14,6 @@
 <a href="#window" class="modalWindow">
     <img src="/img/ico/phone.png">
 </a>
-<p class="errors"></p>
 <div id="window">
     <form name="communication" method="post" action="#">
         <a href="#close" class="close">X</a>
@@ -36,6 +36,20 @@
     </form>
 </div>
 <!--Modal Window end-->
+
+<!--Basked Window start-->
+<div id="basked">
+    <a href="#close">X</a>
+    <div class="row">
+        <div class="offset-2 col-8 hi">
+            <h4>Ваш заказ</h4>
+        </div>
+        <div class="offset-2 col-8 order">
+            <p>Торыт</p><p>Колво: 2</p><p>Сума: 2000р.</p>
+        </div>
+        </div>
+</div>
+<!--Basked Window end-->
 <div class="header">
     <div class="mob-head">
         <div id="burg" onclick="showMenu()">
@@ -51,7 +65,7 @@
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/info/contacts">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
-                <li><a onclick="hideMenu()" href="/cart/show">Корзина</a></li>
+                <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
@@ -62,9 +76,8 @@
             <li><a href="/">Главная</a></li>
             <li><a href="/shop/show">Магазин</a></li>
             <li><a href="/info/contacts">О нас</a></li>
-            <!-- <li><img class="minlog1" src="/img/logo.png" alt=""></li> -->
             <li><a href="/blog/show">Контакты</a></li>
-            <li><a href="/cart/show">Корзина</a></li>
+            <li><a href="#basked">Корзина</a></li>
         </ul>
     </nav>
 </div>
