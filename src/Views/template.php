@@ -15,7 +15,7 @@
     <img src="/img/ico/phone.png">
 </a>
 <div id="window">
-    <form name="communication" method="post" action="#">
+    <form method="POST" action="/mail/send" id="form_mail">
         <a href="#close" class="close">X</a>
         <div class="row windowFrom">
             <div class="col-6">
@@ -23,12 +23,13 @@
                 <label class="formText" for="name">Имя</label>
             </div>
             <div class="col-6">
-                <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
-                <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
+                    <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее время</div>
+                    <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
+                    <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
             </div>
         </div>
         <div class="col-12 bot">
-        <input class="bot" type="submit" value="Заказать звонок">
+        <input class="bot" type="submit" id="button_send" value="Заказать звонок">
         </div>
         <div class="col-12">
             <p id="errors"></p>
@@ -45,7 +46,7 @@
             <h4>Ваш заказ</h4>
         </div>
         <div class="offset-2 col-8 order">
-            <p>Торыт</p><p>Колво: 2</p><p>Сума: 2000р.</p>
+            <p>Торты</p><p>Колво: 2</p><p>Сума: 2000р.</p>
         </div>
         </div>
 </div>
@@ -89,7 +90,7 @@
 </footer>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/script.js"></script>
-<script src="/js/communication.js"></script>
 </body>
 </html>

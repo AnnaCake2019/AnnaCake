@@ -2,7 +2,6 @@
 
 
 namespace Notorious\Shugar\Controllers;
-
 use Notorious\Shugar\Core\Controller;
 
 class AdminController extends Controller
