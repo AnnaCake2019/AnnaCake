@@ -45,6 +45,15 @@
         <div class="offset-2 col-8 hi">
             <h4>Ваш заказ</h4>
         </div>
+        <div class="offset-2 col-8">
+            <div class="orders">
+                <form name="orders" method="post" action="#">
+                    <input class="val" type="text" placeholder="Имя">
+                    <input class="val" type="text" placeholder="Телефон">
+                    <input type="submit" value="Заказать">
+                </form>
+            </div>
+        </div>
         <div class="offset-2 col-8 order">
             <p>Торты</p><p>Колво: 2</p><p>Сума: 2000р.</p>
         </div>
@@ -92,5 +101,10 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/script.js"></script>
+<<<<<<< HEAD
+=======
+<script src="/js/communication.js"></script>
+<script src="/js/basked.js"></script>
+>>>>>>> a636d3047aa9bdd2928d53bc082624cb28c93ac6
 </body>
 </html>

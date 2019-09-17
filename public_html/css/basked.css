@@ -34,6 +34,13 @@
     border-bottom: 1px black solid;
     margin-top: 10px;
 }
+.orders form{
+    display: flex;
+    flex-direction: column;
+}
+.orders form input{
+    text-align: center;
+}
 
 
 
