@@ -3,8 +3,15 @@ body{
     margin: 0;
     background-color: lightsteelblue;
 }
+body h1{
+    text-align: center;
+}
 li{
     list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 .enter form{
     display: flex;
@@ -66,3 +73,17 @@ li{
     transition: 1s;
 }
 
+/*Content*/
+.form_cont{
+    display: flex;
+    flex-direction: column;
+}
+.form_cont input{
+    margin: 15px 0;
+}
+#yourId {
+    width: 200px;
+    height: 150px;
+    position:relative; /* or fixed or absolute */
+}
+/*Content end*/

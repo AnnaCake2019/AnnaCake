@@ -6,19 +6,22 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/forAdmin.css">
+    <link rel="stylesheet" href="/css/croppic.css">
+    <script src="/js/croppic.js"></script>
 </head>
 <body>
-<a class="exit" href="#">Выход</a>
+<a class="exit" href="/Index/index">Выход</a>
 <div class="row">
     <div class="offset-2 col-8 menuAdm">
         <ul>
-            <li>Торты</li>
-            <li>Кейки</li>
-            <li>Чизкейки</li>
-            <li>Выпечка</li>
-            <li>Корзины</li>
-            <li>Обратный звонок</li>
+            <li><a href="/Admin/Cake">Торты</a></li>
+            <li><a href="/Admin/Cheesecake">Чизкейки</a></li>
+            <li><a href="/Admin/Pie">Кейки</a></li>
+            <li><a href="/Admin/Bakery">Выпечка</a></li>
+            <li><a href="/Admin/Basked">Корзины</a></li>
+            <li><a href="/Admin/Call">Обратный звонок</a></li>
         </ul>
     </div>
 </div>

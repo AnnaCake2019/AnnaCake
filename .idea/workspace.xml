@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
+      <change afterPath="$PROJECT_DIR$/src/Views/AdminCheesecake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/basked.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/basked.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/forAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/forAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminHallController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/AdminMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/AdmitMain.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +42,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Star" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -93,6 +96,7 @@
       <workItem from="1568542606549" duration="7007000" />
       <workItem from="1568620424136" duration="5511000" />
       <workItem from="1568650139783" duration="954000" />
+      <workItem from="1568733824075" duration="5713000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>
