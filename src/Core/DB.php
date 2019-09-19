@@ -5,7 +5,7 @@ namespace Notorious\Shugar\Core;
 class DB
 {
     private $server = 'localhost';
-    private $dbName = 'project';
+    private $dbName = 'annacake';
     private $username = 'AnnaCake';
     private $pwd = 'sweet';
 
