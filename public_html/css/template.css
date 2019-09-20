@@ -10,6 +10,30 @@ body{
 a{
     text-decoration: none;
 }
+
+/*Scroll start*/
+.fixedMenu nav{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    opacity: 0.7;
+    height: 10px;
+    background: lightslategrey;
+ }
+.fixedMenu ul{
+    margin-top: 0px;
+    color: white;
+    height: 10px;
+}
+/*Scroll end*/
+
+
+
+
+
 .header {
     padding-top: 20px;
     display: flex;

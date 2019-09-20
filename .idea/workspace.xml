@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
-      <change afterPath="$PROJECT_DIR$/src/Views/AdminCheesecake.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/js/fixedMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/forAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/forAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnaCake.mwb.bak" beforeDir="false" afterPath="$PROJECT_DIR$/AnnaCake.mwb.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/shop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminHallController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/AdminMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminMenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/AdmitMain.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/MainRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/MainRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/show.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,6 +100,10 @@
       <workItem from="1568620424136" duration="5511000" />
       <workItem from="1568650139783" duration="954000" />
       <workItem from="1568733824075" duration="5713000" />
+      <workItem from="1568904780095" duration="3681000" />
+      <workItem from="1568960704519" duration="608000" />
+      <workItem from="1568965117948" duration="101000" />
+      <workItem from="1568980283537" duration="8053000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>

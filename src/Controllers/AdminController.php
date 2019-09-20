@@ -39,20 +39,25 @@ class AdminController extends Controller
         //     header('Location: /Admin/Start');
         // } else
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $post = $_POST;
-            $files = $_FILES;
-            $params = [
-                'title' => $post['title'],
-                'description' => $post['description'],
-                'price' => $post['price'],
-                'img' => $files['img']['name']
-            ];
-            if ($this->cakeRepository->save($params) === false) {
-                $addResult = 'Торт не был добавлен';
-            } else {
-                $addResult = 'Торт добавлен';
-            }
-            }
+                $post = $_POST;
+                $files = $_FILES;
+                $tmp_name = $_FILES['img']['tmp_name'];
+                $name = $_FILES['img']['name'];
+                $extension = pathinfo($name, PATHINFO_EXTENSION);
+                $name_hash = md5($name) . ".$extension";
+                $params = [
+                    'title' => $post['title'],
+                    'description' => $post['description'],
+                    'price' => $post['price'],
+                    'img' => $name_hash
+                ];
+                    if ($this->cakeRepository->save($params) === false) {
+                        $addResult = 'Торт не был добавлен';
+                    } else {
+                        move_uploaded_file($tmp_name, "img/Cake/$name_hash");
+                        $addResult = 'Торт добавлен';
+                    }
+                }
         $content = 'AdmitCake.php';
         $template = 'AdminMenu.php';
         $cakes = $this->cakeRepository->getAll();

@@ -81,15 +81,17 @@
     </div>
 
     <a href="/"><img class="minlog" src="/img/logo.png" alt="logo"></a>
-    <nav class="menu">
-        <ul>
-            <li><a href="/">Главная</a></li>
-            <li><a href="/shop/show">Магазин</a></li>
-            <li><a href="/info/contacts">О нас</a></li>
-            <li><a href="/blog/show">Контакты</a></li>
-            <li><a href="#basked">Корзина</a></li>
-        </ul>
-    </nav>
+    <div id="fixed">
+        <nav id="fixed" class="menu">
+            <ul>
+                <li><a href="/">Главная</a></li>
+                <li><a href="/shop/show">Магазин</a></li>
+                <li><a href="/info/contacts">О нас</a></li>
+                <li><a href="/blog/show">Контакты</a></li>
+                <li><a href="#basked">Корзина</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
 <?php include_once $content ?>
 <div class="row">
@@ -101,10 +103,8 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/script.js"></script>
-<<<<<<< HEAD
-=======
 <script src="/js/communication.js"></script>
 <script src="/js/basked.js"></script>
->>>>>>> a636d3047aa9bdd2928d53bc082624cb28c93ac6
+<script src="/js/fixedMenu.js"></script>
 </body>
 </html>

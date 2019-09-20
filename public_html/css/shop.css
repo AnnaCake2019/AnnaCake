@@ -9,23 +9,34 @@
     margin-top: 55px;
     font-size: 40px;
 }
-.product{
-    display: flex;
-    justify-content: center;
+.assorted{
+
 }
-.product div{
+.products{
+    display: flex;
+    flex-direction: column;
     margin: 20px 10px 20px 10px;
     height: auto;
 }
-.product img{
-    height: 100px;
+.products img{
+    width: 200px;
+    height: 200px;
 }
-
+@media screen and (max-width: 1080px){
+    .product .col-s-4{
+        width: 40%
+    }
+}
 @media screen and (max-width: 700px){
     .product{
-     flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column;
     }
-    .product div{
-        margin: 10px auto;
+    .product .col-xs-11{
+        width: 90%;
     }
+    .assorted .offset-xs-1{
+        margin-left: 8.333%
+    }
+
 }

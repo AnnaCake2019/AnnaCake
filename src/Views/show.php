@@ -1,22 +1,14 @@
 <div class="row">
     <div class="offset-1 col-10 assorted">
         <h1>Торты</h1>
-<!--         <div class="row product">
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-        </div>
-        <div class="row product">
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-            <div class="col- col-3"><img src="/img/shop.jpg"><p>Название</p><p>цена</p></div>
-        </div> -->
-        <div style="display: flex">
+        <div class="row offset-2 offset-xs-1 product">
            <?php foreach ($cakes as $cake): ?>
-            <div>
+            <div class="col-xs-11 col-s-4 col-3 products"
                 <h2><?php echo $cake['title']; ?></h2>
                 <a href="/cake/show/<?php echo $cake['id'];?>">
-                    <img style="width: 200px; height: 200px;" src="/img/<?php echo $cake['img']; ?>">
+                    <img src="/img/Cake<?php echo $cake['img']; ?>">
+                    <p><?php echo $cake['price']; ?></p>
+                    <p><?php echo $cake['description']; ?></p>
                 </a>
             </div>
             <?php endforeach; ?>

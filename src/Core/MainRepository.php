@@ -27,4 +27,9 @@ class MainRepository implements Repository
         $sql = 'SELECT * FROM ' . basename(str_replace('\\', '/', $this->class)) . ' WHERE id=:id';
         return $this->db->paramsGetOne($sql, ['id'=>$id], $this->class);
     }
+
+    public function save($data)
+    {
+        // TODO: Implement save() method.
+    }
 }
