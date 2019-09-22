@@ -21,8 +21,8 @@ class CakeRepository implements Repository
     public function getById(int $id)
     {
         // получаем тортики по id
-        $sql = 'SELECT * FROM Cakes WHERE id=:id';
         $params = ['id'=>$id];
+        $sql = 'SELECT * FROM Cakes WHERE id=:id';
         return $this->db->paramsGetOne($sql, $params);
     }
 

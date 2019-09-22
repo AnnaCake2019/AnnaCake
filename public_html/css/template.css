@@ -3,6 +3,7 @@
 @import "slider.css";
 @import "modal.css";
 @import "basked.css";
+@import "productWindow.css";
 body{
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;

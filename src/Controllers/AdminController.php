@@ -68,6 +68,15 @@ class AdminController extends Controller
         ];
         echo parent::renderPage($content, $template, $data);
     }
+    public function CakeShowOneAction($id){
+        $content = 'show.php';
+        $template = 'template.php';
+        $cake = $this->cakeRepository->getById($id);
+        $data = [
+            'cake' => $cake
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
 
     public function DeleteCakeAction($id)
     {
