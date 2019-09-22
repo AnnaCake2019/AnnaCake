@@ -15,12 +15,17 @@
 .products{
     display: flex;
     flex-direction: column;
+    text-align: center;
     margin: 20px 10px 20px 10px;
     height: auto;
 }
 .products img{
+    margin: 5px auto;
     width: 200px;
     height: 200px;
+}
+.detail{
+    font-size: 14px;
 }
 @media screen and (max-width: 1080px){
     .product .col-s-4{

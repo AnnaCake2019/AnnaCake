@@ -45,6 +45,7 @@ class AdminController extends Controller
                 $name = $_FILES['img']['name'];
                 $extension = pathinfo($name, PATHINFO_EXTENSION);
                 $name_hash = md5($name) . ".$extension";
+
                 $params = [
                     'title' => $post['title'],
                     'description' => $post['description'],
@@ -65,15 +66,6 @@ class AdminController extends Controller
             'title' => 'Главная',
             'addResult' => $addResult,
             'cakes' => $cakes,
-        ];
-        echo parent::renderPage($content, $template, $data);
-    }
-    public function CakeShowOneAction($id){
-        $content = 'show.php';
-        $template = 'template.php';
-        $cake = $this->cakeRepository->getById($id);
-        $data = [
-            'cake' => $cake
         ];
         echo parent::renderPage($content, $template, $data);
     }

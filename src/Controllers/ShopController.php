@@ -25,4 +25,14 @@ class ShopController extends Controller
         echo $this->renderPage($content, $template, $data);
 
     }
+    public function ShowOneAction($id)
+    {
+        $content = 'showOne.php';
+        $template = 'template.php';
+        $cake = $this->cakeRepository->getById($id);
+        $data = [
+            'cake' => $cake
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
 }

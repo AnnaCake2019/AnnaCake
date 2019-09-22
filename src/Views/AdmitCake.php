@@ -19,14 +19,14 @@
 
 <h2>Торты, которые сейчас на сайте</h2>
 
-        <div style="display: flex">
+        <div class="row offset-2 offset-xs-1 product">
            <?php foreach ($cakes as $cake): ?>
-            <div>
+            <div class="col-xs-11 col-s-4 col-3 productsAdmin">
                 <form action="/Admin/DeleteCake/<?php echo $cake['id']?>" method="POST" id="cake_del_form">
                     <h2><?php echo $cake['title']; ?></h2>
                     <a href="/cake/show/<?php echo $cake['id'];?>">
-                        <img style="width: 200px; height: 200px;" src="/img/<?php echo $cake['img']; ?>">
-                    </a>     
+                        <img style="width: 200px; height: 200px;" src="/img/Cake/<?php echo $cake['img']; ?>">
+                    </a>
                     <input type="submit" id="button_cake_del" value="Удалить">           
                 </form>
 

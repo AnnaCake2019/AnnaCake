@@ -3,7 +3,7 @@
 @import "slider.css";
 @import "modal.css";
 @import "basked.css";
-@import "productWindow.css";
+@import "pageProduct.css";
 body{
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;
@@ -138,6 +138,7 @@ footer{
     background-color: burlywood;
     height: 300px;
     width: auto;
+    margin: 0;
 }
 
 

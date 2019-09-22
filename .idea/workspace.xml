@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
-      <change afterPath="$PROJECT_DIR$/public_html/css/productWindow.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public_html/css/pageProduct.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/showOne.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/forAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/forAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/productWindow.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/shop.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/shop.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cake/571e32a9497bc9ce85a05dda04543fd6.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/CakeRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/CakeRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ShopController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/AdmitCake.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdmitCake.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/show.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/show.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,14 +53,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="B:\work\server\OSPanel\domains\Pasha\public_html" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="B:\work\server\OSPanel\domains\AnnaCake\public_html\css\library\fontawesome" />
       <recent name="B:\work\server\OSPanel\domains\AnnaCake\public_html\css\library" />
       <recent name="B:\work\server\OSPanel\domains\AnnaCake" />
       <recent name="B:\work\server\OSPanel\domains\AnnaCake\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\work\server\OSPanel\domains\Pasha\public_html" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -100,7 +106,7 @@
       <workItem from="1568960704519" duration="608000" />
       <workItem from="1568965117948" duration="101000" />
       <workItem from="1568980283537" duration="8053000" />
-      <workItem from="1569142264762" duration="4810000" />
+      <workItem from="1569142264762" duration="12219000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>

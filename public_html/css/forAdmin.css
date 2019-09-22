@@ -87,3 +87,11 @@ a{
     position:relative; /* or fixed or absolute */
 }
 /*Content end*/
+
+.cake_del_form{
+    display: flex;
+    flex-direction: column;
+}
+.productsAdmin{
+    margin: 10px;
+}
