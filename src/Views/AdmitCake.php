@@ -4,6 +4,7 @@
 <div class="row">
     <div class="offset-2 col-8">
         <h1>Торты</h1>
+        <p id="answerServer"></p>
         <form name="cake" action="/Admin/Cake/" method="post" enctype="multipart/form-data">
                 <div class="form_cont">
                     <input type="text" id="title" name="title" placeholder="Название">
@@ -33,5 +34,5 @@
             </div>
             <?php endforeach; ?>
         </div>
-<script src="/js/library.js"></script>
+<!--<script src="/js/formAdmin.js"></script>-->
 
