@@ -17,6 +17,7 @@ a{
     position: fixed;
     display: flex;
     justify-content: center;
+    z-index: 6;
     top: 0;
     right: 0;
     left: 0;
@@ -149,32 +150,32 @@ footer{
 
 
 /*gallerys phone*/
-.gallery{
-    display: flex;
-    justify-content: center;
-}
+/*.gallery{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
 .gallerys{
-    display: inline-block;
-    margin: 10px 5px 10px 5px;
-    height: 300px;
-    width: 300px;
+    margin: 20px 10px 20px 10px;
 }
 .gallerys img{
     height: 300px;
     width: 300px;
 }
 @media screen and (max-width: 1200px) {
-    .gallery{
-        display: inline-block;
-        margin-left: 130px;
+    .fixedMenu{
+        display: none;
     }
-    .col-s-6{
-        width: 50%;
-    }
-    .gallerys{
-        width: 400px;
-        margin: 10px 10px 10px 10px;
-    }
+    /*.gallery{*/
+    /*    display: inline-block;*/
+    /*    margin-left: 130px;*/
+    /*}*/
+    /*.col-s-6{*/
+    /*    width: 50%;*/
+    /*}*/
+    /*.gallerys{*/
+    /*    width: 400px;*/
+    /*    margin: 10px 10px 10px 10px;*/
+    /*}*/
     .gallerys img{
         height: 300px;
         width: 400px;
@@ -184,9 +185,9 @@ footer{
     .slide img{
         height: 350px;
     }
-    .gallery{
-        display: block;
-    }
+    /*.gallery{*/
+    /*    display: block;*/
+    /*}*/
 }
 @media screen and (max-width: 440px) {
     .gallery{
@@ -198,11 +199,11 @@ footer{
     .slide img{
         height: 250px;
     }
-    .gallery{
-        display: flex;
-        flex-direction: column-reverse;
+    /*.gallery{*/
+    /*    display: flex;*/
+    /*    flex-direction: column-reverse;*/
 
-    }
+    /*}*/
     .col-xs-12{
         width: 100%;
         margin: 0;

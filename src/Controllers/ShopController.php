@@ -28,30 +28,23 @@ class ShopController extends Controller
         $template = 'template.php';
         $cakes = $this->cakeRepository->getAll();
         $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
         $data = [
             'title' => 'Главная',
             'cakes' => $cakes,
-            'pies' => $pies
-        ];
-        echo $this->renderPage($content, $template, $data);
-
-    }
-    public function ShowPieAction()
-    {
-        $content = 'show.php';
-        $template = 'template.php';
-        $pies = $this->pieRepository->getAll();
-        $data = [
-            'title' => 'Главная',
-            'pies' => $pies
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees
         ];
         echo $this->renderPage($content, $template, $data);
 
     }
 
-    public function ShowOneAction($id)
+
+    public function ShowCakeAction($id)
     {
-        $content = 'showOne.php';
+        $content = 'showCake.php';
         $template = 'template.php';
         $cake = $this->cakeRepository->getById($id);
         $data = [
@@ -59,4 +52,38 @@ class ShopController extends Controller
         ];
         echo parent::renderPage($content, $template, $data);
     }
+
+    public function ShowPieAction($id)
+    {
+        $content = 'ShowPie.php';
+        $template = 'template.php';
+        $pie = $this->pieRepository->getById($id);
+        $data = [
+            'pie' => $pie
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+    public function ShowBakeryAction($id)
+    {
+        $content = 'ShowBakery.php';
+        $template = 'template.php';
+        $bakery = $this->bakeryRepository->getById($id);
+        $data = [
+            'bakery' => $bakery
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+    public function ShowCheesAction($id)
+    {
+        $content = 'ShowChees.php';
+        $template = 'template.php';
+        $twoChee = $this->сheesecakeRepository->getById($id);
+        $data = [
+            'twoChee' => $twoChee
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
 }
