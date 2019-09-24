@@ -24,7 +24,7 @@
                 <?php foreach ($pies as $pie): ?>
                 <div class="col-xs-11 col-s-4 col-3 products"
                 <h2><?php echo $pie['title']; ?></h2>
-                <img src="/img/Pie/<?php echo $cake['img']; ?>">
+                <img src="/img/Pie/<?php echo $pie['img']; ?>">
                 <p><?php echo $pie['price']; ?></p>
                 <a class="detail" href="/Shop/ShowOne/<?php echo $pie['id'];?>">
                     Подробнее
