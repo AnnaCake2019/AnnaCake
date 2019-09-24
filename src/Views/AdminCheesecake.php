@@ -23,7 +23,7 @@
 <div class="row offset-2 offset-xs-1 product">
     <?php foreach ($cheesecakes as $cheesecake): ?>
         <div class="col-xs-11 col-s-4 col-3 productsAdmin">
-            <form action="/Admin/DeleteCake/<?php echo $cheesecake['id']?>" method="POST" id="cake_del_form">
+            <form action="/Admin/DeleteCheesecake/<?php echo $cheesecake['id']?>" method="POST" id="cake_del_form">
                 <h2><?php echo $cheesecake['title']; ?></h2>
                 <a href="/cake/show/<?php echo $cheesecake['id'];?>">
                     <img style="width: 200px; height: 200px;" src="/img/Cheesecake/<?php echo $cheesecake['img']; ?>">

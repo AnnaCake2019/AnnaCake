@@ -22,7 +22,6 @@
             <li><a href="/Admin/Pie">Кейки</a></li>
             <li><a href="/Admin/Bakery">Выпечка</a></li>
             <li><a href="/Admin/Basked">Корзины</a></li>
-            <li><a href="/Admin/Call">Обратный звонок</a></li>
         </ul>
     </div>
 </div>

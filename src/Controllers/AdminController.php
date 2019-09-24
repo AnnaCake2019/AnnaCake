@@ -87,11 +87,8 @@ class AdminController extends Controller
         $cake = $this->cakeRepository->getById($id);
 
         $params = [
-            // 'table_name' => 'Cakes',
             'id' => $cake['id']
         ];
-        echo $cake;
-//        unlink();
         $this->cakeRepository->deleteCake($params);
 
         $content = 'AdmitCake.php';
@@ -144,19 +141,82 @@ class AdminController extends Controller
 
     }
 
+    public function DeleteCheesecakeAction($id)
+    {
+        $cheesecake = $this->сheesecakeRepository->getById($id);
+
+        $params = [
+            'id' => $cheesecake['id']
+        ];
+        $this->сheesecakeRepository->deleteCake($params);
+
+        $content = 'AdminCheesecake.php';
+        $template = 'AdminMenu.php';
+        $cheesecakes = $this->сheesecakeRepository->getAll();
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'cheesecakes' => $cheesecakes
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
 
 
 //    Pie
 
     public function PieAction()
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+
+            $params = [
+                'title' => $post['title'],
+                'description' => $post['description'],
+                'price' => $post['price'],
+                'img' => $name_hash
+            ];
+            if ($this->pieRepository->save($params) === false) {
+                $addResult = 'Торт не был добавлен';
+            } else {
+                move_uploaded_file($tmp_name, "img/Pie/$name_hash");
+                $addResult = 'Торт добавлен';
+            }
+        }
         $content = 'AdminPie.php';
         $template = 'AdminMenu.php';
+        $pies = $this->pieRepository->getAll();
         $data = [
-            'title' => 'Главная'
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'pies' => $pies
         ];
         echo $this->renderPage($content, $template, $data);
 
+    }
+
+    public function DeletePieAction($id)
+    {
+        $pie = $this->pieRepository->getById($id);
+
+        $params = [
+            'id' => $pie['id']
+        ];
+        $this->pieRepository->deleteCake($params);
+
+        $content = 'AdminPie.php';
+        $template = 'AdminMenu.php';
+        $pies = $this->pieRepository->getAll();
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'pies' => $pies
+        ];
+        echo parent::renderPage($content, $template, $data);
     }
 
 
@@ -165,14 +225,69 @@ class AdminController extends Controller
 
     public function BakeryAction()
     {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+
+            $params = [
+                'title' => $post['title'],
+                'description' => $post['description'],
+                'price' => $post['price'],
+                'img' => $name_hash
+            ];
+            if ($this->bakeryRepository->save($params) === false) {
+                $addResult = 'Торт не был добавлен';
+            } else {
+                move_uploaded_file($tmp_name, "img/Bakery/$name_hash");
+                $addResult = 'Торт добавлен';
+            }
+        }
         $content = 'AdminBakery.php';
         $template = 'AdminMenu.php';
+        $bakerys = $this->bakeryRepository->getAll();
         $data = [
-            'title' => 'Главная'
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'bakerys' => $bakerys
         ];
         echo $this->renderPage($content, $template, $data);
 
     }
+    public function DeleteBakeryAction($id)
+    {
+        $bakery = $this->bakeryRepository->getById($id);
+
+        $params = [
+            'id' => $bakery['id']
+        ];
+        $this->bakeryRepository->deleteCake($params);
+
+        $content = 'AdminBakery.php';
+        $template = 'AdminMenu.php';
+        $bakerys = $this->bakeryRepository->getAll();
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'bakerys' => $bakerys
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+
+
+
+//    Basked
+
+
+
+
+
+
+
     public function BaskedAction()
     {
         $content = 'AdminBasked.php';
@@ -183,16 +298,7 @@ class AdminController extends Controller
         echo $this->renderPage($content, $template, $data);
 
     }
-    public function CallAction()
-    {
-        $content = 'AdminCall.php';
-        $template = 'AdminMenu.php';
-        $data = [
-            'title' => 'Главная'
-        ];
-        echo $this->renderPage($content, $template, $data);
 
-    }
 
     public function showAction($id) {
         session_start();
