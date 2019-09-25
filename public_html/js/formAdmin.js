@@ -1,6 +1,7 @@
 const cake = document.forms.cake;
 const p = document.getElementById('answerServer');
 let q = 0;
+let w = 0;
 cake.addEventListener('submit', sendInfo);
 function sendInfo(event) {
     event.preventDefault();
@@ -24,12 +25,11 @@ function responseHandler(text) {
 
 const quantity = document.getElementById('quantity');
 const productsAdmin = document.getElementsByClassName('productsAdmin');
-let arr = [];
 console.log(quantity);
 const numberProd = () =>{
     for (let i = 0; i < productsAdmin.length; i++){
-        q++;
-        quantity.innerHTML = "Всего записей " + q;
+        w++;
+        quantity.innerHTML = "Всего записей " + w;
     }
 };
 

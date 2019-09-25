@@ -18,7 +18,7 @@ a{
     position: fixed;
     display: flex;
     justify-content: center;
-    z-index: 6;
+    z-index: 5;
     top: 0;
     right: 0;
     left: 0;
@@ -159,6 +159,10 @@ span{
     margin-top: 20px ;
     display: flex;
     justify-content: center;
+}
+.gallery a:hover{
+    z-index: 1;
+    background: rgba(174, 176, 166, 0.8);
 }
 .gallery div{
     display: inline-block;

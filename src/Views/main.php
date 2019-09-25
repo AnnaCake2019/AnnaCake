@@ -11,12 +11,12 @@
 <div class="row">
     <div class=" gallery">
         <div>
-            <div class="gallerys"><img src="/img/1.jpg"></div>
-            <div class="gallerys"><img src="/img/2.jpg"></div>
+            <div class="gallerys"><a href="/Shop/Show#OneShow"><img src="/img/1.jpg"></a></div>
+            <div class="gallerys"><a href="/Shop/Show#twoShow"><img src="/img/2.jpg"></a></div>
         </div>
         <div>
-            <div class="gallerys"><img src="/img/3.jpg"></div>
-            <div class="gallerys"><img src="/img/4.jpg"></div>
+            <div class="gallerys"><a href="/Shop/Show#threeShow"><img src="/img/3.jpg"></a></div>
+            <div class="gallerys"><a href="/Shop/Show#foreShow"><img src="/img/4.jpg"></a></div>
         </div>
     </div>
 </div>
