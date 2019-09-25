@@ -14,19 +14,19 @@
     </div>
     <div id="yourId"></div>
 </div>
-
+<p id="quantity"></p>
 <h2>Выпечка, которые сейчас на сайте</h2>
 
 <div class="row offset-2 offset-xs-1 product">
     <?php foreach ($bakerys as $bakery): ?>
-        <div class="col-xs-11 col-s-4 col-3 productsAdmin">
+        <div class="offset-2 col-10 productsAdmin">
             <form action="/Admin/DeleteBakery/<?php echo $bakery['id']?>" method="POST" id="cake_del_form">
                 <h2><?php echo $bakery['title']; ?></h2>
-                <a href="/cake/show/<?php echo $bakery['id'];?>">
-                    <img style="width: 200px; height: 200px;" src="/img/Bakery/<?php echo $bakery['img']; ?>">
-                </a>
+                <img src="/img/Bakery/<?php echo $bakery['img']; ?>">
+                <p><?php echo $bakery['description']; ?></p>
                 <input type="submit" id="button_cake_del" value="Удалить">
             </form>
+
         </div>
     <?php endforeach; ?>
 </div>
