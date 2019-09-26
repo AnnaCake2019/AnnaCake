@@ -7,6 +7,7 @@
                 <input type="text" id="title" name="title" placeholder="Название">
                 <input type="file" id="img" name="img" multiple accept="image/*" name="img[]">
                 <input type="text" id="price" name="price"  placeholder="Цена">
+                <input type="text" id="quantity" name="quantity"  placeholder="Количество">
                 <textarea id="description" name="description" placeholder="Описание"></textarea>
                 <div>
                     <input type="submit" value="Опубликовать">

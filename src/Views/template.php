@@ -55,7 +55,29 @@
             </div>
         </div>
         <div class="offset-2 col-8 order">
-            <p>Торты</p><p>Колво: 2</p><p>Сума: 2000р.</p>
+            <!-- <p>Торты</p><p>Колво: 2</p><p>Сума: 2000р.</p> -->
+
+
+    <div style="display: flex;">
+        <?php $summ = 0; ?>
+        <?php foreach ($bakery as $arr1): ?>
+            <?php foreach ($arr1 as $arr2): ?>
+            <?php $summ = $summ + $arr2['price']; ?>
+            <div id="bakery" class="bakery">
+                <h2><?php echo $arr2['title']; ?></h2>
+                <p><?php echo $arr2['price']; ?></p>
+                <form id="bakery_del" class="bakery_del" method="POST" action="/cart/delete/<?php echo $arr2['id']?>">
+                    <div id="results2" class="results2" class="js-successbox t-form__successbox t-text t-text_md" style="display:none; ">
+                        Товар удален из корзины!
+                    </div> 
+                <input id="del_button" class="del_button" type="submit" value="Удалить из корзины">
+                </form>
+            </div>
+            <?php endforeach; ?>
+        <?php endforeach; ?>
+    </div>   
+    
+
         </div>
         </div>
 </div>
@@ -74,7 +96,7 @@
                 <li><a onclick="hideMenu()" href="/">Главная</a></li>
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/info/contacts">О нас</a></li>
-                <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
+                <li><a onclick="hideMenu()" href="/cart/show">Контакты</a></li>
                 <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
@@ -87,7 +109,7 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/info/contacts">О нас</a></li>
-                <li><a href="/blog/show">Контакты</a></li>
+                <li><a href="/cart/show">Контакты</a></li>
                 <li><a href="#basked">Корзина</a></li>
             </ul>
         </nav>

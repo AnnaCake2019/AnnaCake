@@ -31,8 +31,8 @@ class PieRepository implements Repository
     public function save($params)
     {
         $sql = 'INSERT INTO pies 
-                (title, description, img, price)
-                VALUES (:title, :description, :img, :price)';
+                (title, description, img, price, quantity)
+                VALUES (:title, :description, :img, :price, :quantity)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 

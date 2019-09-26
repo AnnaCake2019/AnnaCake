@@ -31,8 +31,8 @@ class CheesecakeRepository implements Repository
     public function save($params)
     {
         $sql = 'INSERT INTO сheesecakes 
-                (title, description, img, price)
-                VALUES (:title, :description, :img, :price)';
+                (title, description, img, price, quantity)
+                VALUES (:title, :description, :img, :price, :quantity)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 

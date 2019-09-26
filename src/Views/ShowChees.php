@@ -4,6 +4,7 @@
         <img src="/img/Cheesecake/<?php echo $twoChee['img']; ?>">
         <p><?php echo $twoChee['price']; ?></p>
         <p><?php echo $twoChee['description']; ?></p>
+        <h3>Товара осталось: <?php echo $twoChee['quantity']; ?></h3>
         <form class="forBasked" name="forBasked" method="post" action="#">
             <input class="numberProd" type="number">
             <input type="submit" value="В корзину">

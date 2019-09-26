@@ -62,6 +62,7 @@ class AdminController extends Controller
                     'title' => $post['title'],
                     'description' => $post['description'],
                     'price' => $post['price'],
+                    'quantity' => $post['quantity'],
                     'img' => $name_hash
                 ];
                     if ($this->cakeRepository->save($params) === false) {
@@ -120,6 +121,7 @@ class AdminController extends Controller
                 'title' => $post['title'],
                 'description' => $post['description'],
                 'price' => $post['price'],
+                'quantity' => $post['quantity'],
                 'img' => $name_hash
             ];
             if ($this->сheesecakeRepository->save($params) === false) {
@@ -178,6 +180,7 @@ class AdminController extends Controller
                 'title' => $post['title'],
                 'description' => $post['description'],
                 'price' => $post['price'],
+                'quantity' => $post['quantity'],
                 'img' => $name_hash
             ];
             if ($this->pieRepository->save($params) === false) {
@@ -237,6 +240,7 @@ class AdminController extends Controller
                 'title' => $post['title'],
                 'description' => $post['description'],
                 'price' => $post['price'],
+                'quantity' => $post['quantity'],
                 'img' => $name_hash
             ];
             if ($this->bakeryRepository->save($params) === false) {
