@@ -1,13 +1,15 @@
 .showOne{
     display: flex;
     flex-direction: column;
-    text-align: center;
     margin-bottom: 30px;
+}
+.showOne h4{
+    text-align: center;
 }
 .showOne img{
     margin: 10px auto;
-    height: 400px;
-    width: 500px;
+    height: 300px;
+    width: 400px;
 }
 
 .forBasked .numberProd{
@@ -16,4 +18,31 @@
 
 .forBasked input{
     border-radius: 5px;
+}
+.about{
+    border-top: 1px black solid;
+    padding-top: 20px;
+    margin-top: 100px;
+}
+.pr{
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 830px) {
+ .reverse{
+     display: flex;
+     flex-direction: column;
+ }
+    .reverse .col-s-7{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .showOne img {
+        margin-right: 50px;
+        height: 200px;
+        width: 300px;
+    }
+
 }

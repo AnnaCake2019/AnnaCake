@@ -81,11 +81,11 @@ a{
 .form_cont input{
     margin: 15px 0;
 }
-#yourId {
-    width: 200px;
-    height: 150px;
-    position:relative; /* or fixed or absolute */
-}
+/*#yourId {*/
+/*    width: 200px;*/
+/*    height: 150px;*/
+/*    position:relative; !* or fixed or absolute *!*/
+/*}*/
 /*Content end*/
 
 .cake_del_form{
@@ -94,4 +94,26 @@ a{
 }
 .productsAdmin{
     margin: 10px;
+}
+.productsAdmin form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.productsAdmin form img{
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+}
+#quantity{
+    color: red;
+    font-style: italic;
+    text-align: center;
+    font-size: 17px;
+}
+#answerServer{
+    color: red;
+    font-style: italic;
+    text-align: center;
+    font-size: 17px;
 }

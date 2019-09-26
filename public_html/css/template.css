@@ -5,6 +5,7 @@
 @import "basked.css";
 @import "pageProduct.css";
 body{
+    max-width: 2500px;
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;
 }
@@ -17,18 +18,22 @@ a{
     position: fixed;
     display: flex;
     justify-content: center;
-    z-index: 6;
+    z-index: 5;
     top: 0;
     right: 0;
     left: 0;
     opacity: 0.7;
     height: 10px;
     background: lightslategrey;
+    border-radius: 0 0 5px 5px;
  }
 .fixedMenu ul{
-    margin-top: 0px;
-    color: white;
+    margin-top: 0;
     height: 10px;
+}
+.fixedMenu li a{
+    font-size: 17px;
+    color: white;
 }
 /*Scroll end*/
 
@@ -135,7 +140,7 @@ span{
     height: 100px;
     width: 100px;
 }
-footer{
+.footer{
     background-color: burlywood;
     height: 300px;
     width: auto;
@@ -150,38 +155,41 @@ footer{
 
 
 /*gallerys phone*/
-/*.gallery{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
+.gallery{
+    margin-top: 20px ;
+    display: flex;
+    justify-content: center;
+}
+.gallery a:hover{
+    z-index: 1;
+    background: rgba(174, 176, 166, 0.8);
+}
+.gallery div{
+    display: inline-block;
+}
 .gallerys{
-    margin: 20px 10px 20px 10px;
+    margin: 20px 20px 20px 20px;
+    width: auto;
 }
 .gallerys img{
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
 }
 @media screen and (max-width: 1200px) {
     .fixedMenu{
         display: none;
     }
-    /*.gallery{*/
-    /*    display: inline-block;*/
-    /*    margin-left: 130px;*/
-    /*}*/
-    /*.col-s-6{*/
-    /*    width: 50%;*/
-    /*}*/
-    /*.gallerys{*/
-    /*    width: 400px;*/
-    /*    margin: 10px 10px 10px 10px;*/
-    /*}*/
+    .gallery div{
+        display: block;
+    }
     .gallerys img{
-        height: 300px;
-        width: 400px;
+        height: 200px;
     }
 }
 @media screen and (max-width: 816px) {
+    #show{
+        height: 370px;
+    }
     .slide img{
         height: 350px;
     }
@@ -189,12 +197,27 @@ footer{
     /*    display: block;*/
     /*}*/
 }
+@media screen and (max-width: 550px) {
+    .gallery{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+    .gallerys{
+        margin: 20px 20px 20px 20px;
+
+    }
+    .gallerys img{
+        height: 300px;
+        width: 400px;
+    }
+}
 @media screen and (max-width: 440px) {
     .gallery{
         margin: 0;
     }
     #show{
-        height: 350px;
+        height: 290px;
     }
     .slide img{
         height: 250px;
@@ -204,14 +227,10 @@ footer{
     /*    flex-direction: column-reverse;*/
 
     /*}*/
-    .col-xs-12{
-        width: 100%;
-        margin: 0;
 
-    }
     .gallerys img{
         height: 300px;
-        width: 400px;
+        width: 335px;
     }
 }
 /*gallerys phone end*/

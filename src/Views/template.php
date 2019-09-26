@@ -118,9 +118,9 @@
 <?php include_once $content ?>
 <div class="row">
     <div class="col-12">
-<footer>
+<div class="footer">
 
-</footer>
+</div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

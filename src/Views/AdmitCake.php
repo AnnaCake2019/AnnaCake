@@ -18,22 +18,22 @@
     </div>
     <div id="yourId"></div>
 </div>
+<p id="quantity"></p>
 
 <h2>Торты, которые сейчас на сайте</h2>
 
-        <div class="row offset-2 offset-xs-1 product">
-           <?php foreach ($cakes as $cake): ?>
-            <div class="col-xs-11 col-s-4 col-3 productsAdmin">
-                <form action="/Admin/DeleteCake/<?php echo $cake['id']?>" method="POST" id="cake_del_form">
-                    <h2><?php echo $cake['title']; ?></h2>
-                    <a href="/cake/show/<?php echo $cake['id'];?>">
-                        <img style="width: 200px; height: 200px;" src="/img/Cake/<?php echo $cake['img']; ?>">
-                    </a>
-                    <input type="submit" id="button_cake_del" value="Удалить">           
-                </form>
+<div class="row offset-2 offset-xs-1 product">
+    <?php foreach ($cakes as $cake): ?>
+        <div class="offset-2 col-10 productsAdmin">
+            <form action="/Admin/DeleteCake/<?php echo $cake['id']?>" method="POST" id="cake_del_form">
+                <h2><?php echo $cake['title']; ?></h2>
+                <img src="/img/Cake/<?php echo $cake['img']; ?>">
+                <p><?php echo $cake['description']; ?></p>
+                <input type="submit" id="button_cake_del" value="Удалить">
+            </form>
 
-            </div>
-            <?php endforeach; ?>
         </div>
-<!--<script src="/js/formAdmin.js"></script>-->
+    <?php endforeach; ?>
+</div>
+<script src="/js/formAdmin.js"></script>
 

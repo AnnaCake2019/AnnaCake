@@ -9,11 +9,15 @@
 </div>
 
 <div class="row">
-    <div class="offset-1 col-10 gallery">
-        <div class="col-2 col-s-6 col-xs-12 gallerys"><img src="/img/1.jpg"></div>
-        <div class="col-2 col-s-6 col-xs-12 gallerys"><img src="/img/2.jpg"></div>
-        <div class="col-2 col-s-6 col-xs-12 gallerys"><img src="/img/3.jpg"></div>
-        <div class="col-2 col-s-6 col-xs-12 gallerys"><img src="/img/4.jpg"></div>
+    <div class=" gallery">
+        <div>
+            <div class="gallerys"><a href="/Shop/Show#OneShow"><img src="/img/1.jpg"></a></div>
+            <div class="gallerys"><a href="/Shop/Show#twoShow"><img src="/img/2.jpg"></a></div>
+        </div>
+        <div>
+            <div class="gallerys"><a href="/Shop/Show#threeShow"><img src="/img/3.jpg"></a></div>
+            <div class="gallerys"><a href="/Shop/Show#foreShow"><img src="/img/4.jpg"></a></div>
+        </div>
     </div>
 </div>
 

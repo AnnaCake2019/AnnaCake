@@ -1,4 +1,4 @@
-<<div class="row">
+<div class="row">
     <div class="offset-2 col-8">
         <h1>Кейки</h1>
         <p id="answerServer"></p>
@@ -15,17 +15,18 @@
     </div>
     <div id="yourId"></div>
 </div>
+<p id="quantity"></p>
 
 <h2>Кейки, которые сейчас на сайте</h2>
 
 <div class="row offset-2 offset-xs-1 product">
     <?php foreach ($pies as $pie): ?>
-        <div class="col-xs-11 col-s-4 col-3 productsAdmin">
+        <div class="offset-2 col-10 productsAdmin">
             <form action="/Admin/DeletePie/<?php echo $pie['id']?>" method="POST" id="cake_del_form">
                 <h2><?php echo $pie['title']; ?></h2>
-                <a href="/cake/show/<?php echo $pie['id'];?>">
-                    <img style="width: 200px; height: 200px;" src="/img/Pie/<?php echo $pie['img']; ?>">
-                </a>
+                    <img src="/img/Pie/<?php echo $pie['img']; ?>">
+                <p><?php echo $pie['description']; ?></p>
+
                 <input type="submit" id="button_cake_del" value="Удалить">
             </form>
 
