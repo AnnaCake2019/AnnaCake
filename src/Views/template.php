@@ -96,7 +96,7 @@
                 <li><a onclick="hideMenu()" href="/">Главная</a></li>
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/info/contacts">О нас</a></li>
-                <li><a onclick="hideMenu()" href="/cart/show">Контакты</a></li>
+                <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
                 <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
@@ -109,7 +109,8 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/info/contacts">О нас</a></li>
-                <li><a href="/cart/show">Контакты</a></li>
+                 <li><a href="/cart/add/">Пробная корзина</a></li>  <!-- ВЫПОЛНЯЮ add, КАК БУД-ТО ПРИ НАЖАТИИ НА КНОПКУ "ЗАКАЗАТЬ" НА СТРАНИЦЕ С ТОВАРОМ -->
+                                                                    <!-- ВЫПОЛНЯЮ ЗДЕСЬ, ПОТОМУ ЧТО ТУТ УДОБНО СМОТРЕТЬ, КАКАЯ ОШИБКА ВЫЛАЗИТ -->
                 <li><a href="#basked">Корзина</a></li>
             </ul>
         </nav>

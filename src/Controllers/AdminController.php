@@ -1,5 +1,4 @@
 <?php
-
 namespace Notorious\Shugar\Controllers;
 use Notorious\Shugar\Core\Controller;
 use Notorious\Shugar\Models\BakeryRepository;
