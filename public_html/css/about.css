@@ -1,0 +1,26 @@
+.hed{
+    text-align: center;
+    font-size: 17px;
+}
+.fotoAbout{
+    margin: 10px 0 10px 0;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+}
+.cont p{
+    margin: 60px;
+}
+.cont img{
+    height: 50px;
+}
+@media screen and (max-width: 1050px){
+    .cont{
+        flex-direction: column;
+    }
+    .cont p{
+        margin: 30px;
+    }
+
+}

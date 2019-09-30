@@ -6,8 +6,8 @@ class DB
 {
     private $server = 'localhost';
     private $dbName = 'annacake';
-    private $username = 'AnnaCake';
-    private $pwd = 'sweet';
+    private $username = 'root';
+    private $pwd = '';
 
     private static $db;
     private $connection;

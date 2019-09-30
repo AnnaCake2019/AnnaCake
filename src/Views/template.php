@@ -18,11 +18,11 @@
     <form method="POST" action="/mail/send" id="form_mail">
         <a href="#close" class="close">X</a>
         <div class="row windowFrom">
-            <div class="col-6">
-                <label class="formText" for="phone">Телефон</label>
-                <label class="formText" for="name">Имя</label>
-            </div>
-            <div class="col-6">
+<!--            <div class="col-6">-->
+<!--                <label class="formText" for="phone">Телефон</label>-->
+<!--                <label class="formText" for="name">Имя</label>-->
+<!--            </div>-->
+            <div class="col-12">
                     <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее время</div>
                     <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
                     <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
@@ -95,20 +95,20 @@
             <ul>
                 <li><a onclick="hideMenu()" href="/">Главная</a></li>
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
-                <li><a onclick="hideMenu()" href="/info/contacts">О нас</a></li>
+                <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
                 <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
 
-    <a href="/"><img class="minlog" src="/img/logo.png" alt="logo"></a>
+    <a href="/"><img class="minlog" src="/img/ico/iconf5.png" alt="logo"></a>
     <div id="fixed">
         <nav id="fixed" class="menu">
             <ul>
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
-                <li><a href="/info/contacts">О нас</a></li>
+                <li><a href="/Index/About">О нас</a></li>
                  <li><a href="/cart/add/">Пробная корзина</a></li>  <!-- ВЫПОЛНЯЮ add, КАК БУД-ТО ПРИ НАЖАТИИ НА КНОПКУ "ЗАКАЗАТЬ" НА СТРАНИЦЕ С ТОВАРОМ -->
                                                                     <!-- ВЫПОЛНЯЮ ЗДЕСЬ, ПОТОМУ ЧТО ТУТ УДОБНО СМОТРЕТЬ, КАКАЯ ОШИБКА ВЫЛАЗИТ -->
                 <li><a href="#basked">Корзина</a></li>

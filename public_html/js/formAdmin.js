@@ -18,7 +18,7 @@ function sendInfo(event) {
 function responseHandler(text) {
     cake.reset();
     q++;
-    p.innerText = "Добавлено записей " + q;
+    p.innerText = `Добавлено записей ${q}`;
 }
 
 
@@ -29,7 +29,7 @@ console.log(quantity);
 const numberProd = () =>{
     for (let i = 0; i < productsAdmin.length; i++){
         w++;
-        quantity.innerHTML = "Всего записей " + w;
+        quantity.innerHTML = `Всего записей ${w}`;
     }
 };
 

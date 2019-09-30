@@ -4,6 +4,7 @@
 @import "modal.css";
 @import "basked.css";
 @import "pageProduct.css";
+@import "about.css";
 body{
     max-width: 2500px;
     margin: 0;
@@ -22,7 +23,7 @@ a{
     top: 0;
     right: 0;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     height: 10px;
     background: lightslategrey;
     border-radius: 0 0 5px 5px;
@@ -160,20 +161,25 @@ span{
     display: flex;
     justify-content: center;
 }
-.gallery a:hover{
-    z-index: 1;
-    background: rgba(174, 176, 166, 0.8);
-}
 .gallery div{
     display: inline-block;
 }
 .gallerys{
     margin: 20px 20px 20px 20px;
     width: auto;
+    text-align: center;
 }
 .gallerys img{
     height: 250px;
     width: 250px;
+    transition: 1s;
+}
+.gallerys img:hover{
+    opacity:0.6;
+    transition: 1s;
+}
+.namePosition {
+    z-index: 10;
 }
 @media screen and (max-width: 1200px) {
     .fixedMenu{

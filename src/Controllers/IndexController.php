@@ -16,6 +16,14 @@ class IndexController extends Controller
             'title' => 'Главная'
         ];
         echo $this->renderPage($content, $template, $data);
+    }
 
+    public function aboutAction(){
+        $content = 'aboutUS.php';
+        $template = 'template.php';
+        $data = [
+            'title' => 'Главная'
+        ];
+        echo $this->renderPage($content, $template, $data);
     }
 }
