@@ -10,6 +10,15 @@ body{
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;
 }
+
+body{
+    background:  linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/background_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 a{
     text-decoration: none;
 }
@@ -45,7 +54,7 @@ a{
 .header {
     padding-top: 20px;
     display: flex;
-    background: #ffffff;
+    /*background: #ffffff;*/
     justify-content: center;
     align-items: center;
 }
@@ -59,7 +68,7 @@ a{
 }
 
 .header .menu a {
-    color: #000000;
+    color: white;
     /*font-size: 20 px;*/
     text-decoration: none;
     padding: 20px 30px;
@@ -78,15 +87,16 @@ a{
 
 
 #burg {
-    background: #ffffff;
+    /*background: #ffffff;*/
     padding: 32px;
 }
 span{
+    font-size: 20px;
     display: flex;
     margin: 8px;
     width: 30px;
     height: 1px;
-    background: #C3C3C3;
+    background: white;
 }
 .mob-head{
     display: flex;
@@ -95,7 +105,7 @@ span{
 .mobile-menu{
     display: flex;
     width: 100%;
-    background: #ffffff;
+    /*background: #ffffff;*/
     flex-direction: column;
     /*position: absolute;*/
     /*margin-right: 300px;*/
@@ -113,7 +123,7 @@ span{
 }
 
 .header .mobile-menu a {
-    color: #000000;
+    color: white;
     /*font-weight: bold;*/
     /*font-size: 20px;*/
     text-decoration: none;
@@ -165,13 +175,13 @@ span{
     display: inline-block;
 }
 .gallerys{
-    margin: 20px 20px 20px 20px;
+    margin: 20px 5px 20px 5px;
     width: auto;
     text-align: center;
 }
 .gallerys img{
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
     transition: 1s;
 }
 .gallerys img:hover{
@@ -189,7 +199,7 @@ span{
         display: block;
     }
     .gallerys img{
-        height: 200px;
+        height: 300px;
     }
 }
 @media screen and (max-width: 816px) {

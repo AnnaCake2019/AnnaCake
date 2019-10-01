@@ -2,17 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
-      <change afterPath="$PROJECT_DIR$/public_html/css/about.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/aboutUS.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/modal.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/slider.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/formAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/formAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Core/DB.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/DB.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/barhat.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/napoleon.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Star" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -122,6 +121,8 @@
       <workItem from="1569568470485" duration="414000" />
       <workItem from="1569772115642" duration="726000" />
       <workItem from="1569832533061" duration="8432000" />
+      <workItem from="1569852153463" duration="244000" />
+      <workItem from="1569913399086" duration="2702000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>
