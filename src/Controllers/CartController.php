@@ -3,16 +3,19 @@ namespace Notorious\Shugar\Controllers;
 use Notorious\Shugar\Core\Controller;
 use Notorious\Shugar\Models\CartBakeryRepository;
 use Notorious\Shugar\Models\UserRepository;
+use Notorious\Shugar\Models\CartRepository;
 
 class CartController extends Controller
 {
     private $cartBakeryRepository;
-    // private $userRepository;
+    private $userRepository;
+    private $cartRepository;
 
     public function __construct()
     {
         $this->cartBakeryRepository = new CartBakeryRepository();
         $this->userRepository = new UserRepository();
+        $this->cartRepository = new CartRepository();
     }
 
     public function addAction($id)
@@ -22,11 +25,13 @@ class CartController extends Controller
         $checked = $this->userRepository->check($session);
         if (count($checked) == 0) {
             $this->userRepository->save($session);
-        }   
+        }
+        session_start();
+        $_SESSION['name'] = $session;   
 
-        $id = '3'; // ПИШУ ЗДЕСЬ 3, ПОТОМУ ЧТО ЭТО НА СТРАНИЦЕ С КОНТАКТАМИ, В add НЕ ПОСТУПАЕТ НИКАКИХ ПАРАМЕТРОВ (СМОТРИ template.php СТРОКА 122)
+         $id = '3'; // ПИШУ ЗДЕСЬ 3, ПОТОМУ ЧТО ЭТО НА СТРАНИЦЕ С КОНТАКТАМИ, В add НЕ ПОСТУПАЕТ НИКАКИХ ПАРАМЕТРОВ (СМОТРИ template.php СТРОКА 122)
 
-        // $account_n = $_SESSION['name'];
+         // $account_n = $_SESSION['name'];
         // $user=$this->cartRepository->isName($account_n);
         // $IdUs = (int) $user['id'];   
 
@@ -39,11 +44,26 @@ class CartController extends Controller
         $params=[
             // 'baskets_id'=> $basketId,
             'Bakery_id'=> $bakeryId,
+            'Users_id' => $_SESSION['name']
         ];
         // $checked = $this->cartRepository->check($params);
         // if (count($checked) == 0) {
-            $this->cartBakeryRepository->save($params); // ДОЛЖЕН СОХРАНЯТЬ id ВЫПЕЧКИ В ТАБЛИЦУ BakeryBasket, НО ТУТ ВЫЛЕТАЕТ ОШИБКА
+        	$this->cartBakeryRepository->foreing();
+            $this->cartBakeryRepository->save($params);
+
+
+		$BakeryBasket = $this->cartBakeryRepository->findBasket($session);
+        // foreach ($BakeryBasket as $row){
+        // 	$this->cartRepository->saveToBasket($row['id']);  
         // }
+
+        
+        $data = [
+        	'BakeryBasket_id'=> $BakeryBasket,
+        	'Users_id' => $_SESSION['name']
+
+        ];
+            $this->cartRepository->save($data);
     }
 
 
@@ -120,9 +140,9 @@ class CartController extends Controller
 
  //        $bakery = $this->cartBakeryRepository->getFromBakery((int) $bakery_in_basket);
  //        // $bakery=[];
- //        // foreach ($bakery_in_basket as $row){
- //        // $bakery1 = $this->cartBakeryRepository->getFromBakery((int) $row['bakery_id']);  
- //         // array_push($bakery, $bakery1);
+        // foreach ($bakery_in_basket as $row){
+        // $bakery1 = $this->cartBakeryRepository->getFromBakery((int) $row['bakery_id']);  
+        //  array_push($bakery, $bakery1);
  //        // }
 
     //  $data = [
@@ -137,6 +157,7 @@ class CartController extends Controller
 
     public function showAction()
     {
+    	session_start();
         $content = 'blog.php';
         $template = 'template.php';
         $bakerysBaskets = $this->cartBakeryRepository->getBaskets();
@@ -144,6 +165,7 @@ class CartController extends Controller
         $data = [
             'title' => 'Корзина',
             'bakerysBaskets' => $bakerysBaskets,
+            'user' => $_SESSION['name']
         ];
         echo $this->renderPage($content, $template, $data);
 

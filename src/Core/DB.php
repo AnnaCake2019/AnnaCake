@@ -31,6 +31,10 @@ class DB
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function foreing($sql){
+        $statement = $this->connection->query($sql);
+    }
+
     public function nonSelectQuery($sql, $params){
         $statement = $this->connection->prepare($sql);
         if (!$statement) return false;

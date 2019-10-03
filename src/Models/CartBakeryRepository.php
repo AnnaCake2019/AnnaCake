@@ -23,11 +23,48 @@ class CartBakeryRepository implements Repository
 
     }
 
+
+	public function foreing()
+	{
+    	$sql1 = 'SET FOREIGN_KEY_CHECKS=0';
+    	return $this->db->foreing($sql1);	
+	}
+
+
     public function save($params)
     {
-        $sql = 'INSERT INTO bakerybasket(Bakery_id) VALUES (:Bakery_id)';
+        $sql = 'INSERT INTO bakerybasket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
         return $this->db->nonSelectQuery($sql, $params);
     }
+
+    public function getBakery($id)
+    {
+        // получаем выпечку по id
+        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $params = ['id'=>$id];
+        return $this->db->paramsGetOne($sql, $params);
+    }
+
+    public function findBasket($session)
+    {
+        
+        $sql = 'SELECT * FROM bakerybasket WHERE Users_id=:session';
+        $params = ['session'=>$session];
+        return $this->db->paramsGetAll($sql, $params);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function getBaskets()
     {
@@ -38,13 +75,7 @@ class CartBakeryRepository implements Repository
         return $this->db->paramsGetOne($sql, $params);
     }    
 
-    public function getBakery($id)
-    {
-        // получаем выпечку по id
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
-        $params = ['id'=>$id];
-        return $this->db->paramsGetOne($sql, $params);
-    }
+
 
     // public function isName($account_n)
     // {
