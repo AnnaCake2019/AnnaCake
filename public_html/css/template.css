@@ -4,11 +4,21 @@
 @import "modal.css";
 @import "basked.css";
 @import "pageProduct.css";
+@import "about.css";
 body{
     max-width: 2500px;
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;
 }
+
+body{
+    background:  linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/background_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
 a{
     text-decoration: none;
 }
@@ -22,7 +32,7 @@ a{
     top: 0;
     right: 0;
     left: 0;
-    opacity: 0.7;
+    opacity: 0.9;
     height: 10px;
     background: lightslategrey;
     border-radius: 0 0 5px 5px;
@@ -44,7 +54,7 @@ a{
 .header {
     padding-top: 20px;
     display: flex;
-    background: #ffffff;
+    /*background: #ffffff;*/
     justify-content: center;
     align-items: center;
 }
@@ -58,7 +68,7 @@ a{
 }
 
 .header .menu a {
-    color: #000000;
+    color: white;
     /*font-size: 20 px;*/
     text-decoration: none;
     padding: 20px 30px;
@@ -77,15 +87,16 @@ a{
 
 
 #burg {
-    background: #ffffff;
+    /*background: #ffffff;*/
     padding: 32px;
 }
 span{
+    font-size: 20px;
     display: flex;
     margin: 8px;
     width: 30px;
     height: 1px;
-    background: #C3C3C3;
+    background: white;
 }
 .mob-head{
     display: flex;
@@ -94,7 +105,7 @@ span{
 .mobile-menu{
     display: flex;
     width: 100%;
-    background: #ffffff;
+    /*background: #ffffff;*/
     flex-direction: column;
     /*position: absolute;*/
     /*margin-right: 300px;*/
@@ -112,7 +123,7 @@ span{
 }
 
 .header .mobile-menu a {
-    color: #000000;
+    color: white;
     /*font-weight: bold;*/
     /*font-size: 20px;*/
     text-decoration: none;
@@ -160,20 +171,25 @@ span{
     display: flex;
     justify-content: center;
 }
-.gallery a:hover{
-    z-index: 1;
-    background: rgba(174, 176, 166, 0.8);
-}
 .gallery div{
     display: inline-block;
 }
 .gallerys{
-    margin: 20px 20px 20px 20px;
+    margin: 20px 5px 20px 5px;
     width: auto;
+    text-align: center;
 }
 .gallerys img{
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
+    transition: 1s;
+}
+.gallerys img:hover{
+    opacity:0.6;
+    transition: 1s;
+}
+.namePosition {
+    z-index: 10;
 }
 @media screen and (max-width: 1200px) {
     .fixedMenu{
@@ -183,7 +199,7 @@ span{
         display: block;
     }
     .gallerys img{
-        height: 200px;
+        height: 300px;
     }
 }
 @media screen and (max-width: 816px) {

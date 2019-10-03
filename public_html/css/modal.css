@@ -19,7 +19,7 @@
 }
 #window{
     position: fixed;
-    top: 250px;
+    top: 270px;
     right: 10px;
     border-radius: 5px 5px 5px 5px;
     display: none;
@@ -57,7 +57,14 @@
 }
 .windowFrom div{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+}
+.windowFrom input{
+    margin: 10px auto;
+    padding: 5px;
+    border: 2px black solid;
+    border-radius: 6px;
+    text-align: center;
 }
 .formText{
     margin: 15px 15px 15px 15px;
