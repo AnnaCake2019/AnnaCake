@@ -33,7 +33,7 @@ class CartBakeryRepository implements Repository
 
     public function save($params)
     {
-        $sql = 'INSERT INTO bakerybasket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
+        $sql = 'INSERT INTO basket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 
@@ -45,37 +45,22 @@ class CartBakeryRepository implements Repository
         return $this->db->paramsGetOne($sql, $params);
     }
 
-    public function findBasket($session)
+
+
+    public function getBaskets($Users_id)
     {
-        
-        $sql = 'SELECT * FROM bakerybasket WHERE Users_id=:session';
-        $params = ['session'=>$session];
-        return $this->db->paramsGetAll($sql, $params);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function getBaskets()
-    {
-        $sql = 'SELECT * FROM bakerybasket WHERE id=:id';
+        $sql = 'SELECT * FROM basket WHERE Users_id=:Users_id';
         $params =[
-            'id' => '1'
+            'Users_id' => $Users_id
         ];
-        return $this->db->paramsGetOne($sql, $params);
+        return $this->db->paramsGetAll($sql, $params);
     }    
 
-
+    public function getAllBakery()
+    {
+        $sql = 'SELECT * FROM bakery';
+        return $this->db->getAll($sql);        
+    }
 
     // public function isName($account_n)
     // {
@@ -110,14 +95,14 @@ class CartBakeryRepository implements Repository
     //     return $this->db->paramsGetAll($sql, $params);
     // }
 
-    // public function getFromBakery(int $bakery_in_basket)
-    // {
-    //     $sql = 'SELECT * FROM Bakery WHERE id=:id';
-    //     $params = [
-    //         'id' => $bakery_in_basket
-    //     ];
-    //     return $this->db->paramsGetAll($sql, $params);
-    // }
+    public function getFromBakery(int $bakery_in_basket)
+    {
+        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $params = [
+            'id' => $bakery_in_basket
+        ];
+        return $this->db->paramsGetAll($sql, $params);
+    }
 
     // public function delete($params)
     // {
