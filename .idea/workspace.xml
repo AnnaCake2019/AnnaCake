@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
+      <change afterPath="$PROJECT_DIR$/src/Models/AdminRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/slider.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/slider.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/barhat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/napoleon.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/js/enter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Admin.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Star" />
+    <property name="last_opened_file_path" value="B:/Study/homystudy/учеба/JS/React end ES6/todo" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -123,6 +119,9 @@
       <workItem from="1569832533061" duration="8432000" />
       <workItem from="1569852153463" duration="244000" />
       <workItem from="1569913399086" duration="2702000" />
+      <workItem from="1569918584510" duration="38000" />
+      <workItem from="1570271407920" duration="6424000" />
+      <workItem from="1570278780348" duration="58000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>
