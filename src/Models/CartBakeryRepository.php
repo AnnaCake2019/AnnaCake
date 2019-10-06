@@ -49,7 +49,7 @@ class CartBakeryRepository implements Repository
 
     public function getBaskets($Users_id)
     {
-        $sql = 'SELECT * FROM basket WHERE Users_id=:Users_id';
+        $sql = 'SELECT Bakery_id FROM basket WHERE Users_id=:Users_id';
         $params =[
             'Users_id' => $Users_id
         ];
@@ -95,11 +95,11 @@ class CartBakeryRepository implements Repository
     //     return $this->db->paramsGetAll($sql, $params);
     // }
 
-    public function getFromBakery(int $bakery_in_basket)
+    public function getFromBakery($bakerysBaskets)
     {
         $sql = 'SELECT * FROM Bakery WHERE id=:id';
         $params = [
-            'id' => $bakery_in_basket
+            'id' => $bakerysBaskets
         ];
         return $this->db->paramsGetAll($sql, $params);
     }

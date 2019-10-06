@@ -121,23 +121,21 @@ class CartBakeryController extends Controller
     public function showAction()
     {
     	session_start();
-        $content = 'blog.php';
-        $template = 'template.php';
+        $content = 'main.php';
+        $template = 'template.php';	
         $Users_id = $_SESSION['name'];
         $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
-        // $bakery_in_basket = $this->cartBakeryRepository->getAllBakery();
 
-        // $bakery = $this->cartBakeryRepository->getFromBakery((int) $bakery_in_basket);
-        // $bakery=[];
-        // foreach ($bakery_in_basket as $row){
-        // $bakery1 = $this->cartBakeryRepository->getFromBakery((int) $row['bakery_id']);  
-        //  array_push($bakery, $bakery1);
-        // }
+
+        $bakery=[];
+        foreach ($bakerysBaskets as $row){
+        	$bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+         	array_push($bakery, $bakery1);
+        }
 
         $data = [
             'title' => 'Корзина',
-            'bakerysBaskets' => $bakerysBaskets,
-            // 'bakery' => $bakery,
+            'bakery' => $bakery,
             'Users_id' => $_SESSION['name']
         ];
         echo $this->renderPage($content, $template, $data);

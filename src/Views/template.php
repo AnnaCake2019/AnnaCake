@@ -60,16 +60,17 @@
 
 
 <div class="row">
-    <div class="offset-1 col-10 assorted">
+    <div class="">
         <h1>Корзина</h1>
-        <a id=“foreShow”></a>
-        <div class="row offset-2 offset-xs-1 product">
-            <?php foreach ($bakerysBaskets as $bakery): ?>
+        <div class="offset-2 col-8 order">
+            <?php foreach ($bakery as $row1): ?>
+                <?php foreach ($row1 as $row2): ?>
+
                     <div class="col-xs-11 col-s-4 col-3 products">
-                        <h2>Товар №<?php echo $bakery['Bakery_id']; ?></h2>
-                        <a class="detail" href="/Shop/ShowBakery/<?php echo $bakery['Bakery_id'];?>">Подробнее</a>
-                        <h2>Название: <?php echo $row['title']; ?></h2>
+                        <p><?php echo $row2['title']; ?></p><p>Цена: <?php echo $row2['price']; ?></p>
                     </div>
+
+                <?php endforeach; ?>
             <?php endforeach; ?>
         </div>
     </div>
@@ -94,7 +95,7 @@
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
-                <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
+                <li><a onclick="hideMenu()" href="/cartBakery/show/#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
@@ -106,8 +107,8 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/Index/About">О нас</a></li>
-                 <li><a href="/cartBakery/show/">Пробная корзина</a></li>
-                <li><a href="#basked">Корзина</a></li>
+                 <li><a href="/blog/show/">Контакты</a></li>
+                <li><a href="/cartBakery/show/#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
