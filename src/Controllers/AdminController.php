@@ -1,6 +1,7 @@
 <?php
 namespace Notorious\Shugar\Controllers;
 use Notorious\Shugar\Core\Controller;
+use Notorious\Shugar\Models\AdminRepository;
 use Notorious\Shugar\Models\BakeryRepository;
 use Notorious\Shugar\Models\CakeRepository;
 use Notorious\Shugar\Models\CheesecakeRepository;
@@ -9,43 +10,62 @@ use Notorious\Shugar\Models\PieRepository;
 
 class AdminController extends Controller
 {
+    private $adminRepository;
     private $сheesecakeRepository;
     private $cakeRepository;
     private $bakeryRepository;
     private $pieRepository;
     public function __construct()
     {
+        $this->adminRepository = new AdminRepository();
         $this->сheesecakeRepository = new CheesecakeRepository();
         $this->cakeRepository = new CakeRepository();
         $this->bakeryRepository = new BakeryRepository();
         $this->pieRepository = new PieRepository();
-    }    
+    }
+    public function StartAction()
+    {
+        $content = 'Admin.php';
+        $template = 'AdminStart.php';
+        $data = [
+            'title' => 'Главная'
+        ];
+        echo $this->renderPage($content, $template, $data);
+    }
+
+    public function AuthAction(){
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+            $post = $_POST;
+            if (!$this->adminRepository->isAuth($post)){
+                echo "Ошибка в логене или пароле";
+                return false;
+            }
+            header('Location: /Admin/Account');
+        }
+    }
 
     public function AccountAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
     $content = 'AdminAccount.php';
     $template = 'AdminMenu.php';
     $data = [
-        'title' => 'Главная'
+        'title' => 'Главная',
+        'email' => $_SESSION['email'],
+        'auth' => isset($_SESSION['email'])
     ];
     echo $this->renderPage($content, $template, $data);
     }
 
-    public function StartAction()
-    {
-    $content = 'Admin.php';
-    $template = 'AdminStart.php';
-    $data = [
-        'title' => 'Главная'
-    ];
-    echo $this->renderPage($content, $template, $data);
-    }
 
 
 //    Cake
 
     public function CakeAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
         // if ($_SERVER['REQUEST_METHOD'] == 'GET'){
         //     header('Location: /Admin/Start');
         // } else
@@ -108,6 +128,8 @@ class AdminController extends Controller
 
     public function CheesecakeAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $post = $_POST;
             $files = $_FILES;
@@ -167,6 +189,8 @@ class AdminController extends Controller
 
     public function PieAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $post = $_POST;
             $files = $_FILES;
@@ -227,6 +251,8 @@ class AdminController extends Controller
 
     public function BakeryAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $post = $_POST;
             $files = $_FILES;
@@ -293,6 +319,8 @@ class AdminController extends Controller
 
     public function BaskedAction()
     {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
         $content = 'AdminBasked.php';
         $template = 'AdminMenu.php';
         $data = [
@@ -313,5 +341,12 @@ class AdminController extends Controller
         ];
         echo parent::renderPage('cake.php',   //название файла, который будет открываться при нажатии на конкретный тортик
             'template.php', $data);
-    }    
+    }
+
+    public function logoutAction(){
+        session_start();
+        session_destroy();
+        $_SESSION =[];
+        header('Location: /');
+    }
 }
