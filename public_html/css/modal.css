@@ -22,11 +22,9 @@
     top: 270px;
     right: 10px;
     border-radius: 5px 5px 5px 5px;
-    display: none;
     height: 200px;
     width: 350px;
     z-index: 4;
-    pointer-events: none;
     background: rgba(174, 176, 166, 0.7);
 
 
@@ -41,7 +39,10 @@
 
     visibility: visible !important;
 }
-#window:target{
+.closeModal{
+    display: none;
+}
+.showModal{
     pointer-events: auto;
     display: block;
 }
@@ -56,19 +57,21 @@
     transition: 1s;
 }
 .windowFrom div{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
 }
 .windowFrom input{
     margin: 10px auto;
     padding: 5px;
-    border: 2px black solid;
+    /*border: 1px black solid;*/
     border-radius: 6px;
     text-align: center;
 }
 .formText{
     margin: 15px 15px 15px 15px;
 }
+
 .bot{
     text-align: center;
 }

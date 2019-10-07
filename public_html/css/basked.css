@@ -2,8 +2,8 @@
     background: rgba(174, 176, 166, 0.8);
     display: none;
     z-index: 6;
-    width: 50%;
-    height: 700px;
+    width: 40%;
+    height: 100%;
     overflow: auto;
 
     animation-name: slideLeft;
@@ -24,15 +24,31 @@
 }
 #basked a{
     position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 19px;
+    font-weight: bold;
+    color: black;
+    transition: 1s;
+}
+#basked a:hover{
+    transition: 1s;
+    color: red;
 }
 #basked .row{
     width: 100%;
 }
+
+.frontBasked{
+    text-align: center;
+}
+
+
 .order{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /*margin-top: 10px;*/
     border-bottom: 1px black solid;
-    margin-top: 10px;
 }
 .orders form{
     display: flex;
@@ -41,9 +57,38 @@
 .orders form input{
     text-align: center;
 }
+.sums {
+    margin: 7px 0 7px 0 ;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.sums p{
+    margin: 0 25px 0 0;
+}
+.sum{
+    display: flex;
+    justify-content: space-evenly;
+}
+.sums div{
+    display: flex;
+    justify-content: center;
+}
+.sums div p {
+    margin: 2px;
+}
 
 
-
+@media screen and (max-width: 990px){
+    .sums{
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 30px 0;
+    }
+    .sums p{
+        margin: 0;
+    }
+}
 
 @media screen and (max-width: 700px) {
     .order{

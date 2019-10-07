@@ -45,6 +45,9 @@ a{
     font-size: 17px;
     color: white;
 }
+.fixedMenu p{
+    display: none;
+}
 /*Scroll end*/
 
 
@@ -66,7 +69,12 @@ a{
     display: flex;
     list-style: none;
 }
-
+.header .menu p{
+    position: absolute;
+    color: #FFFFFF;
+    right: 10px;
+    top: 10px;
+}
 .header .menu a {
     color: white;
     /*font-size: 20 px;*/
@@ -151,13 +159,12 @@ span{
     height: 100px;
     width: 100px;
 }
-.footer{
-    background-color: burlywood;
-    height: 300px;
-    width: auto;
-    margin: 0;
-}
+footer{
+    background: burlywood;
+    display: flex;
+    justify-content: space-between;
 
+}
 
 
 
@@ -201,6 +208,7 @@ span{
     .gallerys img{
         height: 300px;
     }
+
 }
 @media screen and (max-width: 816px) {
     #show{
@@ -250,20 +258,27 @@ span{
     }
 }
 /*gallerys phone end*/
-
-@media screen and (max-width: 1260px) {
-
+@media screen and (max-width: 1100px){
     .mob-head{
         display:block;
     }
+    .header .menu ul {
+         display: none;
+     }
+    .menu p{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+
+
 
     .mobile-menu{
         display:none;
     }
 
-    .header .menu ul {
-        display: none;
-    }
+
 
     .minlog {
         display: block;

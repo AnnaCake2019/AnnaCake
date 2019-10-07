@@ -14,7 +14,7 @@
             <div class="gallerys">
                 <p>Торты</p>
                 <a href="/Shop/Show#OneShow">
-                    <img src="/img/cake_сarrot.jpg">
+                    <img src="/img/picnic.png">
                 </a></div>
             <div class="gallerys">
                 <p>Кейки</p>

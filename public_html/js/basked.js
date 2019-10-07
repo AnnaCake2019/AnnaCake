@@ -6,3 +6,17 @@ orders.addEventListener('submit', (event) =>{
         console.log(ordersValue[i].value);
     }
 });
+
+
+const commonSum = document.getElementById('commonSum');
+const oneSum = document.getElementsByClassName('oneSum');
+let sum = 0;
+const comSum = (arr) =>{
+    for (let i = 0; i < arr.length; i++){
+        sum += parseInt(arr[i].innerHTML);
+        commonSum.innerHTML = `${sum} р.`;
+    }
+};
+comSum(oneSum);
+
+

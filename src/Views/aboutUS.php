@@ -1,7 +1,7 @@
 <div class="row">
-<div class="offset-2 col-8">
+<div class="offset-2 col-8 aboutUs">
     <p  class="hed">Приветствуем Вас на нашем сайте</p>
-    <img class="fotoAbout" src="#">
+    <img class="fotoAbout" src="/img/Фото (О нас).jpg">
     <article>
         Давайте знакомиться, меня зовут Анна.
         И я - кондитер. Любовь к десертам у меня появилась в то время, когда я познакомилась со своим мужем и,
@@ -40,16 +40,10 @@
         Заполните форму, оставьте заявку и мы свяжемся с Вами в ближайшее время, чтобы обсудить все сладкие детали.
     </article>
 <div class="cont">
-    <p>Контакты:<br>
-        8(981)154-65-10 <br>
-        8(981)137-43-14
-    </p>
     <p>
         confectioneryspb1@yandex.ru
     </p>
-    <p>
-        <a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/insta.png"></a>
-    <p></p>
+    <p><a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/insta.png"></a></p>
 </div>
 </div>
 </div>

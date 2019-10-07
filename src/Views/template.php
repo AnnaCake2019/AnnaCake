@@ -5,23 +5,20 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/img/Ice-Cream.ico">
     <link rel="stylesheet" href="/css/template.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>AnnaCake</title>
 </head>
 <body>
 <!--Modal Window Start-->
-<a href="#window" class="modalWindow">
+<a href="#" id="modWin" class="modalWindow">
     <img src="/img/ico/phone.png">
 </a>
-<div id="window">
+<div id="window" class="closeModal">
     <form method="POST" action="/mail/send" id="form_mail">
-        <a href="#close" class="close">X</a>
+<!--        <a href="#close" class="close"></a>-->
         <div class="row windowFrom">
-<!--            <div class="col-6">-->
-<!--                <label class="formText" for="phone">Телефон</label>-->
-<!--                <label class="formText" for="name">Имя</label>-->
-<!--            </div>-->
             <div class="col-12">
                     <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее время</div>
                     <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
@@ -54,30 +51,29 @@
                 </form>
             </div>
         </div>
-        <div class="offset-2 col-8 order">
-            <!-- <p>Торты</p><p>Колво: 2</p><p>Сума: 2000р.</p> -->
+        <div class="col-10 frontBasked">
 
-
-
-<div class="row">
-    <div class="">
-        <h1>Корзина</h1>
-        <div class="offset-2 col-8 order">
-            <?php foreach ($bakery as $row1): ?>
-                <?php foreach ($row1 as $row2): ?>
-
-                    <div class="col-xs-11 col-s-4 col-3 products">
-                        <p><?php echo $row2['title']; ?></p><p>Цена: <?php echo $row2['price']; ?></p>
-                    </div>
-
-                <?php endforeach; ?>
-            <?php endforeach; ?>
+            <div class="row">
+                <div class="offset-2 col-10 order">
+                    <h1>Корзина</h1>
+                    <?php foreach ($bakery as $row1): ?>
+                        <?php foreach ($row1 as $row2): ?>
+                            <div class=" col-12 sums">
+                                <p><?php echo $row2['title']; ?></p>
+                                <div>
+                                    <p>Цена:</p>
+                                    <p class="oneSum"> <?php echo $row2['price']; ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
+                <div class="offset-3 col-9 sum">
+                    <p>Сумма заказа:</p> <p id="commonSum"></p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-        </div>
-        </div>
 </div>
 <!--Basked Window end-->
 <div class="header">
@@ -110,18 +106,24 @@
                  <li><a href="/blog/show/">Контакты</a></li>
                 <li><a href="/cartBakery/show/#basked">Корзина</a></li>
             </ul>
+            <p>Контакты:<br>
+                8(981)154-65-10<br>
+                8(981)137-43-14</p>
         </nav>
     </div>
 </div>
 <?php include_once $content ?>
-<div class="row">
-    <div class="col-12">
-<div class="footer">
-
-</div>
-    </div>
-</div>
+<footer>
+    <p>Контакты:<br>
+        8(981)154-65-10<br>
+        8(981)137-43-14</p>
+    <p>
+        confectioneryspb1@yandex.ru
+    </p>
+    <p><a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/insta.png"></a></p>
+</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/js/modWin.js"></script>
 <script src="/js/script.js"></script>
 <script src="/js/communication.js"></script>
 <script src="/js/basked.js"></script>
