@@ -3,7 +3,7 @@ namespace Notorious\Shugar\Models;
 use Notorious\Shugar\Core\Repository;
 use Notorious\Shugar\Core\DB;
 
-class CartBakeryRepository implements Repository
+class CartCheesecakeRepository implements Repository
 {
     private $db;
     public function __construct()
@@ -13,7 +13,7 @@ class CartBakeryRepository implements Repository
 
     public function getById(int $id)
     {
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -24,23 +24,22 @@ class CartBakeryRepository implements Repository
     }
 
 
-	public function foreing()
-	{
-    	$sql1 = 'SET FOREIGN_KEY_CHECKS=0';
-    	return $this->db->foreing($sql1);	
-	}
+    public function foreing()
+    {
+        $sql1 = 'SET FOREIGN_KEY_CHECKS=0';
+        return $this->db->foreing($sql1);   
+    }
 
 
     public function save($params)
     {
-        $sql = 'INSERT INTO basket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
+        $sql = 'INSERT INTO basket(Сheesecakes_id, Users_id) VALUES (:id, :Users_id)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 
-    public function getBakery($id)
+    public function getCheesecakes($id)
     {
-        // получаем выпечку по id
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -49,16 +48,16 @@ class CartBakeryRepository implements Repository
 
     public function getBaskets($Users_id)
     {
-        $sql = 'SELECT Bakery_id FROM basket WHERE Users_id=:Users_id';
+        $sql = 'SELECT Сheesecakes_id FROM basket WHERE Users_id=:Users_id';
         $params =[
             'Users_id' => $Users_id
         ];
         return $this->db->paramsGetAll($sql, $params);
     }    
 
-    public function getAllBakery()
+    public function getAllCheesecakes()
     {
-        $sql = 'SELECT * FROM bakery';
+        $sql = 'SELECT * FROM cheesecakes';
         return $this->db->getAll($sql);        
     }
 
@@ -95,20 +94,20 @@ class CartBakeryRepository implements Repository
     //     return $this->db->paramsGetAll($sql, $params);
     // }
 
-    public function getFromBakery($bakerysBaskets)
+    public function getFromCheesecakes($cheesecakesBaskets)
     {
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
         $params = [
-            'id' => $bakerysBaskets
+            'id' => $cheesecakesBaskets
         ];
         return $this->db->paramsGetAll($sql, $params);
     }
 
-    public function deleteBakery($params)
-    {
-        $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
-        return $this->db->nonSelectQuery($sql, $params);
-    }
+    // public function delete($params)
+    // {
+    //     $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
+    //     return $this->db->nonSelectQuery($sql, $params);
+    // }
 
     // public function buy($params)
     // {

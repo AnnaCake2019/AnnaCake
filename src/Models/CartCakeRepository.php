@@ -3,7 +3,7 @@ namespace Notorious\Shugar\Models;
 use Notorious\Shugar\Core\Repository;
 use Notorious\Shugar\Core\DB;
 
-class CartBakeryRepository implements Repository
+class CartCakeRepository implements Repository
 {
     private $db;
     public function __construct()
@@ -13,7 +13,7 @@ class CartBakeryRepository implements Repository
 
     public function getById(int $id)
     {
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM Cakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -33,14 +33,13 @@ class CartBakeryRepository implements Repository
 
     public function save($params)
     {
-        $sql = 'INSERT INTO basket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
+        $sql = 'INSERT INTO basket(Cakes_id, Users_id) VALUES (:Cakes_id, :Users_id)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 
-    public function getBakery($id)
+    public function getCake($id)
     {
-        // получаем выпечку по id
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM Cakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -49,7 +48,7 @@ class CartBakeryRepository implements Repository
 
     public function getBaskets($Users_id)
     {
-        $sql = 'SELECT Bakery_id FROM basket WHERE Users_id=:Users_id';
+        $sql = 'SELECT Cakes_id FROM basket WHERE Users_id=:Users_id';
         $params =[
             'Users_id' => $Users_id
         ];
@@ -58,7 +57,7 @@ class CartBakeryRepository implements Repository
 
     public function getAllBakery()
     {
-        $sql = 'SELECT * FROM bakery';
+        $sql = 'SELECT * FROM cakes';
         return $this->db->getAll($sql);        
     }
 
@@ -95,20 +94,20 @@ class CartBakeryRepository implements Repository
     //     return $this->db->paramsGetAll($sql, $params);
     // }
 
-    public function getFromBakery($bakerysBaskets)
+    public function getFromCakes($cakesBaskets)
     {
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT * FROM cakes WHERE id=:id';
         $params = [
-            'id' => $bakerysBaskets
+            'id' => $cakesBaskets
         ];
         return $this->db->paramsGetAll($sql, $params);
     }
 
-    public function deleteBakery($params)
-    {
-        $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
-        return $this->db->nonSelectQuery($sql, $params);
-    }
+    // public function delete($params)
+    // {
+    //     $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
+    //     return $this->db->nonSelectQuery($sql, $params);
+    // }
 
     // public function buy($params)
     // {

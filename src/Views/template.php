@@ -67,6 +67,42 @@
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
+
+                    <?php foreach ($cake as $row3): ?>
+                        <?php foreach ($row3 as $row4): ?>
+                            <div class=" col-12 sums">
+                                <p><?php echo $row4['title']; ?></p>
+                                <div>
+                                    <p>Цена:</p>
+                                    <p class="oneSum"> <?php echo $row4['price']; ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+
+                    <?php foreach ($pie as $row5): ?>
+                        <?php foreach ($row5 as $row6): ?>
+                            <div class=" col-12 sums">
+                                <p><?php echo $row6['title']; ?></p>
+                                <div>
+                                    <p>Цена:</p>
+                                    <p class="oneSum"> <?php echo $row6['price']; ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?> 
+
+                    <?php foreach ($cheesecake as $row7): ?>
+                        <?php foreach ($row7 as $row8): ?>
+                            <div class=" col-12 sums">
+                                <p><?php echo $row8['title']; ?></p>
+                                <div>
+                                    <p>Цена:</p>
+                                    <p class="oneSum"> <?php echo $row8['price']; ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>                                  
                 </div>
                 <div class="offset-3 col-9 sum">
                     <p>Сумма заказа:</p> <p id="commonSum"></p>
@@ -91,7 +127,7 @@
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
-                <li><a onclick="hideMenu()" href="/cartBakery/show/#basked">Корзина</a></li>
+                <li><a onclick="hideMenu()" href="/cart/show/#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
@@ -104,7 +140,7 @@
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/Index/About">О нас</a></li>
                  <li><a href="/blog/show/">Контакты</a></li>
-                <li><a href="/cartBakery/show/#basked">Корзина</a></li>
+                <li><a href="/cart/show/#basked">Корзина</a></li>
             </ul>
             <p>Контакты:<br>
                 8(981)154-65-10<br>

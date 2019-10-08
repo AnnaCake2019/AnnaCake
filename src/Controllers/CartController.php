@@ -2,20 +2,28 @@
 namespace Notorious\Shugar\Controllers;
 use Notorious\Shugar\Core\Controller;
 use Notorious\Shugar\Models\CartBakeryRepository;
+use Notorious\Shugar\Models\CartCakeRepository;
+use Notorious\Shugar\Models\CartPieRepository;
+use Notorious\Shugar\Models\CartCheesecakeRepository;
 use Notorious\Shugar\Models\UserRepository;
 
-class CartBakeryController extends Controller
+class CartController extends Controller
 {
     private $cartBakeryRepository;
+    private $cartCakeRepository;
+
     private $userRepository;
 
     public function __construct()
     {
         $this->cartBakeryRepository = new CartBakeryRepository();
+        $this->cartCakeRepository = new CartCakeRepository();
+        $this->cartPieRepository = new CartPieRepository();
+        $this->cartCheesecakeRepository = new CartCheesecakeRepository();
         $this->userRepository = new UserRepository();
     }
 
-    public function addAction($id)
+    public function addBakeryAction($id)
     { 
         session_start();
         if (!(isset($_SESSION['name']))) {
@@ -29,7 +37,6 @@ class CartBakeryController extends Controller
 
         $bakery = $this->cartBakeryRepository->getBakery($id); 
         $bakeryId = $bakery['id'];
-        
 
         $params=[
             'Bakery_id'=> $bakeryId,
@@ -39,7 +46,77 @@ class CartBakeryController extends Controller
             $this->cartBakeryRepository->save($params);
     }
 
-    public function deleteAction($id)
+    public function addCakeAction($id)
+    { 
+        session_start();
+        if (!(isset($_SESSION['name']))) {
+        	$session = rand();
+        	$_SESSION['name'] = $session; 
+        	$checked = $this->userRepository->check($session);
+        	if (count($checked) == 0) {
+            	$this->userRepository->save($session);
+        	}        	
+        }  
+
+        $cake = $this->cartCakeRepository->getCake($id); 
+        $cakeId = $cake['id'];
+
+        $params=[
+            'Cakes_id'=> $cakeId,
+            'Users_id' => $_SESSION['name']
+        ];       
+        	$this->cartCakeRepository->foreing();
+            $this->cartCakeRepository->save($params);
+    }
+
+    public function addCheesecakeAction($id)
+    { 
+        session_start();
+        if (!(isset($_SESSION['name']))) {
+        	$session = rand();
+        	$_SESSION['name'] = $session; 
+        	$checked = $this->userRepository->check($session);
+        	if (count($checked) == 0) {
+            	$this->userRepository->save($session);
+        	}        	
+        }  
+
+        // $cheesecake = $this->cartCheesecakeRepository->getCheesecakes($id); 
+        // $cheesecakeId = $cheesecake['id'];
+        $params=[
+            'id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ];       
+        	$this->cartCheesecakeRepository->foreing();
+            $this->cartCheesecakeRepository->save($params);
+    }
+
+    public function addPieAction($id)
+    { 
+        session_start();
+        if (!(isset($_SESSION['name']))) {
+        	$session = rand();
+        	$_SESSION['name'] = $session; 
+        	$checked = $this->userRepository->check($session);
+        	if (count($checked) == 0) {
+            	$this->userRepository->save($session);
+        	}        	
+        }  
+
+        $pie = $this->cartPieRepository->getPies($id); 
+        $pieId = $pie['id'];
+
+        $params=[
+            'Pies_id'=> $pieId,
+            'Users_id' => $_SESSION['name']
+        ];       
+        	$this->cartPieRepository->foreing();
+            $this->cartPieRepository->save($params);
+    }
+
+
+
+    public function deleteBakeryAction($id)
     {
         session_start();
         // $account_n = $_SESSION['name'];
@@ -55,9 +132,9 @@ class CartBakeryController extends Controller
 
         $params=[
             // 'baskets_id'=> $basketId,
-            'bakery_Id'=> $bakeryId,
+            'Bakery_id'=> $bakeryId,
         ]; 
-        $this->cartBakeryRepository->delete($params); 
+        $this->cartBakeryRepository->deleteBakery($params); 
 
     }
 
@@ -125,6 +202,10 @@ class CartBakeryController extends Controller
         $template = 'template.php';	
         $Users_id = $_SESSION['name'];
         $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
 
 
         $bakery=[];
@@ -133,9 +214,30 @@ class CartBakeryController extends Controller
          	array_push($bakery, $bakery1);
         }
 
+        $cake=[];
+        foreach ($cakesBaskets as $row1){
+        	$cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+         	array_push($cake, $cake1);
+        }
+
+        $pie=[];
+        foreach ($piesBaskets as $row2){
+        	$pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+         	array_push($pie, $pie1);
+        }
+
+        $cheesecake=[];
+        foreach ($cheesecakesBaskets as $row3){
+        	$cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+         	array_push($cheesecake, $cheesecake1);
+        }
+
         $data = [
             'title' => 'Корзина',
             'bakery' => $bakery,
+            'cake' => $cake,
+            'pie' => $pie,
+            'cheesecake' => $cheesecake,
             'Users_id' => $_SESSION['name']
         ];
         echo $this->renderPage($content, $template, $data);
