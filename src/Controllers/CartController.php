@@ -198,7 +198,7 @@ class CartController extends Controller
     public function showAction()
     {
     	session_start();
-        $content = 'main.php';
+        $content = 'show.php';
         $template = 'template.php';	
         $Users_id = $_SESSION['name'];
         $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);

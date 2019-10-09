@@ -4,7 +4,7 @@
             <li class="slide showing"><img src="/img/cakeOne.jpg"></li>
             <li class="slide"><img src="/img/cakeThree.jpg"></li>
             <li class="slide"><img src="/img/cakeTwo.jpg"></li>
-        </ul>        
+        </ul>
     </div>
 </div>
 
@@ -13,28 +13,37 @@
         <div>
             <div class="gallerys">
                 <p>Торты</p>
-                <a href="/Shop/Show#OneShow">
-                    <img src="/img/picnic.png">
-                </a></div>
+                <?php foreach ($fcakes as $fcake): ?>
+                    <a href="/Shop/Show#OneShow">
+                        <img src="/img/Front/<?php echo $fcake['img']; ?>">
+                    </a>
+                <?php endforeach; ?>
+            </div>
             <div class="gallerys">
                 <p>Кейки</p>
-                <a href="/Shop/Show#twoShow">
-                    <img src="/img/cheese.png">
-                </a>
+                <?php foreach ($fcheesecakes as $fcheesecake): ?>
+                    <a href="/Shop/Show#twoShow">
+                        <img src="/img/Front/<?php echo $fcheesecake['img']; ?>">
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
         <div>
             <div class="gallerys">
                 <p>Чизкейки</p>
-                <a href="/Shop/Show#threeShow">
-                    <img src="/img/cupcakes.png">
-                </a>
+                <?php foreach ($fpies as $fpie): ?>
+                    <a href="/Shop/Show#threeShow">
+                        <img src="/img/Front/<?php echo $fpie['img']; ?>">
+                    </a>
+                <?php endforeach; ?>
             </div>
             <div class="gallerys">
                 <p>Выпечка</p>
-                <a href="/Shop/Show#foreShow">
-                    <img src="/img/bakery.png">
-                </a>
+                <?php foreach ($fbakerys as $fbakery): ?>
+                    <a href="/Shop/Show#foreShow">
+                        <img src="/img/Front/<?php echo $fbakery['img']; ?>">
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -5,6 +5,10 @@ use Notorious\Shugar\Models\AdminRepository;
 use Notorious\Shugar\Models\BakeryRepository;
 use Notorious\Shugar\Models\CakeRepository;
 use Notorious\Shugar\Models\CheesecakeRepository;
+use Notorious\Shugar\Models\FrontBakeryRepository;
+use Notorious\Shugar\Models\FrontCakeRepository;
+use Notorious\Shugar\Models\FrontCheesecakeRepository;
+use Notorious\Shugar\Models\FrontPieRepository;
 use Notorious\Shugar\Models\PieRepository;
 
 
@@ -15,6 +19,10 @@ class AdminController extends Controller
     private $cakeRepository;
     private $bakeryRepository;
     private $pieRepository;
+    private $frontPieRepository;
+    private $frontCheesecakeRepository;
+    private $frontBakeryRepository;
+    private $frontCakeRepository;
     public function __construct()
     {
         $this->adminRepository = new AdminRepository();
@@ -22,6 +30,10 @@ class AdminController extends Controller
         $this->cakeRepository = new CakeRepository();
         $this->bakeryRepository = new BakeryRepository();
         $this->pieRepository = new PieRepository();
+        $this->frontBakeryRepository = new FrontBakeryRepository();
+        $this->frontCakeRepository = new  FrontCakeRepository();
+        $this->frontCheesecakeRepository = new FrontCheesecakeRepository();
+        $this->frontPieRepository = new FrontPieRepository();
     }
     public function StartAction()
     {
@@ -44,19 +56,203 @@ class AdminController extends Controller
         }
     }
 
+
+//    Start Front Picture
+
+    public function FrontCakeAction()
+    {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+            $params = [
+                'img' => $name_hash
+            ];
+            if ($this->frontCakeRepository->save($params) === false) {
+                $addResult = 'Картинка не изменена';
+            } else {
+                move_uploaded_file($tmp_name, "img/Front/$name_hash");
+                $addResult = 'Изменили';
+            }
+
+        }
+            $frontCakes = $this->frontCakeRepository->getAll();
+            $content = 'AdminAccount.php';
+            $template = 'AdminMenu.php';
+            $data = [
+                'title' => 'Главная',
+                'addResult' => $addResult,
+                'frontCakes' => $frontCakes
+            ];
+        header("Location: /Admin/Account");
+        echo $this->renderPage($content, $template, $data);
+
+    }
+
+    public function DeleteFrontCakesAction($id)
+    {
+        $this->frontCakeRepository->deleteCake($id);
+        header("Location: /Admin/Account");
+
+    }
+
+    public function FrontCheesecakeAction()
+    {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+            $params = [
+                'img' => $name_hash
+            ];
+            if ($this->frontCheesecakeRepository->save($params) === false) {
+                $addResult = 'Картинка не изменена';
+            } else {
+                move_uploaded_file($tmp_name, "img/Front/$name_hash");
+                $addResult = 'Изменили';
+            }
+
+        }
+        $frontCheesecakes = $this->frontCheesecakeRepository->getAll();
+        $content = 'AdminAccount.php';
+        $template = 'AdminMenu.php';
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'frontCheesecakes' => $frontCheesecakes
+        ];
+        header("Location: /Admin/Account");
+        echo $this->renderPage($content, $template, $data);
+
+    }
+
+
+    public function DeleteFrontCheesecakesAction($id)
+    {
+        $this->frontCheesecakeRepository->deleteCake($id);
+        header("Location: /Admin/Account");
+
+    }
+
+    public function FrontPieAction()
+    {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+            $params = [
+                'img' => $name_hash
+            ];
+            if ($this->frontPieRepository->save($params) === false) {
+                $addResult = 'Картинка не изменена';
+            } else {
+                move_uploaded_file($tmp_name, "img/Front/$name_hash");
+                $addResult = 'Изменили';
+            }
+
+        }
+        $frontPies = $this->frontPieRepository->getAll();
+        $content = 'AdminAccount.php';
+        $template = 'AdminMenu.php';
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'frontPies' => $frontPies
+        ];
+        header("Location: /Admin/Account");
+        echo $this->renderPage($content, $template, $data);
+
+    }
+
+    public function DeleteFrontPiesAction($id)
+    {
+        $this->frontPieRepository->deleteCake($id);
+        header("Location: /Admin/Account");
+
+    }
+
+    public function FrontBakeryAction()
+    {
+        session_start();
+        if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $post = $_POST;
+            $files = $_FILES;
+            $tmp_name = $_FILES['img']['tmp_name'];
+            $name = $_FILES['img']['name'];
+            $extension = pathinfo($name, PATHINFO_EXTENSION);
+            $name_hash = md5($name) . ".$extension";
+            $params = [
+                'img' => $name_hash
+            ];
+            if ($this->frontBakeryRepository->save($params) === false) {
+                $addResult = 'Картинка не изменена';
+            } else {
+                move_uploaded_file($tmp_name, "img/Front/$name_hash");
+                $addResult = 'Изменили';
+            }
+
+        }
+        $frontBakerys = $this->frontBakeryRepository->getAll();
+        $content = 'AdminAccount.php';
+        $template = 'AdminMenu.php';
+        $data = [
+            'title' => 'Главная',
+            'addResult' => $addResult,
+            'frontBakerys' => $frontBakerys
+        ];
+        header("Location: /Admin/Account");
+        echo $this->renderPage($content, $template, $data);
+
+    }
+
+    public function DeleteFrontBakeryAction($id)
+    {
+        $this->frontBakeryRepository->deleteCake($id);
+        header("Location: /Admin/Account");
+
+    }
+
+
     public function AccountAction()
     {
         session_start();
         if(!isset($_SESSION['email'])) header('Location: /Admin/Start');
-    $content = 'AdminAccount.php';
-    $template = 'AdminMenu.php';
-    $data = [
-        'title' => 'Главная',
-        'email' => $_SESSION['email'],
-        'auth' => isset($_SESSION['email'])
-    ];
-    echo $this->renderPage($content, $template, $data);
+        $content = 'AdminAccount.php';
+        $template = 'AdminMenu.php';
+        $frontCakes = $this->frontCakeRepository->getAll();
+        $frontCheesecakes = $this->frontCheesecakeRepository->getAll();
+        $frontPies = $this->frontPieRepository->getAll();
+        $frontBakerys = $this->frontBakeryRepository->getAll();
+        $data = [
+            'title' => 'Главная',
+            'email' => $_SESSION['email'],
+            'auth' => isset($_SESSION['email']),
+            'frontCakes' => $frontCakes,
+            'frontCheesecakes' => $frontCheesecakes,
+            'frontPies' => $frontPies,
+            'frontBakerys' => $frontBakerys
+        ];
+        echo $this->renderPage($content, $template, $data);
     }
+
+//    End Front Picture
+
 
 
 
@@ -306,14 +502,7 @@ class AdminController extends Controller
         echo parent::renderPage($content, $template, $data);
     }
 
-
-
-
 //    Basked
-
-
-
-
 
 
 

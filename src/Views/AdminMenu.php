@@ -16,7 +16,7 @@
 <div class="row">
     <div class="offset-2 col-8 menuAdm">
         <ul>
-            <li><a href="/Admin/Account">Личный кабинет администратора</a></li>
+            <li><a href="/Admin/Account">Front Picture</a></li>
             <li><a href="/Admin/Cake">Торты</a></li>
             <li><a href="/Admin/Cheesecake">Чизкейки</a></li>
             <li><a href="/Admin/Pie">Кейки</a></li>

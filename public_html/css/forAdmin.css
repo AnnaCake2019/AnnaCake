@@ -105,6 +105,32 @@ a{
     width: 200px;
     height: 200px;
 }
+.front_row{
+    height: 400px;
+}
+.cont_for_front{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: auto;
+}
+.cont_for_front img{
+    margin: 0 auto ;
+    height: 250px;
+    width: 250px;
+}
+.cont_for_front a{
+    transition: 1s;
+}
+.cont_for_front a:hover{
+    color: red;
+    font-size: 18px;
+    transition: 1s;
+}
+.front_form form{
+    display: flex;
+    flex-direction: column;
+}
 #quantity{
     color: red;
     font-style: italic;

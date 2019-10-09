@@ -2,20 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
-      <change afterPath="$PROJECT_DIR$/public_html/js/modWin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/FrontBakeryRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/FrontCakeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/FrontCheesecakeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/FrontPieRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/about.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/about.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/basked.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/basked.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/modal.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/modal.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/img/cake_сarrot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/basked.js" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/js/basked.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/croppic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/js/library.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/aboutUS.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/aboutUS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/css/forAdmin.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/forAdmin.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/3a5feec90a9961933881d42aba7f55e2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/538dcf9d8b98ac9a193a01f25d975ad2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/571e32a9497bc9ce85a05dda04543fd6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/87d07f90f10c40ed8075f45c042fe6f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/bdedd55db6b255069c2fd03ae638c259.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/c2d874a5cd4299a7302da869c9f94666.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Bakery/d18257363c28f199b10cc14caed40b19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cake/571e32a9497bc9ce85a05dda04543fd6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cake/87d07f90f10c40ed8075f45c042fe6f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cake/bd6661231506e0fe52c15a3a77ecc1e7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cheesecake/453859528b76397a5a12a9d2f36ba702.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Cheesecake/bd6661231506e0fe52c15a3a77ecc1e7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Pie/453859528b76397a5a12a9d2f36ba702.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Pie/4f6a306c94af679657ced7273b5ad4ea.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/img/Pie/87d07f90f10c40ed8075f45c042fe6f6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/AdminAccount.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminAccount.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/AdminMenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/AdminMenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ShowBakery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ShowBakery.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +64,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="B:/Study/Study/html/Homework/work4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Star" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -132,6 +146,9 @@
       <workItem from="1570278780348" duration="58000" />
       <workItem from="1570364283053" duration="3235000" />
       <workItem from="1570429051475" duration="11224000" />
+      <workItem from="1570440583672" duration="32000" />
+      <workItem from="1570602561012" duration="17672000" />
+      <workItem from="1570622412392" duration="395000" />
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>
