@@ -49,7 +49,7 @@ class AdminController extends Controller
         if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             $post = $_POST;
             if (!$this->adminRepository->isAuth($post)){
-                echo "Ошибка в логене или пароле";
+                echo "Ошибка в логине или пароле";
                 return false;
             }
             header('Location: /Admin/Account');

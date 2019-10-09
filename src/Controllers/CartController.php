@@ -6,13 +6,24 @@ use Notorious\Shugar\Models\CartCakeRepository;
 use Notorious\Shugar\Models\CartPieRepository;
 use Notorious\Shugar\Models\CartCheesecakeRepository;
 use Notorious\Shugar\Models\UserRepository;
+use Notorious\Shugar\Models\FrontBakeryRepository;
+use Notorious\Shugar\Models\FrontCakeRepository;
+use Notorious\Shugar\Models\FrontCheesecakeRepository;
+use Notorious\Shugar\Models\FrontPieRepository;
 
 class CartController extends Controller
 {
     private $cartBakeryRepository;
     private $cartCakeRepository;
+    private $cartPieRepository;
+    private $cartCheesecakeRepository;
 
     private $userRepository;
+
+    private $frontPieRepository;
+    private $frontCheesecakeRepository;
+    private $frontBakeryRepository;
+    private $frontCakeRepository;
 
     public function __construct()
     {
@@ -20,7 +31,13 @@ class CartController extends Controller
         $this->cartCakeRepository = new CartCakeRepository();
         $this->cartPieRepository = new CartPieRepository();
         $this->cartCheesecakeRepository = new CartCheesecakeRepository();
+        
         $this->userRepository = new UserRepository();
+
+        $this->frontCakeRepository = new FrontCakeRepository();
+        $this->frontCheesecakeRepository = new FrontCheesecakeRepository();
+        $this->frontPieRepository = new FrontPieRepository();
+        $this->frontBakeryRepository = new FrontBakeryRepository();
     }
 
     public function addBakeryAction($id)
@@ -198,7 +215,7 @@ class CartController extends Controller
     public function showAction()
     {
     	session_start();
-        $content = 'show.php';
+        $content = 'main.php';
         $template = 'template.php';	
         $Users_id = $_SESSION['name'];
         $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
@@ -206,7 +223,10 @@ class CartController extends Controller
         $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
         $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
 
-
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
 
         $bakery=[];
         foreach ($bakerysBaskets as $row){
@@ -238,7 +258,11 @@ class CartController extends Controller
             'cake' => $cake,
             'pie' => $pie,
             'cheesecake' => $cheesecake,
-            'Users_id' => $_SESSION['name']
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys
         ];
         echo $this->renderPage($content, $template, $data);
 
