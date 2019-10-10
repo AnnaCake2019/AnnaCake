@@ -96,6 +96,16 @@ class AdminController extends Controller
 
     public function DeleteFrontCakesAction($id)
     {
+        $cakes = $this->frontCakeRepository->getById($id);
+
+        $img = 'img/Front' . '/' . $cakes['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
         $this->frontCakeRepository->deleteCake($id);
         header("Location: /Admin/Account");
 
@@ -139,6 +149,16 @@ class AdminController extends Controller
 
     public function DeleteFrontCheesecakesAction($id)
     {
+        $cheesecakes = $this->frontCheesecakeRepository->getById($id);
+
+        $img = 'img/Front' . '/' . $cheesecakes['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
         $this->frontCheesecakeRepository->deleteCake($id);
         header("Location: /Admin/Account");
 
@@ -181,6 +201,17 @@ class AdminController extends Controller
 
     public function DeleteFrontPiesAction($id)
     {
+
+        $pies = $this->frontPieRepository->getById($id);
+
+        $img = 'img/Front' . '/' . $pies['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
         $this->frontPieRepository->deleteCake($id);
         header("Location: /Admin/Account");
 
@@ -223,6 +254,18 @@ class AdminController extends Controller
 
     public function DeleteFrontBakeryAction($id)
     {
+
+        $bakery = $this->frontBakeryRepository->getById($id);
+
+        $img = 'img/Front' . '/' . $bakery['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
+
         $this->frontBakeryRepository->deleteCake($id);
         header("Location: /Admin/Account");
 
@@ -301,12 +344,20 @@ class AdminController extends Controller
     public function DeleteCakeAction($id)
     {
         $cake = $this->cakeRepository->getById($id);
+        $img = 'img/Cake' . '/' . $cake['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
+        header("Location: /Admin/Cake");
 
         $params = [
             'id' => $cake['id']
         ];
         $this->cakeRepository->deleteCake($params);
-
         $content = 'AdmitCake.php';
         $template = 'AdminMenu.php';
         $cakes = $this->cakeRepository->getAll();
@@ -363,6 +414,16 @@ class AdminController extends Controller
     public function DeleteCheesecakeAction($id)
     {
         $cheesecake = $this->сheesecakeRepository->getById($id);
+
+        $img = 'img/Cheesecake' . '/' . $cheesecake['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
+        header("Location: /Admin/Cheesecake");
 
         $params = [
             'id' => $cheesecake['id']
@@ -425,6 +486,18 @@ class AdminController extends Controller
     {
         $pie = $this->pieRepository->getById($id);
 
+        $img = 'img/Pie' . '/' . $pie['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
+        header("Location: /Admin/Pie");
+
+
+
         $params = [
             'id' => $pie['id']
         ];
@@ -485,6 +558,17 @@ class AdminController extends Controller
     public function DeleteBakeryAction($id)
     {
         $bakery = $this->bakeryRepository->getById($id);
+
+
+        $img = 'img/Bakery' . '/' . $bakery['img'];
+        function delete($img)
+        {
+            if(file_exists($img)) unlink($img);
+            if(file_exists($img) == FALSE) echo $img." файл удален";
+        }
+        delete($img);
+
+        header("Location: /Admin/Bakery");
 
         $params = [
             'id' => $bakery['id']
