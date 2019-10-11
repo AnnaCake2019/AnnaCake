@@ -1,43 +1,24 @@
 <?php
 
 namespace Notorious\Shugar\Controllers;
-use Notorious\Shugar\Core\Controller;
-use Notorious\Shugar\Models\BakeryRepository;
-use Notorious\Shugar\Models\CakeRepository;
-use Notorious\Shugar\Models\CheesecakeRepository;
-use Notorious\Shugar\Models\PieRepository;
+use Notorious\Shugar\Controllers\CartController;
 
-class ShopController extends Controller
+class ShopController extends CartController
 {
 
-    private $сheesecakeRepository;
-    private $cakeRepository;
-    private $bakeryRepository;
-    private $pieRepository;
+
     public function __construct()
     {
-        $this->сheesecakeRepository = new CheesecakeRepository();
-        $this->cakeRepository = new CakeRepository();
-        $this->bakeryRepository = new BakeryRepository();
-        $this->pieRepository = new PieRepository();
+
     }
 
     public function ShowAction()
     {
-        $content = 'show.php';
-        $template = 'template.php';
-        $cakes = $this->cakeRepository->getAll();
-        $pies = $this->pieRepository->getAll();
-        $bakerys = $this->bakeryRepository->getAll();
-        $twoChees = $this->сheesecakeRepository->getAll();
-        $data = [
-            'title' => 'Главная',
-            'cakes' => $cakes,
-            'pies' => $pies,
-            'bakerys' => $bakerys,
-            'twoChees' => $twoChees
-        ];
-        echo $this->renderPage($content, $template, $data);
+     
+        $cartController = new CartController;
+        $cartController->__construct();
+        $cartController->showShopAction();
+      
 
     }
 

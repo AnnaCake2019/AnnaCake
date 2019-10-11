@@ -127,7 +127,7 @@
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
-                <li><a onclick="hideMenu()" href="/cart/show/#basked">Корзина</a></li>
+                <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
     </div>
@@ -139,8 +139,9 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/Index/About">О нас</a></li>
-                 <li><a href="/blog/show/">Контакты</a></li>
-                <li><a href="/cart/show/#basked">Корзина</a></li>
+                <li><a href="/blog/show/">Контакты</a></li>
+                <li><a href="#basked">Корзина</a></li>
+                
             </ul>
             <p>Контакты:<br>
                 8(981)154-65-10<br>

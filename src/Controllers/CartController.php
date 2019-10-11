@@ -1,29 +1,43 @@
 <?php 
 namespace Notorious\Shugar\Controllers;
 use Notorious\Shugar\Core\Controller;
+
 use Notorious\Shugar\Models\CartBakeryRepository;
 use Notorious\Shugar\Models\CartCakeRepository;
 use Notorious\Shugar\Models\CartPieRepository;
 use Notorious\Shugar\Models\CartCheesecakeRepository;
+
 use Notorious\Shugar\Models\UserRepository;
+
 use Notorious\Shugar\Models\FrontBakeryRepository;
 use Notorious\Shugar\Models\FrontCakeRepository;
 use Notorious\Shugar\Models\FrontCheesecakeRepository;
 use Notorious\Shugar\Models\FrontPieRepository;
 
+use Notorious\Shugar\Models\BakeryRepository;
+use Notorious\Shugar\Models\CakeRepository;
+use Notorious\Shugar\Models\CheesecakeRepository;
+use Notorious\Shugar\Models\PieRepository;
+
+
 class CartController extends Controller
 {
-    private $cartBakeryRepository;
-    private $cartCakeRepository;
-    private $cartPieRepository;
-    private $cartCheesecakeRepository;
+    protected $cartBakeryRepository;
+    protected $cartCakeRepository;
+    protected $cartPieRepository;
+    protected $cartCheesecakeRepository;
 
-    private $userRepository;
+    protected $userRepository;
 
-    private $frontPieRepository;
-    private $frontCheesecakeRepository;
-    private $frontBakeryRepository;
-    private $frontCakeRepository;
+    protected $frontPieRepository;
+    protected $frontCheesecakeRepository;
+    protected $frontBakeryRepository;
+    protected $frontCakeRepository;
+
+    private $сheesecakeRepository;
+    private $cakeRepository;
+    private $bakeryRepository;
+    private $pieRepository;
 
     public function __construct()
     {
@@ -38,6 +52,11 @@ class CartController extends Controller
         $this->frontCheesecakeRepository = new FrontCheesecakeRepository();
         $this->frontPieRepository = new FrontPieRepository();
         $this->frontBakeryRepository = new FrontBakeryRepository();
+
+        $this->сheesecakeRepository = new CheesecakeRepository();
+        $this->cakeRepository = new CakeRepository();
+        $this->bakeryRepository = new BakeryRepository();
+        $this->pieRepository = new PieRepository();
     }
 
     public function addBakeryAction($id)
@@ -252,8 +271,8 @@ class CartController extends Controller
          	array_push($cheesecake, $cheesecake1);
         }
 
+
         $data = [
-            'title' => 'Корзина',
             'bakery' => $bakery,
             'cake' => $cake,
             'pie' => $pie,
@@ -268,4 +287,123 @@ class CartController extends Controller
 
     }
 
+
+    public function showAboutAction()
+    {
+        session_start();
+        $content = 'aboutUS.php';
+        $template = 'template.php'; 
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $bakery=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakery, $bakery1);
+        }
+
+        $cake=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cake, $cake1);
+        }
+
+        $pie=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pie, $pie1);
+        }
+
+        $cheesecake=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecake, $cheesecake1);
+        }
+
+
+        $data = [
+            'bakery' => $bakery,
+            'cake' => $cake,
+            'pie' => $pie,
+            'cheesecake' => $cheesecake,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys
+        ];
+        echo $this->renderPage($content, $template, $data);
+    }
+
+
+    public function showShopAction()
+    {
+        session_start();
+        $content = 'show.php';
+        $template = 'template.php'; 
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $bakery=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakery, $bakery1);
+        }
+
+        $cake=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cake, $cake1);
+        }
+
+        $pie=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pie, $pie1);
+        }
+
+        $cheesecake=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecake, $cheesecake1);
+        }
+
+        $cakes = $this->cakeRepository->getAll();
+        $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
+
+        $data = [
+            'bakery' => $bakery,
+            'cake' => $cake,
+            'pie' => $pie,
+            'cheesecake' => $cheesecake,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+            'cakes' => $cakes,
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees,
+        ];
+        echo $this->renderPage($content, $template, $data);
+    }
 }
