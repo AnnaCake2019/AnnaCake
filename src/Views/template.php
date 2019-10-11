@@ -16,7 +16,7 @@
     <img src="/img/ico/phone.png">
 </a>
 <div id="window" class="closeModal">
-    <form method="POST" action="/mail/send" id="form_mail">
+    <form method="POST" action="/Mail/send" id="form_mail">
 <!--        <a href="#close" class="close"></a>-->
         <div class="row windowFrom">
             <div class="col-12">
@@ -42,13 +42,15 @@
         <div class="offset-2 col-8 hi">
             <h4>Ваш заказ</h4>
         </div>
+        <form name="orders" method="post" action="/Mail/sendOffer" id="form_offer">
         <div class="offset-2 col-8">
             <div class="orders">
-                <form name="orders" method="post" action="#">
+                
                     <input class="val" type="text" placeholder="Имя">
                     <input class="val" type="text" placeholder="Телефон">
-                    <input type="submit" value="Заказать">
-                </form>
+                    <div id="results1" style="display: none;">Ваш заказ отправлен в обработку.</div>
+                    <input type="submit" id="button_offer" value="Заказать">
+                
             </div>
         </div>
         <div class="col-10 frontBasked">
@@ -56,7 +58,9 @@
             <div class="row">
                 <div class="offset-2 col-10 order">
                     <h1>Корзина</h1>
-                    <?php foreach ($bakery as $row1): ?>
+                    <?php $bakeryArr=[]; ?>
+                    <?php $bakeryPriceArr=[]; ?>
+                    <?php foreach ($bakeryCart as $row1): ?>
                         <?php foreach ($row1 as $row2): ?>
                             <div class=" col-12 sums">
                                 <p><?php echo $row2['title']; ?></p>
@@ -65,22 +69,28 @@
                                     <p class="oneSum"> <?php echo $row2['price']; ?></p>
                                 </div>
                             </div>
+                            <?php array_push($bakeryArr, $row2['title']) ?>
+                            <?php array_push($bakeryPriceArr, $row2['price']) ?>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-                    <?php foreach ($cake as $row3): ?>
+
+                    <textarea style="display: none;" name="bakeryOffer"><?php foreach ($bakeryArr as $bakArr) echo ("|" . $bakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($bakeryPriceArr as $bakPrArr) echo ("|" . $bakPrArr  . "\t"); ?></textarea>
+
+
+                    <?php foreach ($cakeCart as $row3): ?>
                         <?php foreach ($row3 as $row4): ?>
                             <div class=" col-12 sums">
                                 <p><?php echo $row4['title']; ?></p>
                                 <div>
                                     <p>Цена:</p>
-                                    <p class="oneSum"> <?php echo $row4['price']; ?></p>
+                                    <p class="oneSum"><?php echo $row4['price']; ?></p>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-                    <?php foreach ($pie as $row5): ?>
+                    <?php foreach ($pieCart as $row5): ?>
                         <?php foreach ($row5 as $row6): ?>
                             <div class=" col-12 sums">
                                 <p><?php echo $row6['title']; ?></p>
@@ -92,7 +102,7 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?> 
 
-                    <?php foreach ($cheesecake as $row7): ?>
+                    <?php foreach ($cheesecakeCart as $row7): ?>
                         <?php foreach ($row7 as $row8): ?>
                             <div class=" col-12 sums">
                                 <p><?php echo $row8['title']; ?></p>
@@ -109,6 +119,7 @@
                 </div>
             </div>
         </div>
+        </form>
     </div>
 </div>
 <!--Basked Window end-->

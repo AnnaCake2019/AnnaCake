@@ -8,7 +8,7 @@
                     <h2><?php echo $cake['title']; ?></h2>
                     <img src="/img/Cake/<?php echo $cake['img']; ?>">
                     <p><?php echo $cake['price']; ?></p>
-                    <a class="detail" href="/Shop/showCake/<?php echo $cake['id']; ?>">
+                    <a class="detail" href="/Cart/ShowCake/<?php echo $cake['id']; ?>">
                         Подробнее
                     </a>
                 <?php endforeach; ?>
@@ -26,7 +26,7 @@
                     <h2><?php echo $pie['title']; ?></h2>
                     <img src="/img/Pie/<?php echo $pie['img']; ?>">
                     <p><?php echo $pie['price']; ?></p>
-                    <a class="detail" href="/Shop/ShowPie/<?php echo $pie['id']; ?>">
+                    <a class="detail" href="/Cart/ShowPie/<?php echo $pie['id']; ?>">
                         Подробнее
                     </a>
                 <?php endforeach; ?>
@@ -44,7 +44,7 @@
                     <h2><?php echo $twoChee['title']; ?></h2>
                     <img src="/img/Cheesecake/<?php echo $twoChee['img']; ?>">
                     <p><?php echo $twoChee['price']; ?></p>
-                    <a class="detail" href="/Shop/ShowChees/<?php echo $twoChee['id']; ?>">
+                    <a class="detail" href="/Cart/ShowChees/<?php echo $twoChee['id']; ?>">
                         Подробнее
                     </a>
                 <?php endforeach; ?>
@@ -62,7 +62,7 @@
                     <h2><?php echo $bakery['title']; ?></h2>
                     <img src="/img/Bakery/<?php echo $bakery['img']; ?>">
                     <p><?php echo $bakery['price']; ?></p>
-                    <a class="detail" href="/Shop/ShowBakery/<?php echo $bakery['id']; ?>">
+                    <a class="detail" href="/Cart/ShowBakery/<?php echo $bakery['id']; ?>">
                         Подробнее
                     </a>
                 <?php endforeach; ?>

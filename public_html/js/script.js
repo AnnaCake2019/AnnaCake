@@ -29,6 +29,24 @@ $(function() {
     });
 
 $(function() {
+      $('#form_offer').submit(function(e) {
+        var $form = $(this);
+        $.ajax({
+          type: $form.attr('method'),
+          url: $form.attr('action'),
+          data: $form.serialize()
+        }).done(function() {
+          $('#results1').css('display', 'inline-block');
+          $('#button_offer').css('display', 'none');
+        }).fail(function() {
+          alert('Возникла ошибка: ' + xhr.responseCode);
+        });
+        //отмена действия по умолчанию для кнопки submit
+        e.preventDefault(); 
+      });
+    });
+
+$(function() {
       $('#bakery_form').submit(function(e) {
         var $form = $(this);
         $.ajax({
