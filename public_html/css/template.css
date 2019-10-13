@@ -165,6 +165,12 @@ footer{
     justify-content: space-between;
 
 }
+.contact img{
+    height: 50px;
+}
+.contact{
+    margin-left: 50px;
+}
 
 
 

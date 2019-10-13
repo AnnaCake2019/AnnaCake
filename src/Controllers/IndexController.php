@@ -21,7 +21,7 @@ class IndexController extends CartController
     }
 
 
-    public function indexAction()
+    public function IndexAction()
     {
         $cartController = new CartController;
         $cartController->__construct();
@@ -29,11 +29,20 @@ class IndexController extends CartController
 
     }
 
-    public function aboutAction(){
+    public function AboutAction(){
 
         $cartController = new CartController;
         $cartController->__construct();     
         $cartController->showAboutAction();
 
+    }
+
+    public function ContactAction(){
+        $content = 'contact.php';
+        $template = 'template.php';
+        $data = [
+            'title' => 'Главная'
+        ];
+        echo $this->renderPage($content, $template, $data);
     }
 }

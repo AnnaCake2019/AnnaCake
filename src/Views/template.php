@@ -17,16 +17,18 @@
 </a>
 <div id="window" class="closeModal">
     <form method="POST" action="/mail/send" id="form_mail">
-<!--        <a href="#close" class="close"></a>-->
+        <!--        <a href="#close" class="close"></a>-->
         <div class="row windowFrom">
             <div class="col-12">
-                    <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее время</div>
-                    <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
-                    <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
+                <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее
+                    время
+                </div>
+                <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
+                <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
             </div>
         </div>
         <div class="col-12 bot">
-        <input class="bot" type="submit" id="button_send" value="Заказать звонок">
+            <input class="bot" type="submit" id="button_send" value="Заказать звонок">
         </div>
         <div class="col-12">
             <p id="errors"></p>
@@ -90,7 +92,7 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                    <?php endforeach; ?> 
+                    <?php endforeach; ?>
 
                     <?php foreach ($cheesecake as $row7): ?>
                         <?php foreach ($row7 as $row8): ?>
@@ -102,10 +104,11 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                    <?php endforeach; ?>                                  
+                    <?php endforeach; ?>
                 </div>
                 <div class="offset-3 col-9 sum">
-                    <p>Сумма заказа:</p> <p id="commonSum"></p>
+                    <p>Сумма заказа:</p>
+                    <p id="commonSum"></p>
                 </div>
             </div>
         </div>
@@ -126,7 +129,7 @@
                 <li><a onclick="hideMenu()" href="/">Главная</a></li>
                 <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
-                <li><a onclick="hideMenu()" href="/blog/show">Контакты</a></li>
+                <li><a onclick="hideMenu()" href="/Index/Contact/">Контакты</a></li>
                 <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
             </ul>
         </nav>
@@ -139,9 +142,9 @@
                 <li><a href="/">Главная</a></li>
                 <li><a href="/shop/show">Магазин</a></li>
                 <li><a href="/Index/About">О нас</a></li>
-                <li><a href="/blog/show/">Контакты</a></li>
+                <li><a href="/Index/Contact/">Контакты</a></li>
                 <li><a href="#basked">Корзина</a></li>
-                
+
             </ul>
             <p>Контакты:<br>
                 8(981)154-65-10<br>
@@ -151,13 +154,15 @@
 </div>
 <?php include_once $content ?>
 <footer>
+    <div class="contact">
     <p>Контакты:<br>
         8(981)154-65-10<br>
         8(981)137-43-14</p>
     <p>
         confectioneryspb1@yandex.ru
     </p>
-    <p><a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/insta.png"></a></p>
+    <a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/instagram.ico"></a>
+    </div>
 </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="/js/modWin.js"></script>
