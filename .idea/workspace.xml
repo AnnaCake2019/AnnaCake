@@ -4,10 +4,13 @@
     <list default="true" id="c6de769f-f7f7-44db-bc98-55a494b854d7" name="Default Changelist" comment="two -v">
       <change afterPath="$PROJECT_DIR$/src/Views/contact.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/public_html/css/template.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/css/template.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/img/ico/insta.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/template.php" afterDir="false" />
+=======
+>>>>>>> 8f230150f540a4bf5ad1a16bb0ff81fd30fec8c9
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -129,9 +132,13 @@
       <workItem from="1570622412392" duration="395000" />
       <workItem from="1570685035695" duration="6896000" />
       <workItem from="1570719777236" duration="4462000" />
+<<<<<<< HEAD
       <workItem from="1570771406057" duration="2858000" />
       <workItem from="1570808231185" duration="29000" />
       <workItem from="1570968643582" duration="315000" />
+=======
+      <workItem from="1570815658675" duration="718000" />
+>>>>>>> 8f230150f540a4bf5ad1a16bb0ff81fd30fec8c9
     </task>
     <task id="LOCAL-00001" summary="two -v">
       <created>1568308222541</created>

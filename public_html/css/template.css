@@ -6,13 +6,13 @@
 @import "pageProduct.css";
 @import "about.css";
 body{
-    max-width: 2500px;
+    /*max-width: 2500px;*/
     margin: 0;
     font-family: 'Bradley Hand ITC', sans-serif;
 }
 
 body{
-    background:  linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/background_img.jpg");
+    background:   url("../img/ss-uniqlo_background_01a.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -34,7 +34,7 @@ a{
     left: 0;
     opacity: 0.9;
     height: 10px;
-    background: lightslategrey;
+    background: burlywood;
     border-radius: 0 0 5px 5px;
  }
 .fixedMenu ul{
@@ -43,13 +43,14 @@ a{
 }
 .fixedMenu li a{
     font-size: 17px;
-    color: white;
 }
 .fixedMenu p{
     display: none;
 }
 /*Scroll end*/
-
+.baskedImg{
+    display: none;
+}
 
 
 
@@ -71,13 +72,14 @@ a{
 }
 .header .menu p{
     position: absolute;
-    color: #FFFFFF;
+    color: darkslategray;
+    font-size: 20px;
     right: 10px;
     top: 10px;
 }
 .header .menu a {
-    color: white;
-    /*font-size: 20 px;*/
+    color: darkslategray;
+    font-size: 20px;
     text-decoration: none;
     padding: 20px 30px;
     border-radius: 100px;
@@ -87,7 +89,7 @@ a{
 .menu a:hover{
     transition: 1s;
     /*background: #f6f7f8;*/
-    color: pink;
+    color: lightslategrey;
     /*border-radius: 100px;*/
 }
 
@@ -104,7 +106,7 @@ span{
     margin: 8px;
     width: 30px;
     height: 1px;
-    background: white;
+    color: darkslategray;
 }
 .mob-head{
     display: flex;
@@ -131,7 +133,7 @@ span{
 }
 
 .header .mobile-menu a {
-    color: white;
+    color: darkslategray;
     /*font-weight: bold;*/
     /*font-size: 20px;*/
     text-decoration: none;
@@ -145,7 +147,7 @@ span{
 .mobile-menu a:hover{
     transition: 1s;
     /*background: #f6f7f8;*/
-    color: pink;
+    color: lightslategrey;
     /*border-radius: 100px;*/
 }
 
@@ -163,13 +165,26 @@ footer{
     background: burlywood;
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 1px;
 }
 .contact img{
     height: 50px;
 }
 .contact{
     margin-left: 50px;
+}
+/*stirngCont*/
+.stringCont{
+    margin-top: 90px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+}
+.stringCont div{
+    margin: 30px;
+}
+.stringCont img{
+    height: 50px;
 }
 
 
@@ -191,6 +206,10 @@ footer{
     margin: 20px 5px 20px 5px;
     width: auto;
     text-align: center;
+}
+.gallerys p{
+    color: darkslategray;
+    font-size: 20px;
 }
 .gallerys img{
     height: 300px;
@@ -227,6 +246,18 @@ footer{
     /*    display: block;*/
     /*}*/
 }
+
+@media screen and (max-width: 650px) {
+
+    .stringCont {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
 @media screen and (max-width: 550px) {
     .gallery{
         display: flex;
@@ -278,6 +309,23 @@ footer{
 
 @media screen and (max-width: 1260px) {
 
+    .baskedImg{
+        z-index: 3;
+        padding: 6px;
+        color: black;
+        border-radius: 10px 0 0 10px;
+        text-align: center;
+        transition: 1s;
+        background: lightsteelblue ;
+        display: block;
+        position: fixed;
+        top: 140px;
+        right: 0;
+    }
+    .baskedImg:hover{
+        transition: 1s;
+        background: linear-gradient(to bottom left, lightsteelblue, transparent 90%);
+    }
 
 
     .mobile-menu{

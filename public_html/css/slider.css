@@ -27,6 +27,7 @@
     transition: opacity 1s;
 }
 .slide img{
+    width: 900px;
     height: 500px;
 }
 .showing {

@@ -170,7 +170,7 @@ class CartController extends Controller
             // 'baskets_id'=> $basketId,
             'Bakery_id'=> $bakeryId,
         ]; 
-        $this->cartBakeryRepository->deleteBakery($params); 
+        $this->cartBakeryRepository->deleteBakery($params);
 
     }
 
@@ -247,41 +247,41 @@ class CartController extends Controller
         $fpies = $this->frontPieRepository->getAll();
         $fbakerys = $this->frontBakeryRepository->getAll();
 
-        $bakery=[];
+        $bakeryCart=[];
         foreach ($bakerysBaskets as $row){
         	$bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
-         	array_push($bakery, $bakery1);
+         	array_push($bakeryCart, $bakery1);
         }
 
-        $cake=[];
+        $cakeCart=[];
         foreach ($cakesBaskets as $row1){
         	$cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
-         	array_push($cake, $cake1);
+         	array_push($cakeCart, $cake1);
         }
 
-        $pie=[];
+        $pieCart=[];
         foreach ($piesBaskets as $row2){
         	$pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
-         	array_push($pie, $pie1);
+         	array_push($pieCart, $pie1);
         }
 
-        $cheesecake=[];
+        $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
         	$cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
-         	array_push($cheesecake, $cheesecake1);
+         	array_push($cheesecakeCart, $cheesecake1);
         }
 
 
         $data = [
-            'bakery' => $bakery,
-            'cake' => $cake,
-            'pie' => $pie,
-            'cheesecake' => $cheesecake,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
             'Users_id' => $_SESSION['name'],
             'fcakes' => $fcakes,
             'fcheesecakes' => $fcheesecakes,
             'fpies' => $fpies,
-            'fbakerys' => $fbakerys
+            'fbakerys' => $fbakerys,
         ];
         echo $this->renderPage($content, $template, $data);
 
@@ -304,41 +304,41 @@ class CartController extends Controller
         $fpies = $this->frontPieRepository->getAll();
         $fbakerys = $this->frontBakeryRepository->getAll();
 
-        $bakery=[];
+        $bakeryCart=[];
         foreach ($bakerysBaskets as $row){
             $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
-            array_push($bakery, $bakery1);
+            array_push($bakeryCart, $bakery1);
         }
 
-        $cake=[];
+        $cakeCart=[];
         foreach ($cakesBaskets as $row1){
             $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
-            array_push($cake, $cake1);
+            array_push($cakeCart, $cake1);
         }
 
-        $pie=[];
+        $pieCart=[];
         foreach ($piesBaskets as $row2){
             $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
-            array_push($pie, $pie1);
+            array_push($pieCart, $pie1);
         }
 
-        $cheesecake=[];
+        $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
             $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
-            array_push($cheesecake, $cheesecake1);
+            array_push($cheesecakeCart, $cheesecake1);
         }
 
 
         $data = [
-            'bakery' => $bakery,
-            'cake' => $cake,
-            'pie' => $pie,
-            'cheesecake' => $cheesecake,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
             'Users_id' => $_SESSION['name'],
             'fcakes' => $fcakes,
             'fcheesecakes' => $fcheesecakes,
             'fpies' => $fpies,
-            'fbakerys' => $fbakerys
+            'fbakerys' => $fbakerys,
         ];
         echo $this->renderPage($content, $template, $data);
     }
@@ -360,28 +360,28 @@ class CartController extends Controller
         $fpies = $this->frontPieRepository->getAll();
         $fbakerys = $this->frontBakeryRepository->getAll();
 
-        $bakery=[];
+        $bakeryCart=[];
         foreach ($bakerysBaskets as $row){
             $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
-            array_push($bakery, $bakery1);
+            array_push($bakeryCart, $bakery1);
         }
 
-        $cake=[];
+        $cakeCart=[];
         foreach ($cakesBaskets as $row1){
             $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
-            array_push($cake, $cake1);
+            array_push($cakeCart, $cake1);
         }
 
-        $pie=[];
+        $pieCart=[];
         foreach ($piesBaskets as $row2){
             $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
-            array_push($pie, $pie1);
+            array_push($pieCart, $pie1);
         }
 
-        $cheesecake=[];
+        $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
             $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
-            array_push($cheesecake, $cheesecake1);
+            array_push($cheesecakeCart, $cheesecake1);
         }
 
         $cakes = $this->cakeRepository->getAll();
@@ -390,10 +390,10 @@ class CartController extends Controller
         $twoChees = $this->сheesecakeRepository->getAll();
 
         $data = [
-            'bakery' => $bakery,
-            'cake' => $cake,
-            'pie' => $pie,
-            'cheesecake' => $cheesecake,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
             'Users_id' => $_SESSION['name'],
             'fcakes' => $fcakes,
             'fcheesecakes' => $fcheesecakes,
@@ -406,4 +406,277 @@ class CartController extends Controller
         ];
         echo $this->renderPage($content, $template, $data);
     }
+
+
+
+    public function ShowCakeAction($id)
+    {
+        session_start();
+        $content = 'showCake.php';
+        $template = 'template.php';
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $cake = $this->cakeRepository->getById($id);
+
+        $bakeryCart=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakeryCart, $bakery1);
+        }
+
+        $cakeCart=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cakeCart, $cake1);
+        }
+
+        $pieCart=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pieCart, $pie1);
+        }
+
+        $cheesecakeCart=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecakeCart, $cheesecake1);
+        }
+
+        $cakes = $this->cakeRepository->getAll();
+        $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
+
+
+        $data = [
+            'cake' => $cake,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+            'cakes' => $cakes,
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees,
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+
+    public function ShowPieAction($id)
+    {
+        session_start();
+        $content = 'showPie.php';
+        $template = 'template.php';
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $pie = $this->pieRepository->getById($id);
+
+        $bakeryCart=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakeryCart, $bakery1);
+        }
+
+        $cakeCart=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cakeCart, $cake1);
+        }
+
+        $pieCart=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pieCart, $pie1);
+        }
+
+        $cheesecakeCart=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecakeCart, $cheesecake1);
+        }
+
+        $cakes = $this->cakeRepository->getAll();
+        $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
+
+
+        $data = [
+            'pie' => $pie,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+            'cakes' => $cakes,
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees,
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+
+    public function ShowBakeryAction($id)
+    {
+        session_start();
+        $content = 'ShowBakery.php';
+        $template = 'template.php';
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $bakery = $this->bakeryRepository->getById($id);
+
+        $bakeryCart=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakeryCart, $bakery1);
+        }
+
+        $cakeCart=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cakeCart, $cake1);
+        }
+
+        $pieCart=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pieCart, $pie1);
+        }
+
+        $cheesecakeCart=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecakeCart, $cheesecake1);
+        }
+
+        $cakes = $this->cakeRepository->getAll();
+        $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
+
+
+        $data = [
+            'bakery' => $bakery,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+            'cakes' => $cakes,
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees,
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+
+    public function ShowCheesAction($id)
+    {
+        session_start();
+        $content = 'ShowChees.php';
+        $template = 'template.php';
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $twoChee = $this->сheesecakeRepository->getById($id);
+
+        $bakeryCart=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakeryCart, $bakery1);
+        }
+
+        $cakeCart=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cakeCart, $cake1);
+        }
+
+        $pieCart=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pieCart, $pie1);
+        }
+
+        $cheesecakeCart=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            array_push($cheesecakeCart, $cheesecake1);
+        }
+
+        $cakes = $this->cakeRepository->getAll();
+        $pies = $this->pieRepository->getAll();
+        $bakerys = $this->bakeryRepository->getAll();
+        $twoChees = $this->сheesecakeRepository->getAll();
+
+
+        $data = [
+            'twoChee' => $twoChee,
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+            'cakes' => $cakes,
+            'pies' => $pies,
+            'bakerys' => $bakerys,
+            'twoChees' => $twoChees,
+        ];
+        echo parent::renderPage($content, $template, $data);
+    }
+    
 }

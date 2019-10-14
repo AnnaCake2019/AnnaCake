@@ -22,7 +22,7 @@
 #basked .hi{
     text-align: center;
 }
-#basked a{
+#basked .linkClose{
     position: absolute;
     top: 10px;
     left: 10px;
