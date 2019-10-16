@@ -36,7 +36,7 @@ $(function() {
           url: $form.attr('action'),
           data: $form.serialize()
         }).done(function() {
-          $('#results1').css('display', 'inline-block');
+          $('#results2').css('display', 'inline-block');
           $('#button_offer').css('display', 'none');
         }).fail(function() {
           alert('Возникла ошибка: ' + xhr.responseCode);
@@ -54,7 +54,9 @@ $(function() {
           url: $form.attr('action'),
           data: $form.serialize()
         }).done(function() {
+          location.reload();
           $('#results1').css('display', 'inline-block');
+          $('#quant').css('display', 'none');
           $('#buy_button').css('display', 'none');
         }).fail(function() {
           alert('Возникла ошибка: ' + xhr.responseCode);
@@ -89,8 +91,9 @@ $(function() {
           url: $form.attr('action'),
           data: $form.serialize()
         }).done(function() {
-          $('#results2').css('display', 'inline-block');
-          $('#del_button').css('display', 'none');
+          // $('#results_del').css('display', 'inline-block');
+          // $('#bakery_del_btn').css('display', 'none');
+          location.reload();
         }).fail(function() {
           alert('Возникла ошибка: ' + xhr.responseCode);
         });

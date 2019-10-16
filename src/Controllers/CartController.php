@@ -73,13 +73,29 @@ class CartController extends Controller
 
         $bakery = $this->cartBakeryRepository->getBakery($id); 
         $bakeryId = $bakery['id'];
-
         $params=[
             'Bakery_id'=> $bakeryId,
-            'Users_id' => $_SESSION['name']
-        ];
+            'Users_id' => $_SESSION['name'],
+            'count' => $_POST['quant']
+        ];  
         	$this->cartBakeryRepository->foreing();
-            $this->cartBakeryRepository->save($params);
+
+            $checkBakery = $this->cartBakeryRepository->check($bakeryId);
+
+            if (count($checkBakery) == 0) {
+                $this->cartBakeryRepository->save($params);
+            } 
+            // else {
+            //     $count = $this->cartBakeryRepository->countB($bakeryId);
+            //     $summ = $count + 1;
+            //     $data = [
+            //         'Bakery_id'=> $bakeryId,
+            //         'Users_id' => $_SESSION['name'],
+            //         'count' => $count  
+            //     ];
+            //     $this->cartBakeryRepository->saveB($data);
+            // }           
+
     }
 
     public function addCakeAction($id)
@@ -155,12 +171,11 @@ class CartController extends Controller
     public function deleteBakeryAction($id)
     {
         session_start();
-        // $account_n = $_SESSION['name'];
         // $user=$this->cartRepository->isName($account_n);
         // $IdUs = (int) $user['id'];  
 
-        $bakery = $this->cartBakeryRepository->getBakery($id);
-        $bakeryId = $bakery['id'];
+        // $bakery = $this->cartBakeryRepository->getBakery($id);
+        // $bakeryId = $bakery['id'];
         
         // $basket = $this->cartRepository->getBas($IdUs);
 
@@ -168,7 +183,8 @@ class CartController extends Controller
 
         $params=[
             // 'baskets_id'=> $basketId,
-            'Bakery_id'=> $bakeryId,
+            'Bakery_id'=> $id,
+            'Users_id' => $_SESSION['name']
         ]; 
         $this->cartBakeryRepository->deleteBakery($params);
 

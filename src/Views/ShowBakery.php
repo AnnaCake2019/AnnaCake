@@ -11,13 +11,11 @@
                 <p class='pr'><?php echo $bakery['title']; ?></p>
                 <p class="pr">Цена: <?php echo $bakery['price']; ?></p>
 
-                <form id="bakery_form" class="forBasked" name="forBasked" method="POST"
-                      action="/cart/addBakery/<?php echo $bakery['id'] ?>">
+                <form id="bakery_form" class="forBasked" name="forBasked" method="POST" action="/cart/addBakery/<?php echo $bakery['id'] ?>">
                     <div id="results1" class="js-successbox t-form__successbox t-text t-text_md" style="display:none; ">
                         Товар в корзине!
                     </div>
-                    <p>Товара осталось: <?php echo $bakery['quantity']; ?></p>
-                    <input class="numberProd" type="number">
+                    <input class="numberProd" type="number" name="quant" id="quant">
                     <input id="buy_button" type="submit" value="В корзину">
                 </form>
                 <p class="about">О товаре:</p>

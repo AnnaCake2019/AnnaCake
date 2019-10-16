@@ -30,12 +30,26 @@ class CartBakeryRepository implements Repository
     	return $this->db->foreing($sql1);	
 	}
 
+    public function check($bakeryId)
+    {
+        $sql = 'SELECT * from basket WHERE Bakery_id=:bakeryId';
+        $params =[
+            'bakeryId' =>$bakeryId
+        ];
+        return $this->db->paramsGetAll($sql, $params);
+    }
 
     public function save($params)
     {
-        $sql = 'INSERT INTO basket(Bakery_id, Users_id) VALUES (:Bakery_id, :Users_id)';
+        $sql = 'INSERT INTO basket(Bakery_id, Users_id, count) VALUES (:Bakery_id, :Users_id, :count)';
         return $this->db->nonSelectQuery($sql, $params);
     }
+
+    // public function saveB($data)
+    // {
+    //     $sql = 'UPDATE basket SET count=:count WHERE Bakery_id=:Bakery_id AND Users_id:=Users_id';
+    //     return $this->db->nonSelectQuery($sql, $params);
+    // }
 
     public function getBakery($id)
     {
@@ -45,7 +59,13 @@ class CartBakeryRepository implements Repository
         return $this->db->paramsGetOne($sql, $params);
     }
 
-
+    // public function countB($bakeryId)
+    // {
+    //     // получаем выпечку по id
+    //     $sql = 'SELECT count FROM Bakery WHERE Bakery_id=:bakeryId';
+    //     $params = ['bakeryId'=>$bakeryId];
+    //     return $this->db->paramsGetOne($sql, $params);
+    // }
 
     public function getBaskets($Users_id)
     {
@@ -99,14 +119,14 @@ class CartBakeryRepository implements Repository
     {
         $sql = 'SELECT * FROM Bakery WHERE id=:id';
         $params = [
-            'id' => $bakerysBaskets
+            'id' => $bakerysBaskets,
         ];
         return $this->db->paramsGetAll($sql, $params);
     }
 
     public function deleteBakery($params)
     {
-        $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
+        $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id AND Users_id=:Users_id';
         return $this->db->nonSelectQuery($sql, $params);
     }
 
