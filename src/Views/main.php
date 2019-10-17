@@ -11,7 +11,7 @@
     <div class=" gallery">
         <div>
             <div class="gallerys">
-                <p>Торты</p>
+                <a href="/Shop/Show#OneShow"><p>Торты</p></a>
                 <?php foreach ($fcakes as $fcake): ?>
                     <a href="/Shop/Show#OneShow">
                         <img src="/img/Front/<?php echo $fcake['img']; ?>">
@@ -19,7 +19,7 @@
                 <?php endforeach; ?>
             </div>
             <div class="gallerys">
-                <p>Кейки</p>
+                <a href="/Shop/Show#twoShow"><p>Кейки</p></a>
                 <?php foreach ($fcheesecakes as $fcheesecake): ?>
                     <a href="/Shop/Show#twoShow">
                         <img src="/img/Front/<?php echo $fcheesecake['img']; ?>">
@@ -29,7 +29,7 @@
         </div>
         <div>
             <div class="gallerys">
-                <p>Чизкейки</p>
+                <a href="/Shop/Show#threeShow"><p>Чизкейки</p></a>
                 <?php foreach ($fpies as $fpie): ?>
                     <a href="/Shop/Show#threeShow">
                         <img src="/img/Front/<?php echo $fpie['img']; ?>">
@@ -37,7 +37,8 @@
                 <?php endforeach; ?>
             </div>
             <div class="gallerys">
-                <p>Выпечка</p>
+                <a href="/Shop/Show#foreShow"><p>Выпечка</p></a>
+
                 <?php foreach ($fbakerys as $fbakery): ?>
                     <a href="/Shop/Show#foreShow">
                         <img src="/img/Front/<?php echo $fbakery['img']; ?>">

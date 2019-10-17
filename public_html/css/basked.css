@@ -42,6 +42,9 @@
 .frontBasked{
     text-align: center;
 }
+.forSum{
+    display: none;
+}
 
 
 .order{

@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/img/Ice-Cream.ico">
     <link rel="stylesheet" href="/css/template.css">
+<!--    <link rel="stylesheet" href="/css/bootstrap.min.css">-->
+    <link>
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <title>AnnaCake</title>
 </head>
@@ -23,8 +25,8 @@
                 <div id="results" style="display: none;">Спасибо за Ваше обращение, мы свяжемся с вами в ближайшее
                     время
                 </div>
-                <input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
-                <input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
+                <label for="phone"></label><input name="name" class="formText validate" id="phone" placeholder="Телефон" type="text">
+                <label for="name"></label><input name="phone" class="formText validate" id="name" placeholder="Имя" type="text">
             </div>
         </div>
         <div class="col-12 bot">
@@ -70,16 +72,16 @@
                     <?php $piePriceArr=[]; ?>
 
                     <?php $cheesecakeArr=[]; ?>
-                    <?php $cheesecakePriceArr=[]; ?> 
+                    <?php $cheesecakePriceArr=[]; ?>
 
                     <?php foreach ($bakeryCart as $row1): ?>
                         <?php foreach ($row1 as $row2): ?>
                             <div class=" col-12 sums">
-                                <p><?php echo $row2['title']; ?></p>  
+                                <p><?php echo $row2['title']; ?></p>
                                 <div>
                                     <p>Количество:</p>
                                     <p><?php ?></p>
-                                </div>                                                             
+                                </div>
                                 <div>
                                     <p>Цена:</p>
                                     <p class="oneSum"> <?php echo $row2['price']; ?></p>
@@ -87,7 +89,7 @@
                                 <div>
                                 	<form method="POST" action="/Cart/deleteBakery/<?php echo $row2['id'] ?>" id="bakery_del">
                                 		<!-- <div id="results_del" style="display: none;">Товар удалён.</div> -->
-                                		<input type="submit" id="bakery_del_btn" value="X">	
+                                		<input type="submit" id="bakery_del_btn" value="X">
                                 	</form>
                                 </div>
                             </div>
@@ -109,7 +111,7 @@
                                     <p class="oneSum"><?php echo $row4['price']; ?></p>
                                 </div>
                             <?php array_push($cakeArr, $row2['title']) ?>
-                            <?php array_push($cakePriceArr, $row2['price']) ?>                                
+                            <?php array_push($cakePriceArr, $row2['price']) ?>
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
@@ -125,7 +127,7 @@
                                     <p class="oneSum"> <?php echo $row6['price']; ?></p>
                                 </div>
                             <?php array_push($pieArr, $row2['title']) ?>
-                            <?php array_push($piePriceArr, $row2['price']) ?>                               
+                            <?php array_push($piePriceArr, $row2['price']) ?>
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
@@ -141,18 +143,18 @@
                                     <p class="oneSum"> <?php echo $row8['price']; ?></p>
                                 </div>
                             <?php array_push($cheesecakeArr, $row2['title']) ?>
-                            <?php array_push($cheesecakePriceArr, $row2['price']) ?>                                
+                            <?php array_push($cheesecakePriceArr, $row2['price']) ?>
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
-                    
+
                     <textarea style="display: none;" name="cheesecakeOffer"><?php foreach ($cheesecakeArr as $cheeseArr) echo ("|" . $cheeseArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($cheesecakePriceArr as $cheesecakePrArr) echo ("|" . $cheesecakePrArr  . "\t"); ?></textarea>
 
                 </div>
 
                <div class="offset-3 col-9 sum">
                     <textarea style="display: none;" name="summ" id="commonSum1"></textarea>
-                    <p>Сумма заказа:</p> <p id="commonSum"></p>
+                    <p id="forCommonSum"></p> <p id="commonSum"></p>
                 </div>
 
             </div>
