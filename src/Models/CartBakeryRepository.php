@@ -45,12 +45,6 @@ class CartBakeryRepository implements Repository
         return $this->db->nonSelectQuery($sql, $params);
     }
 
-    // public function saveB($data)
-    // {
-    //     $sql = 'UPDATE basket SET count=:count WHERE Bakery_id=:Bakery_id AND Users_id:=Users_id';
-    //     return $this->db->nonSelectQuery($sql, $params);
-    // }
-
     public function getBakery($id)
     {
         // получаем выпечку по id
@@ -58,14 +52,6 @@ class CartBakeryRepository implements Repository
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
-
-    // public function countB($bakeryId)
-    // {
-    //     // получаем выпечку по id
-    //     $sql = 'SELECT count FROM Bakery WHERE Bakery_id=:bakeryId';
-    //     $params = ['bakeryId'=>$bakeryId];
-    //     return $this->db->paramsGetOne($sql, $params);
-    // }
 
     public function getBaskets($Users_id)
     {
@@ -82,44 +68,12 @@ class CartBakeryRepository implements Repository
         return $this->db->getAll($sql);        
     }
 
-    // public function isName($account_n)
-    // {
-    //     $sql = 'SELECT * FROM User WHERE name=:name';
-    //     $params = [
-    //         'name'=>$account_n
-    //     ];       
-    //     return $this->db->paramsGetOne($sql, $params);
-    // }  
-
-    // public function getBas($idUs)
-    // {
-    //     $sql = 'SELECT * FROM Baskets WHERE user_id=:id';
-    //     $params = [
-    //         'id'=>$idUs
-    //     ];
-    //     return $this->db->paramsGetOne($sql, $params);
-    // }
-
-    // public function check($params)
-    // {
-    //     $sql = 'SELECT * FROM toybasc WHERE baskets_id=:baskets_id AND toy_id=:toy_id';
-    //     return $this->db->paramsGetAll($sql, $params);
-    // }
-
-    // public function getAllBakery()
-    // {
-    //     $sql = 'SELECT idBasket, Bakery_id FROM Basket WHERE idBasket=:idBasket';
-    //     $params = [
-    //         'idBasket' => '4'
-    //     ];
-    //     return $this->db->paramsGetAll($sql, $params);
-    // }
-
     public function getFromBakery($bakerysBaskets)
     {
-        $sql = 'SELECT * FROM Bakery WHERE id=:id';
+        $sql = 'SELECT Bakery.*, Basket.count FROM Bakery, Basket WHERE Bakery.id=:id AND Basket.Bakery_id=:Bakery_id';
         $params = [
             'id' => $bakerysBaskets,
+            'Bakery_id' => $bakerysBaskets
         ];
         return $this->db->paramsGetAll($sql, $params);
     }
@@ -130,18 +84,25 @@ class CartBakeryRepository implements Repository
         return $this->db->nonSelectQuery($sql, $params);
     }
 
-    // public function buy($params)
-    // {
-    //     $sql = 'INSERT INTO orders(Status_id, baskets_id) VALUES (:Status_id, :baskets_id)';
-    //     return $this->db->nonSelectQuery($sql, $params);
-    // }
+    public function getQuantity($bakerysBaskets)
+    {
+        $sql = 'SELECT count FROM Basket WHERE Bakery_id=:Bakery_id';
+        $params = [
+            'Bakery_id' => $bakerysBaskets,
+        ];
+        return $this->db->paramsGetAll($sql, $params);
+    }
 
-    // public function deleteFromBasket($data)
-    // {
-    //     $sql = 'DELETE FROM Toybasc WHERE baskets_id=:baskets_id';
-    //     return $this->db->nonSelectQuery($sql, $data);
+    public function getCount($params)
+    {
+        $sql = 'SELECT count FROM Basket WHERE Bakery_id=:Bakery_id AND Users_id=:Users_id';
+        return $this->db->paramsGetOne($sql, $params);
+    }
 
-    // }
-
+    public function addOne($params)
+    {
+        $sql = 'UPDATE Basket SET count=:quantity WHERE Bakery_id=:Bakery_id AND Users_id=:Users_id';
+        return $this->db->nonSelectQuery($sql, $params);
+    }
 
 }

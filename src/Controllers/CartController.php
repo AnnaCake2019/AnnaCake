@@ -84,17 +84,7 @@ class CartController extends Controller
 
             if (count($checkBakery) == 0) {
                 $this->cartBakeryRepository->save($params);
-            } 
-            // else {
-            //     $count = $this->cartBakeryRepository->countB($bakeryId);
-            //     $summ = $count + 1;
-            //     $data = [
-            //         'Bakery_id'=> $bakeryId,
-            //         'Users_id' => $_SESSION['name'],
-            //         'count' => $count  
-            //     ];
-            //     $this->cartBakeryRepository->saveB($data);
-            // }           
+            }           
 
     }
 
@@ -132,9 +122,6 @@ class CartController extends Controller
             	$this->userRepository->save($session);
         	}        	
         }  
-
-        // $cheesecake = $this->cartCheesecakeRepository->getCheesecakes($id); 
-        // $cheesecakeId = $cheesecake['id'];
         $params=[
             'id'=> $id,
             'Users_id' => $_SESSION['name']
@@ -171,18 +158,7 @@ class CartController extends Controller
     public function deleteBakeryAction($id)
     {
         session_start();
-        // $user=$this->cartRepository->isName($account_n);
-        // $IdUs = (int) $user['id'];  
-
-        // $bakery = $this->cartBakeryRepository->getBakery($id);
-        // $bakeryId = $bakery['id'];
-        
-        // $basket = $this->cartRepository->getBas($IdUs);
-
-        // $basketId=$basket['id'];
-
         $params=[
-            // 'baskets_id'=> $basketId,
             'Bakery_id'=> $id,
             'Users_id' => $_SESSION['name']
         ]; 
@@ -190,62 +166,64 @@ class CartController extends Controller
 
     }
 
-    // public function buyAction()
-    // {
-    //     session_start();
-    //     $account_n = $_SESSION['name'];
-    //     $user=$this->cartRepository->isName($account_n);
-    //     $IdUs = (int) $user['id'];  
-        
-    //     $basket = $this->cartRepository->getBas($IdUs);
+    public function plusBakeryAction($id)
+    {
+        session_start();
+        $params=[
+           'Bakery_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartBakeryRepository->getCount($params);
+        $quantity = array_shift($quantity) + 1;
+        $params=[
+           'Bakery_id'=> $id, 
+           'Users_id' => $_SESSION['name'],
+           'quantity' => $quantity
+        ];       
+        $this->cartBakeryRepository->addOne($params);
+    }
 
-    //     $basketId=$basket['id'];
-    //     $statusId='1';
-
-    //     $params=[
-    //         'baskets_id'=> $basketId,
-    //         'Status_id' => $statusId
-    //     ];        
-    //     $this->cartRepository->buy($params);
-
-    //     $data=[
-    //         'baskets_id'=> $basketId,
-    //     ];
-    //     $this->cartRepository->deleteFromBasket($data);
-    // }
-
-    // public function showAction()
-    // {
-    //  session_start();
-    //  $content = 'blog.php';
-    //  $template = 'template.php';
-
-    //  // $account_n = $_SESSION['name'];
-    //  // $user=$this->cartRepository->isName($account_n);
-    //  // $IdUs = (int) $user['id'];   
- //  //       $basket = $this->cartRepository->getBas($IdUs);
- //  //       $basketId=$basket['id'];
-
- //        $bakery_in_basket = $this->cartBakeryRepository->getAllBakery();
+    public function minusBakeryAction($id)
+    {
+        session_start();
+        $params=[
+           'Bakery_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartBakeryRepository->getCount($params);
+        $quantity = array_shift($quantity) - 1;
+        $params=[
+           'Bakery_id'=> $id, 
+           'Users_id' => $_SESSION['name'],
+           'quantity' => $quantity
+        ];       
+        $this->cartBakeryRepository->addOne($params);
+    }
 
 
 
-        // $bakery = $this->cartBakeryRepository->getFromBakery((int) $bakery_in_basket);
-        // $bakery=[];
-        // foreach ($bakery_in_basket as $row){
-        // $bakery1 = $this->cartBakeryRepository->getFromBakery((int) $row['bakery_id']);  
-        //  array_push($bakery, $bakery1);
-        // }
 
-    //  $data = [
-    //      'title' => 'Корзина',
-    //      'bakery_in_basket' => $bakery_in_basket,
-    //      'bakery' => $bakery,
- //            'bakery_in_basket' => $bakery_in_basket,
- //            // 'row' => $row
-    //  ];       
-    //  echo $this->renderPage($content, $template, $data);     
-    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public function showAction()
     {
@@ -579,10 +557,11 @@ class CartController extends Controller
 
         $bakery = $this->bakeryRepository->getById($id);
 
+
         $bakeryCart=[];
         foreach ($bakerysBaskets as $row){
-            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
-            array_push($bakeryCart, $bakery1);
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']); 
+            array_push($bakeryCart, $bakery1);           
         }
 
         $cakeCart=[];
@@ -612,6 +591,7 @@ class CartController extends Controller
         $data = [
             'bakery' => $bakery,
             'bakeryCart' => $bakeryCart,
+            'bakeryCartCol' => $bakeryCartCol,
             'cakeCart' => $cakeCart,
             'pieCart' => $pieCart,
             'cheesecakeCart' => $cheesecakeCart,

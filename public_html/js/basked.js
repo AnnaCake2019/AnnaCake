@@ -13,6 +13,7 @@ const oneSum = document.getElementsByClassName('oneSum');
 const forCommonSum = document.getElementById('forCommonSum');
 
 
+
 let sum = 0;
 const comSum = (arr) =>{
     for (let i = 0; i < arr.length; i++){

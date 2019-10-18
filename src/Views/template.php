@@ -73,22 +73,28 @@
 
                     <?php $cheesecakeArr=[]; ?>
                     <?php $cheesecakePriceArr=[]; ?>
+					
 
                     <?php foreach ($bakeryCart as $row1): ?>
                         <?php foreach ($row1 as $row2): ?>
                             <div class=" col-12 sums">
                                 <p><?php echo $row2['title']; ?></p>
-                                <div>
-                                    <p>Количество:</p>
-                                    <p><?php ?></p>
+                                <div> 	
+                                	<p>Количество: </p>
+                                	<form class="bakery_minus" method="POST" action="/Cart/minusBakery/<?php echo $row2['id'] ?>">
+                                		<input type="submit" value="-">
+                                	</form>                                 	
+                                    <p><?php echo $row2['count']; ?></p>  
+                                	<form class="bakery_plus" method="POST" action="/Cart/plusBakery/<?php echo $row2['id'] ?>">
+                                		<input type="submit" value="+">
+                                	</form>
                                 </div>
                                 <div>
                                     <p>Цена:</p>
                                     <p class="oneSum"> <?php echo $row2['price']; ?></p>
                                 </div>
                                 <div>
-                                	<form method="POST" action="/Cart/deleteBakery/<?php echo $row2['id'] ?>" id="bakery_del">
-                                		<!-- <div id="results_del" style="display: none;">Товар удалён.</div> -->
+                                	<form method="POST" action="/Cart/deleteBakery/<?php echo $row2['id'] ?>" class="bakery_del">
                                 		<input type="submit" id="bakery_del_btn" value="X">
                                 	</form>
                                 </div>
@@ -98,6 +104,9 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
+
+
+					
 
                     <textarea style="display: none;" name="bakeryOffer"><?php foreach ($bakeryArr as $bakArr) echo ("|" . $bakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($bakeryPriceArr as $bakPrArr) echo ("|" . $bakPrArr  . "\t"); ?></textarea>
 
