@@ -84,14 +84,12 @@
                                 	<form class="bakery_minus" method="POST" action="/Cart/minusBakery/<?php echo $row2['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>                                 	
-                                    <p><?php echo $row2['count']; ?></p>  
-                                	<form class="bakery_plus" method="POST" action="/Cart/plusBakery/<?php echo $row2['id'] ?>">
+                                    <p class="amountCart"><?php echo $row2['count']; ?></p>
+                                    <p class="oneSum"><?php echo $row2['price']; ?></p>
+                                    <form class="bakery_plus" method="POST" action="/Cart/plusBakery/<?php echo $row2['id'] ?>">
                                 		<input type="submit" value="+">
                                 	</form>
-                                </div>
-                                <div>
-                                    <p>Цена:</p>
-                                    <p class="oneSum"> <?php echo $row2['price']; ?></p>
+
                                 </div>
                                 <div>
                                 	<form method="POST" action="/Cart/deleteBakery/<?php echo $row2['id'] ?>" class="bakery_del">
@@ -106,7 +104,7 @@
 
 
 
-					
+
 
                     <textarea style="display: none;" name="bakeryOffer"><?php foreach ($bakeryArr as $bakArr) echo ("|" . $bakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($bakeryPriceArr as $bakPrArr) echo ("|" . $bakPrArr  . "\t"); ?></textarea>
 
