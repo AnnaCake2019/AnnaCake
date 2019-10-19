@@ -39,11 +39,6 @@
 
         Заполните форму, оставьте заявку и мы свяжемся с Вами в ближайшее время, чтобы обсудить все сладкие детали.
     </article>
-<div class="cont">
-    <p>
-        confectioneryspb1@yandex.ru
-    </p>
-    <p><a href="https://www.instagram.com/cakeannaverina/?igshid=4vy8b0lqk44k"><img src="/img/ico/insta.png"></a></p>
-</div>
+
 </div>
 </div>

@@ -8,7 +8,6 @@
 body{
     /*max-width: 2500px;*/
     margin: 0;
-    font-family: 'Bradley Hand ITC', sans-serif;
 }
 
 body{
@@ -175,7 +174,7 @@ footer{
 }
 /*stirngCont*/
 .stringCont{
-    margin-top: 90px;
+    margin-top: 190px;
     margin-bottom: 90px;
     display: flex;
     justify-content: center;

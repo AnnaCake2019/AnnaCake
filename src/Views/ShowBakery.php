@@ -15,7 +15,6 @@
 <!--                     <div id="results1" class="js-successbox t-form__successbox t-text t-text_md" style="display:none; ">
                         Товар в корзине!
                     </div> -->
-                    <input class="numberProd" type="number" name="quant" id="quant">
                     <input id="buy_button" type="submit" value="В корзину">
                 </form>
                 <p class="about">О товаре:</p>

@@ -2,7 +2,7 @@
     background: rgba(174, 176, 166, 0.8);
     display: none;
     z-index: 6;
-    width: 40%;
+    width: 50%;
     height: 100%;
     overflow: auto;
 
@@ -61,7 +61,7 @@
     text-align: center;
 }
 .sums {
-    margin: 7px 0 7px 0 ;
+    margin: 10px 0 10px 0 ;
     display: flex;
     justify-content: space-between;
     text-align: center;
@@ -80,6 +80,9 @@
 .sums div p {
     margin: 2px;
 }
+.sumsCh{
+    width: 50px;
+}
 
 
 @media screen and (max-width: 990px){
@@ -91,7 +94,11 @@
     .sums p{
         margin: 0;
     }
-}
+    .sumsCh {
+        margin: 0 auto;
+    }
+
+    }
 
 @media screen and (max-width: 700px) {
     .order{

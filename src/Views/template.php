@@ -78,9 +78,11 @@
                     <?php foreach ($bakeryCart as $row1): ?>
                         <?php foreach ($row1 as $row2): ?>
                             <div class=" col-12 sums">
-                                <p><?php echo $row2['title']; ?></p>
+                                <div class="sumsCh">
+                                    <p><?php echo $row2['title']; ?></p>
+                                </div>
                                 <div> 	
-                                	<p>Количество: </p>
+                                	<p>Штук: </p>
                                 	<form class="bakery_minus" method="POST" action="/Cart/minusBakery/<?php echo $row2['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
@@ -118,9 +120,11 @@
                     <?php foreach ($cakeCart as $row3): ?>
                         <?php foreach ($row3 as $row4): ?>
                             <div class=" col-12 sums">
+                                <div class="sumsCh">
                                 <p><?php echo $row4['title']; ?></p>
+                                </div>
                                 <div> 	
-                                	<p>Количество: </p>
+                                	<p>Штук: </p>
                                 	<form class="cake_minus" method="POST" action="/Cart/minusCake/<?php echo $row4['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
@@ -153,9 +157,11 @@
                     <?php foreach ($pieCart as $row5): ?>
                         <?php foreach ($row5 as $row6): ?>
                             <div class=" col-12 sums">
+                                <div class="sumsCh">
                                 <p><?php echo $row6['title']; ?></p>
+                                </div>
                                 <div> 	
-                                	<p>Количество: </p>
+                                	<p>Штук: </p>
                                 	<form class="pie_minus" method="POST" action="/Cart/minusPie/<?php echo $row6['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
@@ -188,9 +194,11 @@
                     <?php foreach ($cheesecakeCart as $row7): ?>
                         <?php foreach ($row7 as $row8): ?>
                             <div class=" col-12 sums">
+                                <div class="sumsCh">
                                 <p><?php echo $row8['title']; ?></p>
+                                </div>
                                 <div> 	
-                                	<p>Количество: </p>
+                                	<p>Штук: </p>
                                 	<form class="cheese_minus" method="POST" action="/Cart/minusCheese/<?php echo $row8['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
