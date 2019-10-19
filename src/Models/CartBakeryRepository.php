@@ -84,15 +84,6 @@ class CartBakeryRepository implements Repository
         return $this->db->nonSelectQuery($sql, $params);
     }
 
-    public function getQuantity($bakerysBaskets)
-    {
-        $sql = 'SELECT count FROM Basket WHERE Bakery_id=:Bakery_id';
-        $params = [
-            'Bakery_id' => $bakerysBaskets,
-        ];
-        return $this->db->paramsGetAll($sql, $params);
-    }
-
     public function getCount($params)
     {
         $sql = 'SELECT count FROM Basket WHERE Bakery_id=:Bakery_id AND Users_id=:Users_id';

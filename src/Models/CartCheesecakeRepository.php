@@ -13,7 +13,7 @@ class CartCheesecakeRepository implements Repository
 
     public function getById(int $id)
     {
-        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
+        $sql = 'SELECT * FROM cheesecakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -30,16 +30,24 @@ class CartCheesecakeRepository implements Repository
         return $this->db->foreing($sql1);   
     }
 
+    public function check($id)
+    {
+        $sql = 'SELECT * from basket WHERE Cheesecakes_id=:id';
+        $params =[
+            'id' =>$id
+        ];
+        return $this->db->paramsGetAll($sql, $params);
+    }
 
     public function save($params)
     {
-        $sql = 'INSERT INTO basket(Сheesecakes_id, Users_id) VALUES (:id, :Users_id)';
+        $sql = 'INSERT INTO basket(Cheesecakes_id, Users_id, count) VALUES (:id, :Users_id, :count)';
         return $this->db->nonSelectQuery($sql, $params);
     }
 
     public function getCheesecakes($id)
     {
-        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
+        $sql = 'SELECT * FROM cheesecakes WHERE id=:id';
         $params = ['id'=>$id];
         return $this->db->paramsGetOne($sql, $params);
     }
@@ -48,7 +56,7 @@ class CartCheesecakeRepository implements Repository
 
     public function getBaskets($Users_id)
     {
-        $sql = 'SELECT Сheesecakes_id FROM basket WHERE Users_id=:Users_id';
+        $sql = 'SELECT Cheesecakes_id FROM basket WHERE Users_id=:Users_id';
         $params =[
             'Users_id' => $Users_id
         ];
@@ -61,66 +69,34 @@ class CartCheesecakeRepository implements Repository
         return $this->db->getAll($sql);        
     }
 
-    // public function isName($account_n)
-    // {
-    //     $sql = 'SELECT * FROM User WHERE name=:name';
-    //     $params = [
-    //         'name'=>$account_n
-    //     ];       
-    //     return $this->db->paramsGetOne($sql, $params);
-    // }  
-
-    // public function getBas($idUs)
-    // {
-    //     $sql = 'SELECT * FROM Baskets WHERE user_id=:id';
-    //     $params = [
-    //         'id'=>$idUs
-    //     ];
-    //     return $this->db->paramsGetOne($sql, $params);
-    // }
-
-    // public function check($params)
-    // {
-    //     $sql = 'SELECT * FROM toybasc WHERE baskets_id=:baskets_id AND toy_id=:toy_id';
-    //     return $this->db->paramsGetAll($sql, $params);
-    // }
-
-    // public function getAllBakery()
-    // {
-    //     $sql = 'SELECT idBasket, Bakery_id FROM Basket WHERE idBasket=:idBasket';
-    //     $params = [
-    //         'idBasket' => '4'
-    //     ];
-    //     return $this->db->paramsGetAll($sql, $params);
-    // }
-
     public function getFromCheesecakes($cheesecakesBaskets)
     {
-        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
+        // $sql = 'SELECT * FROM cheesecakes WHERE id=:id';
+        $sql = 'SELECT cheesecakes.*, Basket.count FROM cheesecakes, Basket WHERE cheesecakes.id=:id AND Basket.Cheesecakes_id=:Cheesecakes_id';
         $params = [
-            'id' => $cheesecakesBaskets
+            'id' => $cheesecakesBaskets,
+            'Cheesecakes_id' => $cheesecakesBaskets
         ];
         return $this->db->paramsGetAll($sql, $params);
     }
 
-    // public function delete($params)
-    // {
-    //     $sql = 'DELETE FROM Basket WHERE Bakery_id=:Bakery_id';
-    //     return $this->db->nonSelectQuery($sql, $params);
-    // }
+    public function deleteCheese($params)
+    {
+        $sql = 'DELETE FROM Basket WHERE Cheesecakes_id=:Cheesecakes_id AND Users_id=:Users_id';
+        return $this->db->nonSelectQuery($sql, $params);
+    }
 
-    // public function buy($params)
-    // {
-    //     $sql = 'INSERT INTO orders(Status_id, baskets_id) VALUES (:Status_id, :baskets_id)';
-    //     return $this->db->nonSelectQuery($sql, $params);
-    // }
+    public function getCount($params)
+    {
+        $sql = 'SELECT count FROM Basket WHERE Cheesecakes_id=:Cheesecakes_id AND Users_id=:Users_id';
+        return $this->db->paramsGetOne($sql, $params);
+    }
 
-    // public function deleteFromBasket($data)
-    // {
-    //     $sql = 'DELETE FROM Toybasc WHERE baskets_id=:baskets_id';
-    //     return $this->db->nonSelectQuery($sql, $data);
-
-    // }
+    public function addOne($params)
+    {
+        $sql = 'UPDATE Basket SET count=:quantity WHERE Cheesecakes_id=:Cheesecakes_id AND Users_id=:Users_id';
+        return $this->db->nonSelectQuery($sql, $params);
+    }
 
 
 }

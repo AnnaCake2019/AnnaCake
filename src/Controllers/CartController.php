@@ -102,13 +102,19 @@ class CartController extends Controller
 
         $cake = $this->cartCakeRepository->getCake($id); 
         $cakeId = $cake['id'];
-
         $params=[
             'Cakes_id'=> $cakeId,
-            'Users_id' => $_SESSION['name']
+            'Users_id' => $_SESSION['name'],
+            'count' => $_POST['quant']
         ];       
         	$this->cartCakeRepository->foreing();
-            $this->cartCakeRepository->save($params);
+
+            $checkCake = $this->cartCakeRepository->check($cakeId);
+
+            if (count($checkCake) == 0) {           
+                $this->cartCakeRepository->save($params);
+            }           
+
     }
 
     public function addCheesecakeAction($id)
@@ -124,10 +130,16 @@ class CartController extends Controller
         }  
         $params=[
             'id'=> $id,
-            'Users_id' => $_SESSION['name']
+            'Users_id' => $_SESSION['name'],
+            'count' => $_POST['quant']
         ];       
         	$this->cartCheesecakeRepository->foreing();
-            $this->cartCheesecakeRepository->save($params);
+
+            $checkChees = $this->cartCheesecakeRepository->check($id);
+
+            if (count($checkChees) == 0) { 
+                $this->cartCheesecakeRepository->save($params);
+            }
     }
 
     public function addPieAction($id)
@@ -144,13 +156,18 @@ class CartController extends Controller
 
         $pie = $this->cartPieRepository->getPies($id); 
         $pieId = $pie['id'];
-
         $params=[
             'Pies_id'=> $pieId,
-            'Users_id' => $_SESSION['name']
+            'Users_id' => $_SESSION['name'],
+            'count' => $_POST['quant']
         ];       
         	$this->cartPieRepository->foreing();
-            $this->cartPieRepository->save($params);
+
+            $checkPie = $this->cartCheesecakeRepository->check($pieId);
+
+            if (count($checkPie) == 0) { 
+                $this->cartPieRepository->save($params);
+            }
     }
 
 
@@ -192,23 +209,192 @@ class CartController extends Controller
         ];
         $quantity = $this->cartBakeryRepository->getCount($params);
         $quantity = array_shift($quantity) - 1;
+        if ($quantity == 0) {
         $params=[
-           'Bakery_id'=> $id, 
-           'Users_id' => $_SESSION['name'],
-           'quantity' => $quantity
-        ];       
-        $this->cartBakeryRepository->addOne($params);
+            'Bakery_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartBakeryRepository->deleteBakery($params);            
+        } else{
+            $params=[
+                'Bakery_id'=> $id, 
+                'Users_id' => $_SESSION['name'],
+                'quantity' => $quantity
+            ];       
+            $this->cartBakeryRepository->addOne($params);            
+        }
+
     }
 
 
 
 
 
+    public function deleteCakeAction($id)
+    {
+        session_start();
+        $params=[
+            'Cakes_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartCakeRepository->deleteCake($params);
+
+    }
+
+    public function plusCakeAction($id)
+    {
+        session_start();
+        $params=[
+           'Cakes_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartCakeRepository->getCount($params);
+        $quantity = array_shift($quantity) + 1;
+        $params=[
+           'Cakes_id'=> $id, 
+           'Users_id' => $_SESSION['name'],
+           'quantity' => $quantity
+        ];       
+        $this->cartCakeRepository->addOne($params);
+    }
+
+    public function minusCakeAction($id)
+    {
+        session_start();
+        $params=[
+           'Cakes_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartCakeRepository->getCount($params);
+        $quantity = array_shift($quantity) - 1;
+        if ($quantity == 0) {
+        $params=[
+            'Cakes_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartCakeRepository->deleteCake($params);            
+        } else{
+            $params=[
+                'Cakes_id'=> $id, 
+                'Users_id' => $_SESSION['name'],
+                'quantity' => $quantity
+            ];       
+            $this->cartCakeRepository->addOne($params);            
+        }
+
+    }
+
+
+    public function deletePieAction($id)
+    {
+        session_start();
+        $params=[
+            'Pies_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartPieRepository->deletePie($params);
+
+    }
+
+    public function plusPieAction($id)
+    {
+        session_start();
+        $params=[
+           'Pies_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartPieRepository->getCount($params);
+        $quantity = array_shift($quantity) + 1;
+        $params=[
+           'Pies_id'=> $id, 
+           'Users_id' => $_SESSION['name'],
+           'quantity' => $quantity
+        ];       
+        $this->cartPieRepository->addOne($params);
+    }
+
+    public function minusPieAction($id)
+    {
+        session_start();
+        $params=[
+           'Pies_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartPieRepository->getCount($params);
+        $quantity = array_shift($quantity) - 1;
+        if ($quantity == 0) {
+        $params=[
+            'Pies_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartPieRepository->deletePie($params);            
+        } else{
+            $params=[
+                'Pies_id'=> $id, 
+                'Users_id' => $_SESSION['name'],
+                'quantity' => $quantity
+            ];       
+            $this->cartPieRepository->addOne($params);            
+        }
+
+    }
 
 
 
 
+    public function deleteCheeseAction($id)
+    {
+        session_start();
+        $params=[
+            'Cheesecakes_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartCheesecakeRepository->deleteCheese($params);
 
+    }
+
+    public function plusCheeseAction($id)
+    {
+        session_start();
+        $params=[
+           'Cheesecakes_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartCheesecakeRepository->getCount($params);
+        $quantity = array_shift($quantity) + 1;
+        $params=[
+           'Cheesecakes_id'=> $id, 
+           'Users_id' => $_SESSION['name'],
+           'quantity' => $quantity
+        ];       
+        $this->cartCheesecakeRepository->addOne($params);
+    }
+
+    public function minusCheeseAction($id)
+    {
+        session_start();
+        $params=[
+           'Cheesecakes_id'=> $id, 
+           'Users_id' => $_SESSION['name']
+        ];
+        $quantity = $this->cartCheesecakeRepository->getCount($params);
+        $quantity = array_shift($quantity) - 1;
+        if ($quantity == 0) {
+        $params=[
+            'Cheesecakes_id'=> $id,
+            'Users_id' => $_SESSION['name']
+        ]; 
+        $this->cartCheesecakeRepository->deleteCheese($params);            
+        } else{
+            $params=[
+                'Cheesecakes_id'=> $id, 
+                'Users_id' => $_SESSION['name'],
+                'quantity' => $quantity
+            ];       
+            $this->cartCheesecakeRepository->addOne($params);            
+        }
+
+    }
 
 
 
@@ -261,7 +447,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-        	$cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+        	$cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
          	array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -318,7 +504,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -337,6 +523,60 @@ class CartController extends Controller
         echo $this->renderPage($content, $template, $data);
     }
 
+    public function showContactAction()
+    {
+        session_start();
+        $content = 'contact.php';
+        $template = 'template.php'; 
+        $Users_id = $_SESSION['name'];
+        $bakerysBaskets = $this->cartBakeryRepository->getBaskets($Users_id);
+        $cakesBaskets = $this->cartCakeRepository->getBaskets($Users_id);
+        $piesBaskets = $this->cartPieRepository->getBaskets($Users_id);
+        $cheesecakesBaskets = $this->cartCheesecakeRepository->getBaskets($Users_id);
+
+        $fcakes = $this->frontCakeRepository->getAll();
+        $fcheesecakes = $this->frontCheesecakeRepository->getAll();
+        $fpies = $this->frontPieRepository->getAll();
+        $fbakerys = $this->frontBakeryRepository->getAll();
+
+        $bakeryCart=[];
+        foreach ($bakerysBaskets as $row){
+            $bakery1 = $this->cartBakeryRepository->getFromBakery($row['Bakery_id']);  
+            array_push($bakeryCart, $bakery1);
+        }
+
+        $cakeCart=[];
+        foreach ($cakesBaskets as $row1){
+            $cake1 = $this->cartCakeRepository->getFromCakes($row1['Cakes_id']);  
+            array_push($cakeCart, $cake1);
+        }
+
+        $pieCart=[];
+        foreach ($piesBaskets as $row2){
+            $pie1 = $this->cartPieRepository->getFromPies($row2['Pies_id']);  
+            array_push($pieCart, $pie1);
+        }
+
+        $cheesecakeCart=[];
+        foreach ($cheesecakesBaskets as $row3){
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
+            array_push($cheesecakeCart, $cheesecake1);
+        }
+
+
+        $data = [
+            'bakeryCart' => $bakeryCart,
+            'cakeCart' => $cakeCart,
+            'pieCart' => $pieCart,
+            'cheesecakeCart' => $cheesecakeCart,
+            'Users_id' => $_SESSION['name'],
+            'fcakes' => $fcakes,
+            'fcheesecakes' => $fcheesecakes,
+            'fpies' => $fpies,
+            'fbakerys' => $fbakerys,
+        ];
+        echo $this->renderPage($content, $template, $data);
+    }
 
     public function showShopAction()
     {
@@ -374,7 +614,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -441,7 +681,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -509,7 +749,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -578,7 +818,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 
@@ -646,7 +886,7 @@ class CartController extends Controller
 
         $cheesecakeCart=[];
         foreach ($cheesecakesBaskets as $row3){
-            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Сheesecakes_id']);  
+            $cheesecake1 = $this->cartCheesecakeRepository->getFromCheesecakes($row3['Cheesecakes_id']);  
             array_push($cheesecakeCart, $cheesecake1);
         }
 

@@ -16,7 +16,7 @@ class CheesecakeRepository implements Repository
     public function getAll()
     {
         // возвращает все тортики
-        $sql = 'SELECT * FROM сheesecakes';
+        $sql = 'SELECT * FROM cheesecakes';
         return $this->db->getAll($sql);
     }
 
@@ -24,13 +24,13 @@ class CheesecakeRepository implements Repository
     {
         // получаем тортики по id
         $params = ['id'=>$id];
-        $sql = 'SELECT * FROM сheesecakes WHERE id=:id';
+        $sql = 'SELECT * FROM cheesecakes WHERE id=:id';
         return $this->db->paramsGetOne($sql, $params);
     }
 
     public function save($params)
     {
-        $sql = 'INSERT INTO сheesecakes 
+        $sql = 'INSERT INTO cheesecakes 
                 (title, description, img, price, quantity)
                 VALUES (:title, :description, :img, :price, :quantity)';
         return $this->db->nonSelectQuery($sql, $params);
@@ -38,7 +38,7 @@ class CheesecakeRepository implements Repository
 
     public function deleteCake($params)
     {
-        $sql = 'DELETE FROM сheesecakes WHERE id=:id';
+        $sql = 'DELETE FROM cheesecakes WHERE id=:id';
         return $this->db->nonSelectQuery($sql, $params);
     }
 }

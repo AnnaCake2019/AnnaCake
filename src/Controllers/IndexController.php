@@ -38,11 +38,8 @@ class IndexController extends CartController
     }
 
     public function ContactAction(){
-        $content = 'contact.php';
-        $template = 'template.php';
-        $data = [
-            'title' => 'Главная'
-        ];
-        echo $this->renderPage($content, $template, $data);
+        $cartController = new CartController;
+        $cartController->__construct();     
+        $cartController->showContactAction();
     }
 }
