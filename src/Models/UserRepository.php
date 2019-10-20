@@ -39,26 +39,5 @@ class UserRepository implements Repository
         return $this->db->paramsGetAll($sql, $params);
     }
 
-    // public function baskets($params)
-    // {
-    //     $sql = 'INSERT INTO baskets (user_id, active) VALUES (:user_id, :active)';
-    //     return $this->db->nonSelectQuery($sql, $params);
-    // }
-
-    // public function isAuth($post)
-    // {
-    //     $sql = 'SELECT * FROM User WHERE email=:email';
-    //     $params = [
-    //         'email'=>$post['email']
-    //     ];
-    //     $result = $this->db->paramsGetOne($sql, $params);
-    //     if (!$result) return false; // если по email записи не найдено, то возвращаем контроллеру false
-    //     if (!password_verify($post['password'], $result['hash'])) return false;
-    //     session_start();
-    //     $_SESSION['name'] = $result['name'];
-    //     $_SESSION['role'] = $result['role'];
-    //     return true;
-    // }
-
 
 }

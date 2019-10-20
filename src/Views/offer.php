@@ -1,6 +1,6 @@
 <?php 
 
-mail('example@gmail.com', 'Заказ пользователя', 
+mail('confectioneryspb1@yandex.ru', 'Заказ пользователя', 
 	"С сайта AnnaCake.ru был получен заказ:
 	\nВыпечка:
 	\n$_POST[bakeryOffer]
@@ -18,6 +18,6 @@ mail('example@gmail.com', 'Заказ пользователя',
 ---------------------------
 	\nИмя заказчика: $_POST[name]
 	\nТелефон заказчика: $_POST[tel]"
-	, 'From: example@gmail.com');
+	, 'From: confectioneryspb1@yandex.ru');
 
  ?>

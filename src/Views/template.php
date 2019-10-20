@@ -46,16 +46,17 @@
         <div class="offset-2 col-8 hi">
             <h4>Ваш заказ</h4>
         </div>
-        <div class="offset-2 col-8">
+        
+<!--         <div class="offset-2 col-8">
             <div class="orders">
-                <form name="orders" method="POST" action="/Mail/sendOffer" id="form_offer">
-                	<input name="name" required class="val" type="text" placeholder="Имя">
-                    <input name="tel" required class="val" type="text" placeholder="Телефон">
-                    <div id="results2" style="display: none;">Ваш заказ отправлен в обработку.</div>
-                    <input type="submit" id="button_offer" value="Заказать">
-                </form>
+                    <form name="orders" method="POST" action="/Mail/sendOffer/" id="form_offer">
+                    	<input name="name" required class="val" type="text" placeholder="Имя">
+                        <input name="tel" required class="val" type="text" placeholder="Телефон">
+                        <div id="results2" style="display: none;">Ваш заказ отправлен в обработку.</div>
+                        <input type="submit" id="button_offer" value="Заказать">
+                    </form>
             </div>
-        </div>
+        </div> -->      
         <div class="col-10 frontBasked">
 
             <div class="row">
@@ -110,13 +111,6 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-
-
-
-
-                    <textarea style="display: none;" name="bakeryOffer"><?php foreach ($bakeryArr as $bakArr) echo ("|" . $bakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($bakeryPriceArr as $bakPrArr) echo ("|" . $bakPrArr  . "\t"); ?></textarea>
-
-
                     <?php foreach ($cakeCart as $row3): ?>
                         <?php foreach ($row3 as $row4): ?>
                             <div class=" col-12 sums">
@@ -152,7 +146,6 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-                    <textarea style="display: none;" name="cakeOffer"><?php foreach ($cakeArr as $cakArr) echo ("|" . $cakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($cakePriceArr as $cakPrArr) echo ("|" . $cakPrArr  . "\t"); ?></textarea>
 
                     <?php foreach ($pieCart as $row5): ?>
                         <?php foreach ($row5 as $row6): ?>
@@ -175,7 +168,8 @@
                                 <div>
 	                                <p>Цена: </p>
 	                                <p style="display: none;" class="amountCart1"><?php echo $row6['count']; ?></p>
-                                    <p class="oneSum1"><?php echo $row6['price']; ?></p>                                		
+                                    <p class="oneSum1"><?php echo $row6['price']; ?></p>  
+
                                 </div> 
 
                                 <div>
@@ -184,12 +178,12 @@
                                 	</form>
                                 </div>
                             </div>                            
-                            <?php array_push($cakeArr, $row6['title']) ?>
-                            <?php array_push($cakePriceArr, $row6['price']) ?>
+                            <?php array_push($pieArr, $row6['title']) ?>
+                            <?php array_push($piePriceArr, $row6['price']) ?>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-                    <textarea style="display: none;" name="pieOffer"><?php foreach ($pieArr as $piArr) echo ("|" . $piArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($piePriceArr as $piePrArr) echo ("|" . $piePrArr  . "\t"); ?></textarea>
+
 
                     <?php foreach ($cheesecakeCart as $row7): ?>
                         <?php foreach ($row7 as $row8): ?>
@@ -226,18 +220,45 @@
                         <?php endforeach; ?>
                     <?php endforeach; ?>
 
-                    <textarea style="display: none;" name="cheesecakeOffer"><?php foreach ($cheesecakeArr as $cheeseArr) echo ("|" . $cheeseArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($cheesecakePriceArr as $cheesecakePrArr) echo ("|" . $cheesecakePrArr  . "\t"); ?></textarea>
+
 
                 </div>
 
                <div class="offset-3 col-9 sum">
-                    <textarea style="display: none;" name="summ" id="commonSum1"></textarea>
                     <p id="forCommonSum"></p> <p id="commonSum"></p>
                 </div>
 
             </div>
         </div>
-        </form>
+
+        <div class="offset-2 col-8">
+            <div class="orders">
+                    <form name="orders" method="POST" action="/Mail/sendOffer/" id="form_offer">
+
+                        <input name="name" required class="val" type="text" placeholder="Имя">
+                        <input name="tel" required class="val" type="text" placeholder="Телефон">
+
+                        <textarea style="display: none;" name="bakeryOffer"><?php foreach ($bakeryArr as $bakArr) echo ("|" . $bakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($bakeryPriceArr as $bakPrArr) echo ("|" . $bakPrArr  . "\t"); ?>
+                        </textarea>
+
+                        <textarea style="display: none;" name="cakeOffer"><?php foreach ($cakeArr as $cakArr) echo ("|" . $cakArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($cakePriceArr as $cakPrArr) echo ("|" . $cakPrArr  . "\t"); ?>
+                        </textarea>
+
+                        <textarea style="display: none;" name="pieOffer"><?php foreach ($pieArr as $piArr) echo ("|" . $piArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($piePriceArr as $piePrArr) echo ("|" . $piePrArr  . "\t"); ?>
+                        </textarea>
+
+                        <textarea style="display: none;" name="cheesecakeOffer"><?php foreach ($cheesecakeArr as $cheeseArr) echo ("|" . $cheeseArr . "\t"); ?><?php echo "\n"; ?><?php foreach ($cheesecakePriceArr as $cheesecakePrArr) echo ("|" . $cheesecakePrArr  . "\t"); ?>
+                        </textarea>
+
+                        <textarea style="display: none;" name="summ" id="commonSum1"></textarea> 
+
+                        <div id="results2" style="display: none;">Ваш заказ отправлен в обработку.</div>
+
+                        <input type="submit" id="button_offer" value="Заказать">
+                    </form>
+            </div>
+        </div> 
+
     </div>
 </div>
 <!--Basked Window end-->

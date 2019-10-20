@@ -39,6 +39,7 @@ class CartController extends Controller
     private $bakeryRepository;
     private $pieRepository;
 
+
     public function __construct()
     {
         $this->cartBakeryRepository = new CartBakeryRepository();
@@ -57,6 +58,7 @@ class CartController extends Controller
         $this->cakeRepository = new CakeRepository();
         $this->bakeryRepository = new BakeryRepository();
         $this->pieRepository = new PieRepository();
+
     }
 
     public function addBakeryAction($id)
@@ -163,7 +165,7 @@ class CartController extends Controller
         ];       
         	$this->cartPieRepository->foreing();
 
-            $checkPie = $this->cartCheesecakeRepository->check($pieId);
+            $checkPie = $this->cartPieRepository->check($pieId);
 
             if (count($checkPie) == 0) { 
                 $this->cartPieRepository->save($params);
@@ -395,21 +397,6 @@ class CartController extends Controller
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function showAction()
     {

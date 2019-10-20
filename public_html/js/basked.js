@@ -10,6 +10,8 @@ orders.addEventListener('submit', (event) =>{
 const oneSum = document.getElementsByClassName('oneSum');
 
 const commonSum = document.getElementById('commonSum');
+const commonSum1 = document.getElementById('commonSum1');
+
 const amountBakery = document.getElementsByClassName('amountCart');
 const forCommonSum = document.getElementById('forCommonSum');
 const forCommonSum1 = document.getElementById('forCommonSum1');
@@ -54,6 +56,8 @@ const fCommonSum = (sum) =>{
 
             forCommonSum.innerHTML = `Сумма заказа:`;
             commonSum.innerHTML = `${comSum} р.`;
+            commonSum1.innerHTML = `${comSum} р.`;
+
         }
 };
 fCommonSum(oneSum);
