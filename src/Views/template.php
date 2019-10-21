@@ -18,7 +18,7 @@
     <img src="/img/ico/phone.png">
 </a>
 <div id="window" class="closeModal">
-    <form method="POST" action="/Mail/send" id="form_mail">
+    <form method="POST" action="/Mail/Send" id="form_mail">
 <!--        <a href="#close" class="close"></a>-->
         <div class="row windowFrom">
             <div class="col-12">
@@ -46,17 +46,7 @@
         <div class="offset-2 col-8 hi">
             <h4>Ваш заказ</h4>
         </div>
-        
-<!--         <div class="offset-2 col-8">
-            <div class="orders">
-                    <form name="orders" method="POST" action="/Mail/sendOffer/" id="form_offer">
-                    	<input name="name" required class="val" type="text" placeholder="Имя">
-                        <input name="tel" required class="val" type="text" placeholder="Телефон">
-                        <div id="results2" style="display: none;">Ваш заказ отправлен в обработку.</div>
-                        <input type="submit" id="button_offer" value="Заказать">
-                    </form>
-            </div>
-        </div> -->      
+             
         <div class="col-10 frontBasked">
 
             <div class="row">
@@ -84,13 +74,13 @@
                                 </div>
                                 <div> 	
                                 	<p>Штук: </p>
-                                	<form class="bakery_minus" method="POST" action="/Cart/minusBakery/<?php echo $row2['id'] ?>">
+                                	<form class="bakery_minus" method="POST" action="/Cart/MinusBakery/<?php echo $row2['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
 
                                     <p class="amountCart"><?php echo $row2['count']; ?></p>
                                     <p style="display: none;" class="oneSum"><?php echo $row2['price']; ?></p>
-                                    <form class="bakery_plus" method="POST" action="/Cart/plusBakery/<?php echo $row2['id'] ?>">
+                                    <form class="bakery_plus" method="POST" action="/Cart/PlusBakery/<?php echo $row2['id'] ?>">
                                 		<input type="submit" value="+">
                                 	</form>
                                 </div>
@@ -101,7 +91,7 @@
                                 </div> 
 
                                 <div>
-                                	<form method="POST" action="/Cart/deleteBakery/<?php echo $row2['id'] ?>" class="bakery_del">
+                                	<form method="POST" action="/Cart/DeleteBakery/<?php echo $row2['id'] ?>" class="bakery_del">
                                 		<input type="submit" id="bakery_del_btn" value="X">
                                 	</form>
                                 </div>
@@ -119,13 +109,13 @@
                                 </div>
                                 <div> 	
                                 	<p>Штук: </p>
-                                	<form class="cake_minus" method="POST" action="/Cart/minusCake/<?php echo $row4['id'] ?>">
+                                	<form class="cake_minus" method="POST" action="/Cart/MinusCake/<?php echo $row4['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
 
                                     <p class="amountCart"><?php echo $row4['count']; ?></p>
                                     <p style="display: none;" class="oneSum"><?php echo $row4['price']; ?></p>
-                                    <form class="cake_plus" method="POST" action="/Cart/plusCake/<?php echo $row4['id'] ?>">
+                                    <form class="cake_plus" method="POST" action="/Cart/PlusCake/<?php echo $row4['id'] ?>">
                                 		<input type="submit" value="+">
                                 	</form>
                                 </div>
@@ -136,7 +126,7 @@
                                 </div> 
 
                                 <div>
-                                	<form method="POST" action="/Cart/deleteCake/<?php echo $row4['id'] ?>" class="cake_del">
+                                	<form method="POST" action="/Cart/DeleteCake/<?php echo $row4['id'] ?>" class="cake_del">
                                 		<input type="submit" id="cake_del_btn" value="X">
                                 	</form>
                                 </div>
@@ -155,13 +145,13 @@
                                 </div>
                                 <div> 	
                                 	<p>Штук: </p>
-                                	<form class="pie_minus" method="POST" action="/Cart/minusPie/<?php echo $row6['id'] ?>">
+                                	<form class="pie_minus" method="POST" action="/Cart/MinusPie/<?php echo $row6['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
 
                                     <p class="amountCart"><?php echo $row6['count']; ?></p>
                                     <p style="display: none;" class="oneSum"><?php echo $row6['price']; ?></p>
-                                    <form class="pie_plus" method="POST" action="/Cart/plusPie/<?php echo $row6['id'] ?>">
+                                    <form class="pie_plus" method="POST" action="/Cart/PlusPie/<?php echo $row6['id'] ?>">
                                 		<input type="submit" value="+">
                                 	</form>
                                 </div>
@@ -173,7 +163,7 @@
                                 </div> 
 
                                 <div>
-                                	<form method="POST" action="/Cart/deletePie/<?php echo $row6['id'] ?>" class="pie_del">
+                                	<form method="POST" action="/Cart/DeletePie/<?php echo $row6['id'] ?>" class="pie_del">
                                 		<input type="submit" id="pie_del_btn" value="X">
                                 	</form>
                                 </div>
@@ -193,13 +183,13 @@
                                 </div>
                                 <div> 	
                                 	<p>Штук: </p>
-                                	<form class="cheese_minus" method="POST" action="/Cart/minusCheese/<?php echo $row8['id'] ?>">
+                                	<form class="cheese_minus" method="POST" action="/Cart/MinusCheese/<?php echo $row8['id'] ?>">
                                 		<input type="submit" value="-">
                                 	</form>  
 
                                     <p class="amountCart"><?php echo $row8['count']; ?></p>
                                     <p style="display: none;" class="oneSum"><?php echo $row8['price']; ?></p>
-                                    <form class="cheese_plus" method="POST" action="/Cart/plusCheese/<?php echo $row8['id'] ?>">
+                                    <form class="cheese_plus" method="POST" action="/Cart/PlusCheese/<?php echo $row8['id'] ?>">
                                 		<input type="submit" value="+">
                                 	</form>
                                 </div>
@@ -210,7 +200,7 @@
                                 </div> 
 
                                 <div>
-                                	<form method="POST" action="/Cart/deleteCheese/<?php echo $row8['id'] ?>" class="cheese_del">
+                                	<form method="POST" action="/Cart/DeleteCheese/<?php echo $row8['id'] ?>" class="cheese_del">
                                 		<input type="submit" id="cheese_del_btn" value="X">
                                 	</form>
                                 </div>
@@ -233,7 +223,7 @@
 
         <div class="offset-2 col-8">
             <div class="orders">
-                    <form name="orders" method="POST" action="/Mail/sendOffer/" id="form_offer">
+                    <form name="orders" method="POST" action="/Mail/SendOffer/" id="form_offer">
 
                         <input name="name" required class="val" type="text" placeholder="Имя">
                         <input name="tel" required class="val" type="text" placeholder="Телефон">
@@ -274,7 +264,7 @@
         <nav class="mobile-menu" id="mobile">
             <ul>
                 <li><a onclick="hideMenu()" href="/">Главная</a></li>
-                <li><a onclick="hideMenu()" href="/shop/show">Магазин</a></li>
+                <li><a onclick="hideMenu()" href="/Shop/Show">Магазин</a></li>
                 <li><a onclick="hideMenu()" href="/Index/About">О нас</a></li>
                 <li><a onclick="hideMenu()" href="/Index/Contact/">Контакты</a></li>
                 <li><a onclick="hideMenu()" href="#basked">Корзина</a></li>
@@ -287,7 +277,7 @@
         <nav id="fixed" class="menu">
             <ul>
                 <li><a href="/">Главная</a></li>
-                <li><a href="/shop/show">Магазин</a></li>
+                <li><a href="/Shop/Show">Магазин</a></li>
                 <li><a href="/Index/About">О нас</a></li>
                 <li><a href="/Index/Contact/">Контакты</a></li>
                 <li><a href="#basked">Корзина</a></li>

@@ -14,7 +14,7 @@ class MailController extends Controller
         $this->cartRepository = new CartRepository();
     }
 
-	public function sendAction()
+	public function SendAction()
 	{
 		session_start();
 		$content = 'mail.php';
@@ -25,7 +25,7 @@ class MailController extends Controller
 		echo $this->renderPage($content, $template, $data);
 	}
 
-	public function sendOfferAction()
+	public function SendOfferAction()
 	{
 		session_start();
 		$content = 'offer.php';

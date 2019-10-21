@@ -11,7 +11,7 @@
                 <p class='pr'><?php echo $pie['title']; ?></p>
                 <p class="pr">Цена: <?php echo $pie['price']; ?></p>
 
-                <form id="bakery_form" class="forBasked" name="forBasked" method="POST" action="/cart/addPie/<?php echo $pie['id'] ?>">
+                <form id="bakery_form" class="forBasked" name="forBasked" method="POST" action="/Cart/AddPie/<?php echo $pie['id'] ?>">
 <!--                     <div id="results1" class="js-successbox t-form__successbox t-text t-text_md" style="display:none; ">
                         Товар в корзине!
                     </div> --> 

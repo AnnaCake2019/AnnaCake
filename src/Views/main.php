@@ -19,7 +19,7 @@
                 <?php endforeach; ?>
             </div>
             <div class="gallerys">
-                <a href="/Shop/Show#twoShow"><p>Кейки</p></a>
+                <a href="/Shop/Show#twoShow"><p>Чизкейки</p></a>
                 <?php foreach ($fcheesecakes as $fcheesecake): ?>
                     <a href="/Shop/Show#twoShow">
                         <img src="/img/Front/<?php echo $fcheesecake['img']; ?>">
@@ -29,7 +29,7 @@
         </div>
         <div>
             <div class="gallerys">
-                <a href="/Shop/Show#threeShow"><p>Чизкейки</p></a>
+                <a href="/Shop/Show#threeShow"><p>Кейки</p></a>
                 <?php foreach ($fpies as $fpie): ?>
                     <a href="/Shop/Show#threeShow">
                         <img src="/img/Front/<?php echo $fpie['img']; ?>">

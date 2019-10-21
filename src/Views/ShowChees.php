@@ -11,7 +11,7 @@
                 <p class='pr'><?php echo $twoChee['title']; ?></p>
                 <p class="pr">Цена: <?php echo $twoChee['price']; ?></p>
 
-                <form id="bakery_form" class="forBasked" name="forBasked" method="POST" action="/cart/addCheesecake/<?php echo $twoChee['id'] ?>">
+                <form id="bakery_form" class="forBasked" name="forBasked" method="POST" action="/Cart/AddCheesecake/<?php echo $twoChee['id'] ?>">
 <!--                     <div id="results1" class="js-successbox t-form__successbox t-text t-text_md" style="display:none; ">
                         Товар в корзине!
                     </div> --> 

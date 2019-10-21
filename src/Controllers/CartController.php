@@ -61,7 +61,7 @@ class CartController extends Controller
 
     }
 
-    public function addBakeryAction($id)
+    public function AddBakeryAction($id)
     { 
         session_start();
         if (!(isset($_SESSION['name']))) {
@@ -90,7 +90,7 @@ class CartController extends Controller
 
     }
 
-    public function addCakeAction($id)
+    public function AddCakeAction($id)
     { 
         session_start();
         if (!(isset($_SESSION['name']))) {
@@ -119,7 +119,7 @@ class CartController extends Controller
 
     }
 
-    public function addCheesecakeAction($id)
+    public function AddCheesecakeAction($id)
     { 
         session_start();
         if (!(isset($_SESSION['name']))) {
@@ -144,7 +144,7 @@ class CartController extends Controller
             }
     }
 
-    public function addPieAction($id)
+    public function AddPieAction($id)
     { 
         session_start();
         if (!(isset($_SESSION['name']))) {
@@ -174,7 +174,7 @@ class CartController extends Controller
 
 
 
-    public function deleteBakeryAction($id)
+    public function DeleteBakeryAction($id)
     {
         session_start();
         $params=[
@@ -185,7 +185,7 @@ class CartController extends Controller
 
     }
 
-    public function plusBakeryAction($id)
+    public function PlusBakeryAction($id)
     {
         session_start();
         $params=[
@@ -202,7 +202,7 @@ class CartController extends Controller
         $this->cartBakeryRepository->addOne($params);
     }
 
-    public function minusBakeryAction($id)
+    public function MinusBakeryAction($id)
     {
         session_start();
         $params=[
@@ -232,7 +232,7 @@ class CartController extends Controller
 
 
 
-    public function deleteCakeAction($id)
+    public function DeleteCakeAction($id)
     {
         session_start();
         $params=[
@@ -243,7 +243,7 @@ class CartController extends Controller
 
     }
 
-    public function plusCakeAction($id)
+    public function PlusCakeAction($id)
     {
         session_start();
         $params=[
@@ -260,7 +260,7 @@ class CartController extends Controller
         $this->cartCakeRepository->addOne($params);
     }
 
-    public function minusCakeAction($id)
+    public function MinusCakeAction($id)
     {
         session_start();
         $params=[
@@ -287,7 +287,7 @@ class CartController extends Controller
     }
 
 
-    public function deletePieAction($id)
+    public function DeletePieAction($id)
     {
         session_start();
         $params=[
@@ -298,7 +298,7 @@ class CartController extends Controller
 
     }
 
-    public function plusPieAction($id)
+    public function PlusPieAction($id)
     {
         session_start();
         $params=[
@@ -315,7 +315,7 @@ class CartController extends Controller
         $this->cartPieRepository->addOne($params);
     }
 
-    public function minusPieAction($id)
+    public function MinusPieAction($id)
     {
         session_start();
         $params=[
@@ -344,7 +344,7 @@ class CartController extends Controller
 
 
 
-    public function deleteCheeseAction($id)
+    public function DeleteCheeseAction($id)
     {
         session_start();
         $params=[
@@ -355,7 +355,7 @@ class CartController extends Controller
 
     }
 
-    public function plusCheeseAction($id)
+    public function PlusCheeseAction($id)
     {
         session_start();
         $params=[
@@ -372,7 +372,7 @@ class CartController extends Controller
         $this->cartCheesecakeRepository->addOne($params);
     }
 
-    public function minusCheeseAction($id)
+    public function MinusCheeseAction($id)
     {
         session_start();
         $params=[
@@ -398,7 +398,7 @@ class CartController extends Controller
 
     }
 
-    public function showAction()
+    public function ShowAction()
     {
     	session_start();
         $content = 'main.php';
@@ -455,7 +455,7 @@ class CartController extends Controller
     }
 
 
-    public function showAboutAction()
+    public function ShowAboutAction()
     {
         session_start();
         $content = 'aboutUS.php';
@@ -510,7 +510,7 @@ class CartController extends Controller
         echo $this->renderPage($content, $template, $data);
     }
 
-    public function showContactAction()
+    public function ShowContactAction()
     {
         session_start();
         $content = 'contact.php';
@@ -565,7 +565,7 @@ class CartController extends Controller
         echo $this->renderPage($content, $template, $data);
     }
 
-    public function showShopAction()
+    public function ShowShopAction()
     {
         session_start();
         $content = 'show.php';
